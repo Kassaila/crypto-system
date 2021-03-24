@@ -10,9 +10,37 @@
 />
     {% include './partials/head/common.njk' %}
   </head>
+  {%
+    set inputs = [
+      {
+        'name': 'reg-form-name',
+        'type': 'text',
+        'icon': '',
+        'placeholder': 'Enter Your Name'
+      },
+      {
+        'name': 'reg-form-email',
+        'type': 'email',
+        'icon': '',
+        'placeholder': 'Enter Your E-mail'
+      }
+    ]
+  %}
   <body>
-    <main>
-    <h4></h4>
+    <main class="page-registration">
+      <div class="page-bg">
+        <img src="./img/bg_registration.jpg" alt="">
+      </div>
+      <div class="container">
+        <h4>Create your free account</h4>
+        <form class="reg-form">
+          {% for input in inputs %}
+            <label for="{{ input.name }}">
+              <input id="{{ input.name }}" type="{{ input.type }}" placeholder="{{ input.placeholder }}">
+            </label>
+          {% endfor %}
+        </form>
+      </div>
     </main>
     {% include './partials/scripts/common.njk' %}
   </body>
