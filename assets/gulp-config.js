@@ -8,8 +8,8 @@ const global = {
       main: 'index.html',
     },
     js: {
-      main: 'app',
-      build: 'jquery.main',
+      main: 'main',
+      build: 'main',
       vendor: 'vendor',
     },
     styles: {
@@ -28,9 +28,7 @@ const global = {
     },
   },
   buildJs: {
-    externalLibs: {
-      jquery: 'jQuery',
-    },
+    externalLibs: {},
     getEntryPoints() {
       return {
         [global.file.js.build]: `./js/${global.file.js.main}`,

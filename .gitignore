@@ -32,7 +32,7 @@ composer.lock
 
 # markup
 .sass-cache
-/.temp/
+.temp
 *.map
 *.tmp
 .tmp
@@ -45,7 +45,7 @@ tmp
 *.rar
 
 # npm dependencies
-/node_modules/
+node_modules
 package-lock.json
 
 # cache
@@ -53,3 +53,8 @@ package-lock.json
 
 # report
 report.*
+
+# public
+public/*.html
+public/js
+public/css
