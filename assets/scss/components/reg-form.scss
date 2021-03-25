@@ -1,0 +1,29 @@
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 360px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__label {
+    --icon-color: var(--color-blue-40);
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  &__input {
+    padding: 15px 35px 15px 55px;
+    border: none;
+    border-radius: 50px;
+  }
+}

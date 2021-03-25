@@ -17,24 +17,20 @@ input[type='password'],
 textarea {
   vertical-align: top;
   box-sizing: border-box;
-  padding: var(--form-element-padding);
-  border: 0.1rem solid var(--form-element-border-color);
-  border-radius: 0;
+  outline: none;
   font-family: var(--form-font-family);
+  line-height: 1;
   resize: vertical;
   appearance: none;
-
-  &:focus {
-    border-color: var(--form-element-focus-border-color);
-  }
 
   @include placeholder {
     color: var(--placeholder-color);
   }
 }
 
-select {
-  border-radius: 0;
+textarea {
+  line-height: 1.2;
+  resize: vertical;
 }
 
 button,
@@ -42,7 +38,7 @@ input[type='button'],
 input[type='reset'],
 input[type='file'],
 input[type='submit'] {
-  border-radius: 0;
+  outline: none;
   font-family: var(--form-font-family);
   cursor: pointer;
   appearance: none;

@@ -7,10 +7,11 @@ $rem: 10px;
 
 // Breakpoints for include media mixin
 $breakpoints: (
-  'phone': 480px,
-  'tablet': 768px,
-  'desktop': 980px,
-  'widescreen': 1200px,
+  'xs': 480px,
+  'sm': 768px,
+  'md': 980px,
+  'lg': 1200px,
+  'xlg': 1440px,
 );
 
 // Keywords for include media mixin
@@ -43,16 +44,21 @@ $media-expressions: (
 
 :root {
   // Breakpoints
-  --phone: #{map-get($breakpoints, 'phone')};
-  --tablet: #{map-get($breakpoints, 'tablet')};
-  --desktop: #{map-get($breakpoints, 'desktop')};
-  --widescreen: #{map-get($breakpoints, 'widescreen')};
+  --xs: #{map-get($breakpoints, 'xs')};
+  --sm: #{map-get($breakpoints, 'sm')};
+  --md: #{map-get($breakpoints, 'md')};
+  --lg: #{map-get($breakpoints, 'lg')};
+  --xlg: #{map-get($breakpoints, 'xlg')};
+
+  // container
+  --container-padding: 30px;
 
   // Colors
   --color-white: #fff;
   --color-black: #000;
   --color-grey: #999;
   --color-blue: #39f;
+  --color-blue-40: #007def;
   --color-blue-80: #02143b;
 
   // Fonts

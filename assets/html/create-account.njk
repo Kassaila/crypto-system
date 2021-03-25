@@ -10,36 +10,62 @@
 />
     {% include './partials/head/common.njk' %}
   </head>
+  {% from "./partials/components/icon.njk" import icon %}
+
+  {%
+    set form = {
+      id: 'create-acc'
+    }
+  %}
+
   {%
     set inputs = [
       {
-        'name': 'reg-form-name',
+        'name': form.id + '-' + 'user',
         'type': 'text',
-        'icon': '',
+        'icon': 'user',
         'placeholder': 'Enter Your Name'
       },
       {
-        'name': 'reg-form-email',
+        'name': form.id + '-' + 'email',
         'type': 'email',
-        'icon': '',
+        'icon': 'mail',
         'placeholder': 'Enter Your E-mail'
+      },
+      {
+        'name': form.id + '-' + 'pass',
+        'type': 'password',
+        'icon': 'lock-open',
+        'placeholder': 'Enter Your Password'
+      },
+      {
+        'name': form.id + '-' + 'pass-repeat',
+        'type': 'password',
+        'icon': 'lock-open',
+        'placeholder': 'Repeat Your Password'
       }
     ]
   %}
   <body>
-    <main class="page-registration">
-      <div class="page-bg">
+    <main class="page page--create-account">
+      <div class="page__bg">
         <img src="./img/bg_registration.jpg" alt="">
       </div>
-      <div class="container">
-        <h4>Create your free account</h4>
-        <form class="reg-form">
-          {% for input in inputs %}
-            <label for="{{ input.name }}">
-              <input id="{{ input.name }}" type="{{ input.type }}" placeholder="{{ input.placeholder }}">
-            </label>
-          {% endfor %}
-        </form>
+      <div class="page__container">
+        <div class="reg-form__wrapper">
+          <a href="javascript: void(0)" class="logo logo-lg">
+            <img src="./img/logo.png" alt="logo">
+          </a>
+          <h4>Create your free account</h4>
+          <form id="{{ form.id }}" class="reg-form">
+            {% for input in inputs %}
+              <label for="{{ input.name }}" class="reg-form__label">
+                {{ icon(input.icon) }}
+                <input id="{{ input.name }}" type="{{ input.type }}" class="reg-form__input" placeholder="{{ input.placeholder }}">
+              </label>
+            {% endfor %}
+          </form>
+        </div>
       </div>
     </main>
     {% include './partials/scripts/common.njk' %}
