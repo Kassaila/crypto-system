@@ -57,12 +57,13 @@ p {
 
 a {
   color: var(--base-link-color);
+  text-decoration: none;
   @include media('hover') {
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
   &:focus {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }

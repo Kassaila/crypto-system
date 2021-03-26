@@ -57,13 +57,18 @@ $media-expressions: (
   --color-white: #fff;
   --color-black: #000;
   --color-grey: #999;
+  --color-grey-10: #eeeeee;
+  --color-grey-80: #676767;
   --color-blue: #39f;
+  --color-blue-10: #00bcf9;
   --color-blue-40: #007def;
   --color-blue-80: #02143b;
 
+  --grad-blue: linear-gradient(86.88deg, #00C6FB 1.95%, #005BEA 97.83%);
+
   // Fonts
-  --font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  --font-serif: 'Times New Roman', Times, Baskerville, Georgia, serif;
+  --font-sans-serif: 'Montserrat', Helvetica, sans-serif;
+  --font-serif: 'Times New Roman', Times, Georgia, serif;
 
   // Body base
   --base-background-color: var(--color-blue-80);
@@ -88,7 +93,7 @@ $media-expressions: (
   --form-element-padding: var(--btn-padding);
   --form-element-border-color: var(--color-grey);
   --form-element-focus-border-color: var(--color-black);
-  --placeholder-color: var(--color-grey);
+  --placeholder-color: var(--color-grey-80);
 
   // Headings base
   --headings-font-family: var(--font-sans-serif);
