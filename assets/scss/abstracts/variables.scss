@@ -51,7 +51,8 @@ $media-expressions: (
   --xlg: #{map-get($breakpoints, 'xlg')};
 
   // container
-  --container-padding: 30px;
+  --container-width: var(--xlg);
+  --container-padding: 80px;
 
   // Colors
   --color-white: #fff;
@@ -63,12 +64,15 @@ $media-expressions: (
   --color-blue-10: #00bcf9;
   --color-blue-40: #007def;
   --color-blue-80: #02143b;
+  --color-blue-90: #021130;
 
-  --grad-blue: linear-gradient(86.88deg, #00C6FB 1.95%, #005BEA 97.83%);
+  --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
 
   // Fonts
   --font-sans-serif: 'Montserrat', Helvetica, sans-serif;
   --font-serif: 'Times New Roman', Times, Georgia, serif;
+  --font-primary: var(--font-sans-serif);
+  --font-secondary: 'Raleway', var(--font-sans-serif);
 
   // Body base
   --base-background-color: var(--color-blue-80);
@@ -86,17 +90,17 @@ $media-expressions: (
   --btn-background: var(--color-blue);
   --btn-padding: 0.4em 0.7em;
   --btn-font-size: 1.6rem;
-  --btn-font-family: var(--font-sans-serif);
+  --btn-font-family: var(--font-primary);
 
   // Forms base
-  --form-font-family: var(--font-sans-serif);
+  --form-font-family: var(--font-secondary);
   --form-element-padding: var(--btn-padding);
   --form-element-border-color: var(--color-grey);
   --form-element-focus-border-color: var(--color-black);
   --placeholder-color: var(--color-grey-80);
 
   // Headings base
-  --headings-font-family: var(--font-sans-serif);
+  --headings-font-family: var(--font-primary);
   --headings-color: var(--base-text-color);
 
   // Base font styles for headings
@@ -106,4 +110,24 @@ $media-expressions: (
   --headings-sizes-h4: 2.1rem;
   --headings-sizes-h5: 1.7rem;
   --headings-sizes-h6: 1.5rem;
+
+  // icon
+  --icon-color: var(--white);
+
+  @include media('<=xlg') {
+    --container-width: var(--lg);
+    --container-padding: 30px;
+  }
+  @include media('<=lg') {
+    --container-width: var(--md);
+  }
+  @include media('<=md') {
+    --container-width: var(--sm);
+  }
+  @include media('<=sm') {
+    --container-width: var(--xs);
+  }
+  @include media('<=xs') {
+    --container-padding: 15px;
+  }
 }

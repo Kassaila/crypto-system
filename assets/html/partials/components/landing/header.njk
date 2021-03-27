@@ -1,0 +1,38 @@
+{% set navList = [
+  {
+    'title': 'Platform',
+    'link': 'javascript:void(0)'
+  }, {
+    'title': 'Pricing',
+    'link': 'javascript:void(0)'
+  }, {
+    'title': 'API',
+    'link': 'javascript:void(0)'
+  }, {
+    'title': 'About',
+    'link': 'javascript:void(0)'
+  }
+] %}
+
+<header class="cs--landing-header">
+  <div class="cs--page__container">
+    <div class="cs--landing-header__wrapper">
+      <a href="javascript: void(0)" class="cs--logo cs--logo--lg">
+        <img src="./img/logo.png" alt="logo">
+      </a>
+      <nav class="cs--landing-nav">
+        <ul class="cs--landing-nav__list">
+          {% for navItem in navList %}
+            <li class="cs--landing-nav__item">
+              <a href="{{ navItem.link }}">{{ navItem.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="cs--landing-login">
+        <a href="javascript:void(0)">log in</a>
+        <a href="registration-create-account.html" class="">sing up</a>
+      </div>
+    </div>
+  </div>
+</header>

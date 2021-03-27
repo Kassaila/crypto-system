@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="cs">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,19 +11,11 @@
     {% include './partials/head/fonts.njk' %}
     {% include './partials/head/common.njk' %}
   </head>
-  {% from "./partials/components/icon.njk" import icon %}
-
-  {%
-    set form = {
-      id: 'landing'
-    }
-  %}
   <body>
-    <main class="page page--registration">
-      <div class="page__container">
-        <div class="page__wrapper">
-
-        </div>
+    {% include './partials/components/landing/header.njk' %}
+    <main class="cs--page cs--page--registration">
+      <div class="cs--page__container">
+        <div class="cs--page__wrapper"></div>
       </div>
     </main>
     {% include './partials/scripts/common.njk' %}

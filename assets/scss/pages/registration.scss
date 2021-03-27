@@ -1,6 +1,6 @@
-.page--registration {
+.cs--page--registration {
   padding: 72px 0;
-  .page {
+  .cs--page {
     &__bg {
       position: fixed;
       height: 100vh;
@@ -27,17 +27,17 @@
       }
     }
   }
-  .sing-in {
+  .cs--sing-in {
     margin-top: 35px;
     font-weight: 700;
     font-size: 12px;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-secondary);
     a {
       color: var(--color-blue-10);
     }
   }
-  .reg-form {
-    .btn {
+  .cs--reg-form {
+    .cs--btn {
       margin: 25px 0 35px;
     }
   }
