@@ -1,0 +1,45 @@
+// This is base reset for form elements.
+//
+// Note: If you use a framework that includes form styling then you need to remove this file.
+
+form,
+fieldset {
+  padding: 0;
+  margin: 0;
+  border-style: none;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+textarea {
+  vertical-align: top;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--form-font-family);
+  line-height: 1;
+  resize: vertical;
+  appearance: none;
+
+  @include placeholder {
+    color: var(--placeholder-color);
+  }
+}
+
+textarea {
+  line-height: 1.2;
+  resize: vertical;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'] {
+  outline: none;
+  font-family: var(--form-font-family);
+  cursor: pointer;
+  appearance: none;
+}
