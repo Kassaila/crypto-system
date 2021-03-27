@@ -1,8 +1,11 @@
 .cs--btn {
+  --btn-border-radius: 50px;
   position: relative;
-  padding: 16px;
+  display: flex;
+  padding: 16px 32px;
   border: none;
-  border-radius: 50px;
+  border-radius: var(--btn-border-radius);
+  background-color: transparent;
   color: var(--color-white);
   font-weight: 700;
   font-size: 16px;
@@ -31,6 +34,40 @@
       filter: blur(50px);
       transform: translateY(-50%);
       @include animate(filter);
+    }
+  }
+  &-transparent-grad-blue {
+    --grad-border: 2px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    @include media('hover') {
+      &:hover {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: var(--btn-border-radius);
+    }
+    &:before {
+      top: 0;
+      left: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background-image: var(--grad-blue);
+    }
+    &:after {
+      top: var(--grad-border);
+      left: var(--grad-border);
+      z-index: -1;
+      width: calc(100% - 2 * var(--grad-border));
+      height: calc(100% - 2 * var(--grad-border));
+      background-color: var(--color-blue-90);
+      @include animate(opacity);
     }
   }
 }
