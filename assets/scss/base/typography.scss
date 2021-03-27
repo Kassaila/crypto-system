@@ -1,70 +1,32 @@
 // Typography
 //
 // Base font styles for headings and links.
-html.cs {
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4,
-  h5,
-  .h5,
-  h6,
-  .h6,
-  .h {
-    margin: 0 0 0.5em;
-    color: var(--headings-color);
-    font-weight: bold;
-    font-family: var(--headings-font-family);
-  }
 
-  h1,
-  .h1 {
-    font-size: var(--headings-sizes-h1);
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5em;
+  color: var(--headings-color);
+  font-weight: bold;
+  font-family: var(--headings-font-family);
+}
 
-  h2,
-  .h2 {
-    font-size: var(--headings-sizes-h2);
-  }
+p {
+  margin: 0 0 1em;
+}
 
-  h3,
-  .h3 {
-    font-size: var(--headings-sizes-h3);
-  }
-
-  h4,
-  .h4 {
-    font-size: var(--headings-sizes-h4);
-  }
-
-  h5,
-  .h5 {
-    font-size: var(--headings-sizes-h5);
-  }
-
-  h6,
-  .h6 {
-    font-size: var(--headings-sizes-h6);
-  }
-
-  p {
-    margin: 0 0 1em;
-  }
-
-  a {
-    color: var(--base-link-color);
-    text-decoration: none;
-    @include media('hover') {
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    &:focus {
+a {
+  color: var(--base-link-color);
+  text-decoration: none;
+  @include media('hover') {
+    &:hover {
       text-decoration: underline;
     }
+  }
+  &:focus {
+    text-decoration: underline;
   }
 }

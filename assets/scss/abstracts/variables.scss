@@ -55,18 +55,19 @@ $media-expressions: (
   --container-padding: 80px;
 
   // Colors
-  --color-white: #fff;
-  --color-black: #000;
-  --color-grey: #999;
-  --color-grey-10: #eeeeee;
-  --color-grey-80: #676767;
-  --color-blue: #39f;
-  --color-blue-10: #00bcf9;
-  --color-blue-40: #007def;
-  --color-blue-80: #02143b;
-  --color-blue-90: #021130;
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey: hsl(0, 0%, 60%);
+  --color-grey-10: hsl(0, 0%, 93%);
+  --color-grey-80: hsl(0, 0%, 40%);
+  --color-blue: hsl(210, 100%, 60%);
+  --color-blue-10: hsl(195, 100%, 49%);
+  --color-blue-40: hsl(209, 100%, 47%);
+  --color-blue-80: hsl(221, 93%, 12%);
+  --color-blue-90: hsl(220, 92%, 10%);
 
   --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
+  --grad-orange: linear-gradient(271.95deg, #fb7e37 14.29%, #ff9a44 98.96%);
 
   // Fonts
   --font-sans-serif: 'Montserrat', Helvetica, sans-serif;
@@ -123,9 +124,6 @@ $media-expressions: (
   }
   @include media('<=md') {
     --container-width: var(--sm);
-  }
-  @include media('<=sm') {
-    --container-width: var(--xs);
   }
   @include media('<=xs') {
     --container-padding: 15px;

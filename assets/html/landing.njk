@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="cs">
+<html lang="en" >
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,10 +13,8 @@
   </head>
   <body>
     {% include './partials/components/landing/header.njk' %}
-    <main class="cs--page cs--page--registration">
-      <div class="cs--page__container">
-        <div class="cs--page__wrapper"></div>
-      </div>
+    <main class="cs--page cs--page--landing">
+      {% include './partials/sections/landing/hero.njk' %}
     </main>
     {% include './partials/scripts/common.njk' %}
   </body>

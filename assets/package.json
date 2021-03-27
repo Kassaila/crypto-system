@@ -72,7 +72,7 @@
   },
   "scripts": {
     "postinstall": "npm exec gulp load-env",
-    "lint-staged": "lint-staged -r --allow-empty",
+    "lint-staged": "npm exec lint-staged -r --allow-empty",
     "format": "npm exec prettier . --write --ignore-unknown",
     "dev": "npm exec gulp",
     "test": "npm exec gulp build --log-level -LLLL",

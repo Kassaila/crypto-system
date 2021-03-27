@@ -1,4 +1,6 @@
 .cs--landing-header {
+  position: relative;
+  z-index: 10;
   padding: 20px 0;
   background-color: var(--color-blue-90);
   &__wrapper {
@@ -9,10 +11,8 @@
 .cs--landing-nav {
   margin: 0 auto;
   &__list {
+    @extend %listreset;
     display: flex;
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
   }
   &__item {
     font-size: 14px;

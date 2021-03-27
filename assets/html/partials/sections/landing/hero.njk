@@ -1,0 +1,41 @@
+{% set counterList = [
+  {
+    'count': '13',
+    'title': 'Supported exchanges'
+  }, {
+    'count': '12',
+    'title': 'Automated bots'
+  }, {
+    'count': '1575',
+    'title': 'Crypto assets'
+  }, {
+    'count': '3873',
+    'title': 'Trading pairs'
+  }, {
+    'count': '250M+',
+    'title': 'USD managed'
+  }
+] %}
+<section class="cs--section cs--landing-hero">
+  <div class="cs--section__bg">
+    <img src="./img/bg_registration.jpg" alt="">
+  </div>
+  <div class="cs--container">
+    <div class="cs--landing-hero__decor">
+      <img src="./img/hero-img-1.png" alt="">
+    </div>
+    <div class="cs--landing-hero__content">
+      <h1 class="cs--landing-hero__title">A smarter way to trade and manage <span class="cs--landing-hero__title--accent">your crypto</span></h1>
+      <p class="cs--landing-hero__comment">Professional platform to trade, automate strategies, and monitor your holdings - even offline wallets.</p>
+      <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Learn more</a>
+    </div>
+    <ul class="cs--landing-hero__counter">
+      {% for counterItem in counterList %}
+        <li class="cs--landing-hero__counter-item">
+          <span class="cs--landing-hero__counter-item-count">{{counterItem.count}}</span>
+          <span class="cs--landing-hero__counter-item-text">{{counterItem.title}}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
