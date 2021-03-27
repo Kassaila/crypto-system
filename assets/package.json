@@ -67,20 +67,21 @@
     "webpack": "5.27.2"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=12.0.0 <15",
+    "npm": "^7.0.0"
   },
   "scripts": {
-    "postinstall": "npx gulp load-env",
-    "lint-staged": "lint-staged -r --allow-empty",
-    "format": "npx prettier . --write --ignore-unknown",
-    "dev": "npx gulp",
-    "test": "npx gulp build --log-level -LLLL",
-    "build": "npx cross-env NODE_ENV=production npx gulp build",
-    "lint-html": "npx gulp lint-html",
-    "lint-styles": "npx gulp lint-styles",
-    "lint-js": "npx gulp lint-js",
-    "fix-js": "npx prettier js/**/*.js --write && npx eslint js/**/*.js --fix",
-    "fix-styles": "npx prettier scss/**/*.scss --write && npx stylelint scss/**/*.scss --fix --cache"
+    "postinstall": "npm exec gulp load-env",
+    "lint-staged": "npm exec lint-staged -r --allow-empty",
+    "format": "npm exec prettier . --write --ignore-unknown",
+    "dev": "npm exec gulp",
+    "test": "npm exec gulp build --log-level -LLLL",
+    "build": "npm exec cross-env NODE_ENV=production npm exec gulp build",
+    "lint-html": "npm exec gulp lint-html",
+    "lint-styles": "npm exec gulp lint-styles",
+    "lint-js": "npm exec gulp lint-js",
+    "fix-js": "npm exec prettier js/**/*.js --write && npm exec eslint js/**/*.js --fix",
+    "fix-styles": "npm exec prettier scss/**/*.scss --write && npm exec stylelint scss/**/*.scss --fix --cache"
   },
   "dependencies": {
     "normalize.css": "8.0.1"

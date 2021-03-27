@@ -1,0 +1,7 @@
+.cs--container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}

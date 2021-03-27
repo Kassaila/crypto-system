@@ -1,0 +1,54 @@
+.cs--landing-header {
+  position: relative;
+  z-index: 10;
+  padding: 20px 0;
+  background-color: var(--color-blue-90);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+.cs--landing-nav {
+  margin: 0 auto;
+  &__list {
+    @extend %listreset;
+    display: flex;
+  }
+  &__item {
+    font-size: 14px;
+    font-family: var(--font-secondary);
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+.cs--landing-login {
+  display: flex;
+  align-items: center;
+  a {
+    font-weight: 400;
+    text-transform: uppercase;
+    &:not(.cs--btn) {
+      text-decoration: underline;
+      @include media('hover') {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+    &.cs--btn {
+      margin-left: 20px;
+      @include media('hover') {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.cs--landing {
+  &-hero {
+    padding: 120px 0 0;
+    @include media('<=xs') {
+      padding: 60px 0 0;
+    }
+    &__content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 565px;
+      margin-bottom: 160px;
+      @include media('<=md') {
+        margin-bottom: 80px;
+      }
+    }
+    &__decor {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 0;
+      overflow: hidden;
+      max-height: 100%;
+      transform: translateY(-25%);
+      @include media('<=md') {
+        display: none;
+      }
+    }
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 800;
+      font-size: 42px;
+      @include media('<=xs') {
+        font-size: 28px;
+      }
+      &--accent {
+        background-image: var(--grad-orange);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    &__comment {
+      margin-bottom: 50px;
+      font-family: var(--font-secondary);
+      line-height: 1.4;
+    }
+    &__counter {
+      @extend %listreset;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-gap: 20px 10px;
+    }
+    &__counter-item {
+      --counter-item-height: 100px;
+      position: relative;
+      display: flex;
+      flex-shrink: 0;
+      place-self: center;
+      align-items: center;
+      max-width: 220px;
+      height: var(--counter-item-height);
+      padding-left: 25px;
+      @include media('<=sm') {
+        --counter-item-height: 50px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--counter-item-height);
+        height: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent transparent var(--color-blue-40) var(--color-blue-40);
+        border-radius: 50%;
+        transform: rotateZ(45deg);
+      }
+      &-count {
+        margin-right: 10px;
+        font-weight: 300;
+        font-size: 30px;
+      }
+      &-text {
+        font-size: 14px;
+        font-family: var(--font-secondary);
+        word-spacing: 100vw;
+      }
+    }
+    .cs--section__bg {
+      height: 100%;
+      object-fit: cover;
+    }
+    .cs--container {
+      position: relative;
+    }
+    .cs--btn {
+      padding-right: 62px;
+      padding-left: 62px;
+      @include media('hover') {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
