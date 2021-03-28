@@ -1,0 +1,42 @@
+{% set itemList = [
+  {
+    'title': 'SMART PAYMENT',
+    'imgSrc': './img/circle-blocks_circuit.svg'
+  }, {
+    'title': 'BLOCKCHAIN',
+    'imgSrc': './img/circle-blocks_blockchain.svg'
+  }, {
+    'title': 'TOKEN INTEGRATION',
+    'imgSrc': './img/circle-blocks_boss.svg'
+  }, {
+    'title': 'GLOBAL SECURITY',
+    'imgSrc': './img/circle-blocks_programming.svg'
+  }
+] %}
+<section class="cs--section cs--landing-acquaintance">
+  <div class="cs--container">
+    <div class="cs--landing-acquaintance__wrapper">
+      <div class="cs--circle-blocks-wrapper">
+        <ul class="cs--circle-blocks">
+          {% for item in itemList %}
+            <li class="cs--circle-blocks-item">
+              <div class="cs--circle-blocks-item__icon">
+                <img src="{{item.imgSrc}}" alt="">
+              </div>
+              <span class="cs--circle-blocks-item__title">{{item.title}}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="cs--landing-acquaintance__content">
+        <h1 class="cs--landing-acquaintance__title">Why Cryptosystem?</h1>
+        <p class="cs--landing-acquaintance__sub-title">Facilisis nibh etiam augue sed commodo. Porttitor et, malesuada sed libero viverra dolor eget.</p>
+        <div class="cs--landing-acquaintance__comment">
+          <p>Enim feugiat libero mattis morbi. Pulvinar et, nunc, sed sit. Cum facilisi augue aliquet eu et tincidunt est lacus, felis. Commodo, ut aliquam amet pellentesque tortor. Convallis ac eget phasellus mauris eu sociis. Pharetra proin aliquam vulputate tellus augue. At cras dictum duis morbi odio lacus faucibus nisi. Hendrerit aliquet magna sit amet elementum aliquet.</p>
+          <p>Donec aliquam hendrerit nam dolor, nulla eget. Et a pretium sit id metus amet, semper auctor duis. Dui leo molestie sed tortor nisl, ut urna. Enim est lorem velit dolor amet eu donec sed faucibus. Vestibulum sollicitudin tellus mauris orci augue. Tortor commodo dolor aliquet donec ut dictumst dignissim. Habitant faucibus nunc maecenas varius vel pulvinar nec.</p>
+        </div>
+        <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Create Your Free Account</a>
+      </div>
+    </div>
+  </div>
+</section>
