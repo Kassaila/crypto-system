@@ -71,3 +71,13 @@
     }
   }
 }
+a.cs--btn {
+  @include media('hover') {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}

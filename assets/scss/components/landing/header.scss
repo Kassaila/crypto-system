@@ -137,15 +137,6 @@
       @include media('<sm') {
         padding: 8px 16px;
         border-radius: 25px;
-        // margin-left: 20px;
-      }
-      @include media('hover') {
-        &:hover {
-          text-decoration: none;
-        }
-      }
-      &:focus {
-        text-decoration: none;
       }
     }
   }

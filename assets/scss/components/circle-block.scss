@@ -1,0 +1,116 @@
+.cs--circle-blocks {
+  @extend %listreset;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--color-blue-40);
+  border-radius: 50%;
+   @include media('<xs') {
+      grid-gap: 20px;
+    }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    place-self: center;
+    border: 1px dashed var(--color-blue-40);
+    border-radius: 50%;
+  }
+  &:before {
+    width: 75%;
+    height: 75%;
+    animation: rotation 30s linear infinite;
+  }
+  &:after {
+    width: 50%;
+    height: 50%;
+    animation: rotation 20s linear infinite reverse;
+  }
+  &-wrapper {
+    position: relative;
+    place-self: center;
+    overflow: visible;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  &-item {
+    --block-size: 200px;
+    position: relative;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--block-size);
+    height: var(--block-size);
+    padding: 10px;
+    border-radius: calc(var(--block-size) / 20);
+    background-color: var(--color-blue-60);
+    @include media('<xs') {
+      --block-size: 100%;
+    }
+    @include media('hover') {
+      &:hover {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      border-radius: calc(var(--block-size) / 20);
+      background-image: var(--grad-orange-10);
+      opacity: 0;
+    }
+    &:before {
+      width: 100%;
+      height: 100%;
+      @include animate(opacity);
+    }
+    &:after {
+      place-self: center;
+      width: 90%;
+      height: 90%;
+      filter: blur(40px);
+      @include animate(opacity filter);
+    }
+    &:nth-child(even) {
+      margin-bottom: 20px;
+    }
+    &:nth-child(odd) {
+      margin-top: 20px;
+    }
+    &__icon {
+      position: relative;
+      z-index: 1;
+      max-width: 41.5%;
+      margin-bottom: 20px;
+    }
+    &__title {
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  @keyframes rotation {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}

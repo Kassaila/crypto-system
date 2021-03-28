@@ -66,11 +66,13 @@ $media-expressions: (
   --color-blue: hsl(210, 100%, 60%);
   --color-blue-10: hsl(195, 100%, 49%);
   --color-blue-40: hsl(209, 100%, 47%);
+  --color-blue-60: hsl(221, 83%, 18%);
   --color-blue-80: hsl(221, 93%, 12%);
   --color-blue-90: hsl(220, 92%, 10%);
 
   --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
   --grad-orange: linear-gradient(271.95deg, #fb7e37 14.29%, #ff9a44 98.96%);
+  --grad-orange-10: linear-gradient(53.13deg, #C07945 3.66%, #FA7E37 92.94%);
 
   // Fonts
   --font-sans-serif: 'Montserrat', Helvetica, sans-serif;

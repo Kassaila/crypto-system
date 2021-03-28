@@ -1,6 +1,6 @@
 .cs--landing {
   &-hero {
-    padding: 120px 0 0;
+    padding: 120px 0 15px;
     @include media('<xs') {
       padding: 60px 0 0;
     }
@@ -111,11 +111,6 @@
     .cs--btn {
       padding-right: 62px;
       padding-left: 62px;
-      @include media('hover') {
-        &:hover {
-          text-decoration: none;
-        }
-      }
       @include media('<sm') {
         padding-right: 32px;
         padding-left: 32px;
