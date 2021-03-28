@@ -3,31 +3,124 @@
   z-index: 10;
   padding: 20px 0;
   background-color: var(--color-blue-90);
+  @include media('<xs') {
+    padding: 10px 0;
+  }
   &__wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+  &__menu {
+    --header-menu-width: 28px;
+    position: relative;
+    display: none;
+    width: var(--header-menu-width);
+    height: calc(var(--header-menu-width) * 0.7);
+    margin-left: 20px;
+    border: none;
+    background-color: transparent;
+    @include media('<md') {
+      display: block;
+    }
+    @include media('hover') {
+      &:hover {
+        &:before,
+        &:after,
+        span {
+          background-color: var(--color-blue-40);
+        }
+      }
+    }
+    &:before,
+    &:after {
+      content: '';
+    }
+    &:before,
+    &:after,
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-white);
+      pointer-events: none;
+      transform-origin: left;
+      @include animate(background-color opacity transform);
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &[aria-expanded='true'] {
+      &:before {
+        transform: rotateZ(41deg);
+      }
+      &:after {
+        transform: rotateZ(-41deg);
+      }
+      span {
+        opacity: 0;
+      }
+    }
   }
 }
 .cs--landing-nav {
-  margin: 0 auto;
+  @include media('<md') {
+    position: absolute;
+    top: var(--landing-header-height);
+    left: 0;
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: calc(100vh - var(--landing-header-height));
+    background-color: var(--color-blue-80);
+    &[data-expanded='true'] {
+      display: block;
+    }
+  }
   &__list {
     @extend %listreset;
     display: flex;
+    @include media('<md') {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
   }
   &__item {
     font-size: 14px;
     font-family: var(--font-secondary);
+    @include media('<md') {
+      font-size: 16px;
+    }
     &:not(:last-child) {
       margin-right: 30px;
+      @include media('<md') {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 }
 .cs--landing-login {
   display: flex;
   align-items: center;
+  @include media('<md') {
+    margin-left: auto;
+  }
   a {
     font-weight: 400;
     text-transform: uppercase;
+    @include media('<sm') {
+      font-size: 12px;
+    }
     &:not(.cs--btn) {
       text-decoration: underline;
       @include media('hover') {
@@ -41,6 +134,11 @@
     }
     &.cs--btn {
       margin-left: 20px;
+      @include media('<sm') {
+        padding: 8px 16px;
+        border-radius: 25px;
+        // margin-left: 20px;
+      }
       @include media('hover') {
         &:hover {
           text-decoration: none;

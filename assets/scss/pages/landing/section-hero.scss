@@ -1,7 +1,7 @@
 .cs--landing {
   &-hero {
     padding: 120px 0 0;
-    @include media('<=xs') {
+    @include media('<xs') {
       padding: 60px 0 0;
     }
     &__content {
@@ -12,19 +12,22 @@
       align-items: flex-start;
       max-width: 565px;
       margin-bottom: 160px;
-      @include media('<=md') {
+      @include media('<md') {
         margin-bottom: 80px;
       }
     }
     &__decor {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 150px;
       z-index: 0;
       overflow: hidden;
       max-height: 100%;
       transform: translateY(-25%);
-      @include media('<=md') {
+      @include media('<xlg') {
+        right: var(--container-padding);
+      }
+      @include media('<md') {
         display: none;
       }
     }
@@ -32,7 +35,10 @@
       margin-bottom: 40px;
       font-weight: 800;
       font-size: 42px;
-      @include media('<=xs') {
+      @include media('<sm') {
+        font-size: 32px;
+      }
+      @include media('<xs') {
         font-size: 28px;
       }
       &--accent {
@@ -47,10 +53,11 @@
       line-height: 1.4;
     }
     &__counter {
+      --counter-item-max-width: 200px;
       @extend %listreset;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      grid-gap: 20px 10px;
+      grid-template-columns: repeat(auto-fill, minmax(var(--counter-item-max-width), 1fr));
+      grid-gap: 20px 5px;
     }
     &__counter-item {
       --counter-item-height: 100px;
@@ -59,10 +66,10 @@
       flex-shrink: 0;
       place-self: center;
       align-items: center;
-      max-width: 220px;
+      max-width: var(--counter-item-max-width);
       height: var(--counter-item-height);
       padding-left: 25px;
-      @include media('<=sm') {
+      @include media('<sm') {
         --counter-item-height: 50px;
       }
       &:before {
@@ -95,6 +102,11 @@
     }
     .cs--container {
       position: relative;
+      z-index: 1;
+      padding: 0 170px 0 190px;
+      @include media('<xlg') {
+        padding: 0 var(--container-padding);
+      }
     }
     .cs--btn {
       padding-right: 62px;
@@ -103,6 +115,10 @@
         &:hover {
           text-decoration: none;
         }
+      }
+      @include media('<sm') {
+        padding-right: 32px;
+        padding-left: 32px;
       }
     }
   }

@@ -36,6 +36,11 @@ module.exports = function () {
           },
           minimize: process.env.NODE_ENV === 'production',
         },
+        resolve: {
+          alias: {
+            '@js': path.resolve(__dirname, '../js'),
+          },
+        },
         module: {
           rules: [
             {

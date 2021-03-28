@@ -1,3 +1,5 @@
+import headerMenu from '@js/modules/header-menu';
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM ready');
+  headerMenu();
 });

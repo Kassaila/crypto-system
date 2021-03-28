@@ -14,13 +14,16 @@
   }
 ] %}
 
-<header class="cs--landing-header">
+<header class="cs--landing-header" data-landing-header>
   <div class="cs--container">
     <div class="cs--landing-header__wrapper">
       <a href="javascript: void(0)" class="cs--logo cs--logo--lg">
-        <img src="./img/logo.png" alt="logo">
+        <picture>
+          <source srcset="./img/logo-icon.png" media="(max-width: 768px)">
+          <img src="./img/logo.png" alt="logo">
+        </picture>
       </a>
-      <nav class="cs--landing-nav">
+      <nav class="cs--landing-nav" data-landing-menu data-expanded="false">
         <ul class="cs--landing-nav__list">
           {% for navItem in navList %}
             <li class="cs--landing-nav__item">
@@ -33,6 +36,8 @@
         <a href="javascript:void(0)">log in</a>
         <a href="registration-create-account.html" class="cs--btn cs--btn-transparent-grad-blue">sing up</a>
       </div>
+      <button type="button" class="cs--landing-header__menu" data-landing-expander aria-expanded="false">
+        <span></span></button>
     </div>
   </div>
 </header>
