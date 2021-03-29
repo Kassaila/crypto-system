@@ -2,7 +2,7 @@
   &-acquaintance {
     padding: 158px 0 125px;
     @include media('<md') {
-        padding: 60px 0 15px;
+        padding: 60px 0;
       }
     &__wrapper {
       display: grid;
