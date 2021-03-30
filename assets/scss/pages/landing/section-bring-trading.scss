@@ -1,0 +1,61 @@
+.cs--landing {
+  &-bring-trading {
+    padding: 80px 0 100px;
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 470px;
+      grid-gap: 30px;
+      @include media('<md') {
+        display: block;
+      }
+    }
+    &__decor {
+      place-self: center;
+      display: flex;
+      @include media('<md') {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 800;
+      font-size: 42px;
+      @include media('<sm') {
+        font-size: 32px;
+      }
+      @include media('<xs') {
+        font-size: 28px;
+      }
+    }
+    &__form {
+      display: grid;
+      grid-template-columns: 2.4fr 1fr;
+      grid-gap: 25px;
+      @include media('<md') {
+        grid-template-columns: 1fr auto;
+      }
+      @include media('<xs') {
+        grid-template-columns: 1fr;
+      }
+      .cs--reg-form__input-wrapper:not(:last-child) {
+        margin-bottom: 0;
+      }
+      .cs--btn {
+        @include media('<xs') {
+          place-self: flex-start;
+        }
+      }
+    }
+    .cs--container {
+      position: relative;
+      z-index: 1;
+    }
+    .cs--section__bg {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.cs--landing-footer {
+  &__bottom {
+    padding: 25px 0 45px;
+    background-color: var(--color-blue-100);
+    color: var(--color-grey-70);
+    font-size: 12px;
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
