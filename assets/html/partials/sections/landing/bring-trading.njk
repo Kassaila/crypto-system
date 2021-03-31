@@ -1,4 +1,5 @@
 {% from "../../components/icon.njk" import icon %}
+{% from "../../components/grad-list.njk" import gradList %}
 
 {% set itemList = [
   {
@@ -21,11 +22,7 @@
       </div>
       <div class="cs--landing-bring-trading__content">
         <h2 class="cs--landing-bring-trading__title">Bring clarity to your trading</h2>
-        <ul class="cs--grad-list">
-          {% for item in itemList %}
-            <li class="cs--grad-list-item">{{item.text}}</li>
-          {% endfor %}
-        </ul>
+        {{ gradList(itemList) }}
         <form class="cs--landing-bring-trading__form">
           <label for="bring-trading-email" class="cs--reg-form__input-wrapper">
             {{ icon('mail') }}

@@ -1,0 +1,17 @@
+{% macro cardList(itemList) %}
+  <ul class="cs--card-list">
+    {% for item in itemList %}
+      <li class="cs--card-item">
+        <div class="cs--card-item__image">
+          <img src="{{ item.imgSrc }}" alt="">
+        </div>
+        <div class="cs--card-item__content">
+          <div class="cs--card-item__meta">
+            <span>{{ item.date }}</span><span>{{ item.commentsCount }} comments</span></div>
+          <span class="cs--card-item__title">{{ item.title }}</span>
+          <a class="cs--card-item__link" href="{{ item.link }}">Read more</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

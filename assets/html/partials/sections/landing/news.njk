@@ -1,0 +1,31 @@
+{% from "../../components/card-list.njk" import cardList %}
+
+{% set itemList = [
+  {
+    'title': 'Morbi morbi et rhoncus commodo semper egestas',
+    'date': 'MARCH 17, 2021',
+    'commentsCount': '10',
+    'link': 'javascript:void(0)',
+    'imgSrc': './img/news-1.png'
+  }, {
+    'title': 'Odio at iaculis in arcu leo consequat',
+    'date': 'MARCH 17, 2021',
+    'commentsCount': '10',
+    'link': 'javascript:void(0)',
+    'imgSrc': './img/news-2.png'
+  }, {
+    'title': 'Nisl pulvinar urna id libero sit tellus',
+    'date': 'MARCH 17, 2021',
+    'commentsCount': '10',
+    'link': 'javascript:void(0)',
+    'imgSrc': './img/news-3.png'
+  }
+] %}
+
+<section class="cs--section cs--landing-news">
+  <div class="cs--container">
+    <h2 class="cs--landing-news__title">Latest News</h2>
+    <p class="cs--landing-news__comment">Laoreet tincidunt justo sem sagittis sapien. Tincidunt congue tincidunt at nam egestas in urna. Mollis libero habitant vitae risus eget.</p>
+    {{ cardList(itemList) }}
+  </div>
+</section>
