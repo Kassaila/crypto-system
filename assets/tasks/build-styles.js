@@ -24,8 +24,8 @@ module.exports = function () {
 
   return (done) =>
     gulp
-      .src('./scss/*.scss', { sourcemaps: process.env.NODE_ENV === 'production' })
-      .pipe(sass.sync({ sourceMap: process.env.NODE_ENV === 'production' }))
+      .src('./scss/*.scss', { sourcemaps: process.env.NODE_ENV !== 'production' })
+      .pipe(sass.sync({ sourceMap: process.env.NODE_ENV !== 'production' }))
       .on('error', (error) => notifier.error(error.message, 'Main Sass compiling error', done))
       .pipe(postcss(plugins))
       .pipe(gulp.dest(`../${global.folder.build}/css`, { sourcemaps: './' }));

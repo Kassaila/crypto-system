@@ -57,7 +57,9 @@
     line-height: 1.4;
   }
   &__recaptcha {
+    align-self: center;
     max-width: 285px;
     max-height: 75px;
+    margin: 20px 0;
   }
 }

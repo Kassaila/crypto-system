@@ -22,7 +22,7 @@
     &__title {
       margin-bottom: 40px;
       font-weight: 800;
-      font-size: 42px;
+      font-size: 48px;
       @include media('<sm') {
         font-size: 32px;
       }
@@ -52,6 +52,9 @@
     .cs--container {
       position: relative;
       z-index: 1;
+    }
+    .cs--grad-list {
+      margin-bottom: 60px;
     }
     .cs--section__bg {
       height: 100%;
