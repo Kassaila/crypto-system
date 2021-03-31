@@ -1,0 +1,11 @@
+.cs--preloader {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--base-background-color);
+  @include animate(opacity);
+  &--fade {
+    opacity: 0;
+  }
+}
