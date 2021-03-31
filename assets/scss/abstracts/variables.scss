@@ -61,18 +61,25 @@ $media-expressions: (
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
   --color-grey: hsl(0, 0%, 60%);
+  --color-grey-5: hsl(0, 0%, 96%);
   --color-grey-10: hsl(0, 0%, 93%);
+  --color-grey-20: hsl(0, 0%, 84%);
+  --color-grey-30: hsl(0, 0%, 71%);
+  --color-grey-70: hsl(0, 0%, 45%);
   --color-grey-80: hsl(0, 0%, 40%);
   --color-blue: hsl(210, 100%, 60%);
   --color-blue-10: hsl(195, 100%, 49%);
+  --color-blue-20: hsl(197, 100%, 48%);
   --color-blue-40: hsl(209, 100%, 47%);
   --color-blue-60: hsl(221, 83%, 18%);
   --color-blue-80: hsl(221, 93%, 12%);
   --color-blue-90: hsl(220, 92%, 10%);
+  --color-blue-100: hsl(222, 89%, 7%);
 
   --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
   --grad-orange: linear-gradient(271.95deg, #fb7e37 14.29%, #ff9a44 98.96%);
-  --grad-orange-10: linear-gradient(53.13deg, #C07945 3.66%, #FA7E37 92.94%);
+  --grad-orange-10: linear-gradient(53.13deg, #c07945 3.66%, #fa7e37 92.94%);
+  --grad-orange-20: linear-gradient(90deg, #f83600 0%, #f9d423 100%);
 
   // Fonts
   --font-sans-serif: 'Montserrat', Helvetica, sans-serif;

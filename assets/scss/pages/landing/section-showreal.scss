@@ -1,0 +1,74 @@
+.cs--landing {
+  &-showreal {
+    padding: 75px 0 50px;
+    @include media('<md') {
+      padding: 50px 0 50px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__title {
+      margin-bottom: 35px;
+      font-weight: 800;
+      font-size: 42px;
+      text-align: center;
+      @include media('<sm') {
+        font-size: 32px;
+      }
+      @include media('<xs') {
+        font-size: 28px;
+      }
+    }
+    &__comment {
+      margin-bottom: 85px;
+      color: var(--color-grey-30);
+      font-family: var(--font-secondary);
+      line-height: 1.4;
+      text-align: center;
+    }
+    &__video-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-bottom: calc(100% * 9 / 16);
+      margin-bottom: 70px;
+      background-color: var(--color-blue-90);
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        transform: translate(-50%, -50%);
+        @include animate(transform);
+        @include media('hover') {
+          &:hover {
+            transform: translate(-50%, -50%) scale(0.95);
+          }
+        }
+        @include media('<sm') {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+    &__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .cs--container {
+      padding: 0 268px;
+      @include media('<xlg') {
+        padding: 0 var(--container-padding);
+      }
+    }
+  }
+}

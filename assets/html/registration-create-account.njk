@@ -1,3 +1,40 @@
+{% from "./partials/components/icon.njk" import icon %}
+
+{%
+  set form = {
+    id: 'create-acc'
+  }
+%}
+
+{%
+  set inputs = [
+    {
+      'name': form.id + '-' + 'user',
+      'type': 'text',
+      'icon': 'user',
+      'placeholder': 'Enter Your Name'
+    },
+    {
+      'name': form.id + '-' + 'email',
+      'type': 'email',
+      'icon': 'mail',
+      'placeholder': 'Enter Your E-mail'
+    },
+    {
+      'name': form.id + '-' + 'pass',
+      'type': 'password',
+      'icon': 'lock-open',
+      'placeholder': 'Enter Your Password'
+    },
+    {
+      'name': form.id + '-' + 'pass-repeat',
+      'type': 'password',
+      'icon': 'lock-open',
+      'placeholder': 'Repeat Your Password'
+    }
+  ]
+%}
+
 <!DOCTYPE html>
 <html lang="en" >
   <head>
@@ -11,42 +48,7 @@
     {% include './partials/head/fonts.njk' %}
     {% include './partials/head/common.njk' %}
   </head>
-  {% from "./partials/components/icon.njk" import icon %}
 
-  {%
-    set form = {
-      id: 'create-acc'
-    }
-  %}
-
-  {%
-    set inputs = [
-      {
-        'name': form.id + '-' + 'user',
-        'type': 'text',
-        'icon': 'user',
-        'placeholder': 'Enter Your Name'
-      },
-      {
-        'name': form.id + '-' + 'email',
-        'type': 'email',
-        'icon': 'mail',
-        'placeholder': 'Enter Your E-mail'
-      },
-      {
-        'name': form.id + '-' + 'pass',
-        'type': 'password',
-        'icon': 'lock-open',
-        'placeholder': 'Enter Your Password'
-      },
-      {
-        'name': form.id + '-' + 'pass-repeat',
-        'type': 'password',
-        'icon': 'lock-open',
-        'placeholder': 'Repeat Your Password'
-      }
-    ]
-  %}
   <body>
     <main class="cs--page cs--page--registration">
       <div class="cs--page__bg">
@@ -74,12 +76,12 @@
                   <b>Privacy Statement</b>
                 </a>.</div>
             </div>
+            <div class="cs--reg-form__recaptcha">
+              {# This img for example #}
+              <img src="./img/recaptcha.png" alt="">
+            </div>
             <button type="submit" class="cs--btn cs--btn-grad-blue">Create Account</button>
           </form>
-          <div class="cs--reg-form__recaptcha">
-            {# This img for example #}
-            <img src="./img/recaptcha.png" alt="">
-          </div>
           <div class="cs--sing-in">
           Already have an account? <a href="javascript: void(0)">Sign in</a>
           </div>

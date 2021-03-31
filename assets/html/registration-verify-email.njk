@@ -1,3 +1,22 @@
+{% from "./partials/components/icon.njk" import icon %}
+
+{%
+  set form = {
+    id: 'verify-account'
+  }
+%}
+
+{%
+  set inputs = [
+    {
+      'name': form.id + '-' + 'verify-code',
+      'type': 'password',
+      'icon': 'lock-open',
+      'placeholder': 'Enter Code'
+    }
+  ]
+%}
+
 <!DOCTYPE html>
 <html lang="en" >
   <head>
@@ -11,24 +30,7 @@
     {% include './partials/head/fonts.njk' %}
     {% include './partials/head/common.njk' %}
   </head>
-  {% from "./partials/components/icon.njk" import icon %}
 
-  {%
-    set form = {
-      id: 'verify-account'
-    }
-  %}
-
-  {%
-    set inputs = [
-      {
-        'name': form.id + '-' + 'verify-code',
-        'type': 'password',
-        'icon': 'lock-open',
-        'placeholder': 'Enter Code'
-      }
-    ]
-  %}
   <body>
     <main class="cs--page cs--page--registration">
       <div class="cs--page__bg">

@@ -1,0 +1,53 @@
+{% set itemList = [
+  {
+    'title': 'Unified Platform',
+    'text': 'Trade on all top tier exchanges from one, fast and intuitive interface featuring both simple and advanced order types.',
+    'imgSrc': './img/benefits_network.svg'
+  }, {
+    'title': 'Trading Bots',
+    'text': 'Sophisticated algos made simple. Select from pre-built popular strategies, customize and go live in minutes.',
+    'imgSrc': './img/benefits_bitcoin.svg'
+  }, {
+    'title': 'Portfolio Analytics',
+    'text': 'Monitor all of your crypto assets (offline and exchanges) and track their performance over time as you trade.',
+    'imgSrc': './img/benefits_analytics.svg'
+  }, {
+    'title': 'Advanced Charting',
+    'text': 'Go beyond market cap rankings with integrated market screener and charts coupled with high quality streaming data.',
+    'imgSrc': './img/benefits_chart.svg'
+  }, {
+    'title': 'News & Research',
+    'text': 'Skip the noise of social media and ad-blanketed news sites with news feed curated by respected industry insiders.',
+    'imgSrc': './img/benefits_file.svg'
+  }, {
+    'title': 'Fiat or BTC Values',
+    'text': 'Avoid guesswork - view prices and portfolio values converted to your preferred local currency or BTC.',
+    'imgSrc': './img/benefits_native-currency.svg'
+  }, {
+    'title': 'Benefit 7',
+    'text': 'Neque lorem a amet in vestibulum urna. Sit odio vitae turpis pretium lobortis eget.',
+    'imgSrc': './img/benefits_password.svg'
+  }, {
+    'title': 'Benefit 8',
+    'text': 'Est in purus eget in. Sollicitudin felis enim, nascetur non tempor nunc.',
+    'imgSrc': './img/benefits_tablet.svg'
+  }
+] %}
+
+<section class="cs--section cs--landing-benefits">
+  <div class="cs--container">
+    <h2 class="cs--landing-benefits__title">Our benefits</h2>
+    <p class="cs--landing-benefits__comment">Neque enim fermentum pellentesque est. Gravida elementum, condimentum vitae amet, in nam.</p>
+    <ul class="cs--benefits">
+      {% for item in itemList %}
+        <li class="cs--benefits-item">
+          <div class="cs--benefits-item__icon">
+            <img src="{{item.imgSrc}}" alt="">
+          </div>
+          <span class="cs--benefits-item__title">{{item.title}}</span>
+          <span class="cs--benefits-item__text">{{item.text}}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

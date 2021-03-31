@@ -1,0 +1,24 @@
+.cs--grad-list {
+  @extend %listreset;
+  &-item {
+    position: relative;
+    padding-left: 35px;
+    color: var(--color-grey-5);
+    font-family: var(--font-secondary);
+    line-height: 1.4;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-image: var(--grad-orange-20);
+      transform: translateY(-50%);
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

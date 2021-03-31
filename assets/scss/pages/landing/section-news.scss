@@ -1,0 +1,35 @@
+.cs--landing {
+  &-news {
+    padding: 100px 0 140px;
+    &__title {
+      margin-bottom: 30px;
+      font-weight: 800;
+      font-size: 42px;
+      text-align: center;
+      @include media('<sm') {
+        font-size: 32px;
+      }
+      @include media('<xs') {
+        font-size: 28px;
+      }
+    }
+    &__comment {
+      margin-bottom: 60px;
+      color: var(--color-grey-30);
+      font-family: var(--font-secondary);
+      line-height: 1.4;
+      text-align: center;
+    }
+    .cs--container {
+      padding: 0 240px;
+      @include media('<xlg') {
+        padding: 0 var(--container-padding);
+      }
+    }
+    .cs--card-list {
+      @include media('<xs') {
+        padding: 0 10%;
+      }
+    }
+  }
+}

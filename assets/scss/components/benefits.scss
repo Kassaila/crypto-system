@@ -1,0 +1,48 @@
+.cs--benefits {
+  @extend %listreset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 70px 30px;
+  @include media('<md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media('<xs') {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__icon {
+      position: relative;
+      max-width: 25%;
+      margin-bottom: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(100% * 2);
+        padding-bottom: calc(100% * 2);
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--color-blue-20) transparent transparent var(--color-blue-20);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) rotateZ(45deg);
+      }
+    }
+    &__title {
+      margin-bottom: 25px;
+      font-weight: 800;
+      font-size: 18px;
+      text-align: center;
+    }
+    &__text {
+      color: var(--color-grey-20);
+      font-size: 14px;
+      font-family: var(--font-secondary);
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+}

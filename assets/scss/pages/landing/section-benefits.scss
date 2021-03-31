@@ -1,0 +1,29 @@
+.cs--landing {
+  &-benefits {
+    padding: 85px 0 160px;
+    background-color: var(--color-blue-90);
+    @include media('<md') {
+        padding: 60px 0 60px;
+      }
+    &__title {
+      margin-bottom: 30px;
+      font-weight: 800;
+      font-size: 42px;
+      text-align: center;
+      @include media('<sm') {
+        font-size: 32px;
+      }
+      @include media('<xs') {
+        font-size: 28px;
+      }
+    }
+    &__comment {
+      margin-bottom: 95px;
+      color: var(--color-grey-30);
+      font-size: 14px;
+      font-family: var(--font-secondary);
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{% macro gradList(itemList) %}
+  <ul class="cs--grad-list">
+    {% for item in itemList %}
+      <li class="cs--grad-list-item">{{item.text}}</li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

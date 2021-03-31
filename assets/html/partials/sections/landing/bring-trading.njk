@@ -1,0 +1,36 @@
+{% from "../../components/icon.njk" import icon %}
+{% from "../../components/grad-list.njk" import gradList %}
+
+{% set itemList = [
+  {
+    'text': 'Get the edge you need to invest more profitably'
+  }, {
+    'text': 'Join tens of thousands of traders using Quadency'
+  }, {
+    'text': 'Receive updates on new features and announcements'
+  }
+] %}
+
+<section class="cs--section cs--landing-bring-trading">
+  <div class="cs--section__bg">
+    <img src="./img/bring-trading-bg.png" alt="">
+  </div>
+  <div class="cs--container">
+    <div class="cs--landing-bring-trading__wrapper">
+      <div class="cs--landing-bring-trading__decor">
+        <img src="./img/bring-trading-img.png" alt="">
+      </div>
+      <div class="cs--landing-bring-trading__content">
+        <h2 class="cs--landing-bring-trading__title">Bring clarity to your trading</h2>
+        {{ gradList(itemList) }}
+        <form class="cs--landing-bring-trading__form">
+          <label for="bring-trading-email" class="cs--reg-form__input-wrapper">
+            {{ icon('mail') }}
+            <input id="bring-trading-email" type="email" class="cs--reg-form__input" placeholder="Enter Your E-mail">
+          </label>
+          <button type="submit" class="cs--btn cs--btn-grad-blue">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
