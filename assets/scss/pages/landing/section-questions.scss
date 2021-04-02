@@ -1,0 +1,22 @@
+.cs--landing-questions {
+  padding: 50px 0;
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 42px;
+    text-align: center;
+    @include media('<sm') {
+      font-size: 32px;
+    }
+    @include media('<xs') {
+      font-size: 28px;
+    }
+  }
+  &__comment {
+    margin-bottom: 65px;
+    color: var(--color-grey-30);
+    font-family: var(--font-secondary);
+    line-height: 1.4;
+    text-align: center;
+  }
+}
