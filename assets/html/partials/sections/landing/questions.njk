@@ -1,0 +1,38 @@
+{% from "../../components/detail-list.njk" import detailList %}
+
+{%
+  set textList = [
+      'Quadency is a professional cryptocurrency trading terminal. By securely connecting with all major exchanges, you can trade from one place. Exchange accounts can be connected to Quadency using API keys. To learn more about how API keys work, click here.',
+      'Assets in your offline wallets (hardware, software, paper etc) such as Trezor, Ledger and MyEtherWallet can also be monitored by entering transaction manually. Automatic tracking of all major wallets and DeFi investments is coming soon!'
+    ]
+%}
+
+{% set itemList = [
+  {
+    'summary': 'How does it work?',
+    'textList': textList
+  }, {
+    'summary': 'What are bots?',
+    'textList': textList
+  }, {
+    'summary': 'Which exchanges are supported?',
+    'textList': textList
+  }, {
+    'summary': 'Is it secure?',
+    'textList': textList
+  }, {
+    'summary': 'How much does it cost, are there any transactions fees?',
+    'textList': textList
+  }, {
+    'summary': 'Is there a referral or affiliate program?',
+    'textList': textList
+  }
+] %}
+
+<section class="cs--section cs--landing-questions">
+  <div class="cs--container">
+    <h2 class="cs--landing-questions__title">Frequenty Asked Questions</h2>
+    <p class="cs--landing-questions__comment">Leo imperdiet at massa, malesuada sed in at. Facilisi non ac ultrices est interdum id.</p>
+    {{ detailList(itemList) }}
+  </div>
+</section>

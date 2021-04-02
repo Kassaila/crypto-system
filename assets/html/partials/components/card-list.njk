@@ -7,7 +7,11 @@
         </div>
         <div class="cs--card-item__content">
           <div class="cs--card-item__meta">
-            <span>{{ item.date }}</span><span>{{ item.commentsCount }} comments</span></div>
+            <span>{{ item.date }}</span>
+            {% if item.commentsCount  %}
+              <span>{{ item.commentsCount }} comments</span>
+            {% endif %}
+          </div>
           <span class="cs--card-item__title">{{ item.title }}</span>
           <a class="cs--card-item__link" href="{{ item.link }}">Read more</a>
         </div>
