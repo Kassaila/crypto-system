@@ -1,4 +1,4 @@
-{% from "../../components/detail-list.njk" import detailList %}
+{% from "../../components/details-list.njk" import detailsList %}
 
 {%
   set textList = [
@@ -33,6 +33,6 @@
   <div class="cs--container">
     <h2 class="cs--landing-questions__title">Frequenty Asked Questions</h2>
     <p class="cs--landing-questions__comment">Leo imperdiet at massa, malesuada sed in at. Facilisi non ac ultrices est interdum id.</p>
-    {{ detailList(itemList) }}
+    {{ detailsList(itemList) }}
   </div>
 </section>

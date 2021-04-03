@@ -1,5 +1,148 @@
-<footer>
-  <div class="cs--landing-footer__bottom">
+{% from "../social-list.njk" import socialList %}
+
+{% set emptyLink = 'javascript:void(0)' %}
+
+{% set footerMenuList = [
+  {
+    'type': 'list',
+    'title': 'PLATFORM',
+    'itemList': [
+      {
+        'title': 'Dashboard',
+        'link': emptyLink
+      }, {
+        'title': 'Portfolio',
+        'link': emptyLink
+      }, {
+        'title': 'Trade',
+        'link': emptyLink
+      }, {
+        'title': 'Bots',
+        'link': emptyLink
+      }, {
+        'title': 'Research',
+        'link': emptyLink
+      }, {
+        'title': 'News',
+        'link': emptyLink
+      }, {
+        'title': 'Plans & Pricing',
+        'link': emptyLink
+      }, {
+        'title': 'Institutional Tools',
+        'link': emptyLink
+      }
+    ]
+  }, {
+    'type': 'list',
+    'title': 'RESOURCES',
+    'itemList': [
+      {
+        'title': 'Status',
+        'link': emptyLink
+      }, {
+        'title': 'Blog',
+        'link': emptyLink
+      }, {
+        'title': 'Support Center',
+        'link': emptyLink
+      }, {
+        'title': 'APIs & Market Data',
+        'link': emptyLink
+      }, {
+        'title': 'Developers',
+        'link': emptyLink
+      }, {
+        'title': 'Referral Program',
+        'link': emptyLink
+      }, {
+        'title': 'Security',
+        'link': emptyLink
+      }, {
+        'title': 'Terms of Use',
+        'link': emptyLink
+      }, {
+        'title': 'Privacy Policy',
+        'link': emptyLink
+      }
+    ]
+  }, {
+    'type': 'list',
+    'title': 'THE COMPANY',
+    'itemList': [
+      {
+        'title': 'About',
+        'link': emptyLink
+      }, {
+        'title': 'Careers',
+        'link': emptyLink
+      }, {
+        'title': 'Contact Us',
+        'link': emptyLink
+      }, {
+        'title': 'Partnerships',
+        'link': emptyLink
+      }, {
+        'title': 'Advertise',
+        'link': emptyLink
+      }
+    ]
+  }, {
+    'type': 'social',
+    'title': 'CONNECT / FOLLOW',
+    'itemList': [
+      {
+        'icon': 'm-twitter',
+        'link': emptyLink
+      }, {
+        'icon': 'm-telegram',
+        'link': emptyLink
+      }, {
+        'icon': 'm-linkedin',
+        'link': emptyLink
+      }, {
+        'icon': 'm-youtube',
+        'link': emptyLink
+      }
+    ]
+  }
+] %}
+
+<footer class="cs--landing-footer">
+  <div class="cs--landing-footer__block--top">
+    <div class="cs--container">
+      <div class="cs--landing-footer__content">
+        <div class="cs--landing-footer__company">
+          <a class="cs--logo" href="javascript:void(0)">
+            <img src="./img/logo.png" alt="logo">
+          </a>
+          <span>Copyright ©2021. All rights reserved.</span>
+        </div>
+        <nav>
+          <ul class="cs--landing-footer__menu-group">
+            {% for groupMenu in footerMenuList %}
+              <li class="cs--landing-footer__menu-group-item">
+                <span class="cs--landing-footer__menu-group-title">{{ groupMenu.title }}</span>
+                {% if groupMenu.type == 'list' %}
+                  <ul class="cs--landing-footer__menu-list">
+                    {% for item in groupMenu.itemList %}
+                      <li class="cs--landing-footer__menu-item">
+                        <a href="{{ item.link }}">{{ item.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if groupMenu.type == 'social' %}
+                  {{ socialList(groupMenu.itemList) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="cs--landing-footer__block--bottom">
     <div class="cs--container">
       <p>Disclaimer: Information contained herein should not be construed as investment advice, or investment recommendation, or an order of, or solicitation for, any transactions in financial instruments; We make no warranty or representation, whether express or implied, as to the completeness or accuracy of the information contained herein or fitness thereof for a particular purpose. Use of images and symbols is made for illustrative purposes only and does not constitute a recommendation to buy, sell or hold a particular financial instrument; Use of brand logos does not necessarily imply a contractual relationship between us and the entities owning the logos, nor does it represent an endorsement of any such entity by Quadency, or vice versa. Market information is made available to you only as a service, and we do not endorse or approve it. Quadency does not hold custody of client funds and is not liable to you for any (direct or indirect) damage you suffer as a result of the use of the Website or Software or the content provided thereon.</p>
     </div>

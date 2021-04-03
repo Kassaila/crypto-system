@@ -39,6 +39,7 @@ module.exports = function () {
         resolve: {
           alias: {
             '@js': path.resolve(__dirname, '../js'),
+            '@vendor': path.resolve(__dirname, '../vendor_entries/js'),
           },
         },
         module: {

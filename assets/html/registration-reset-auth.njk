@@ -22,7 +22,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CryptoSystem - Verify account</title>
+    <title>CryptoSystem - Reset Google Authenticator</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
@@ -42,16 +42,14 @@
           <a href="javascript:void(0)" class="cs--logo cs--logo-lg">
             <img src="./img/logo.png" alt="logo">
           </a>
-          <h1 class="cs--page__title">Enter the code from E-mail</h1>
-          <form id="{{ form.id }}" class="cs--reg-form">
-            {% for input in inputs %}
-              <label for="{{ input.name }}" class="cs--reg-form__input-wrapper">
-                {{ icon(input.icon) }}
-                <input id="{{ input.name }}" type="{{ input.type }}" class="cs--reg-form__input" placeholder="{{ input.placeholder }}">
-              </label>
-            {% endfor %}
-            <button type="submit" class="cs--btn cs--btn-grad-blue">Confirm registration</button>
-          </form>
+          <h1 class="cs--page__title">Reset Google Authenticator</h1>
+          <div class="cs--page__content">
+            <div class="cs--page__content-image">
+              <img src="./img/img-check.svg" alt="">
+            </div>
+            <p>Your request to reset 2 Factor Authentication has been submited to CryptoSystem Support. We will follow up with you within the next couple of days to validate account ownership and assist you further.</p>
+          </div>
+          <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Back to Home</a>
         </div>
       </div>
     </main>

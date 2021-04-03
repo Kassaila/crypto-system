@@ -1,0 +1,24 @@
+.cs--social {
+  &-list {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &-item {
+    margin-bottom: 10px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    & > * {
+      display: flex;
+      @include media('hover') {
+        &:hover {
+          .cs--icon {
+            --icon-color: var(--color-blue-30);
+          }
+        }
+      }
+    }
+  }
+}
