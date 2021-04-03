@@ -39,7 +39,10 @@ input[type='reset'],
 input[type='file'],
 input[type='submit'] {
   outline: none;
-  font-family: var(--form-font-family);
   cursor: pointer;
   appearance: none;
+}
+
+input[type='file'] {
+  font-family: var(--form-font-family);
 }

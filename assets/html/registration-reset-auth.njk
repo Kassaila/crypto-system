@@ -1,0 +1,58 @@
+{% from "./partials/components/icon.njk" import icon %}
+
+{%
+  set form = {
+    id: 'verify-account'
+  }
+%}
+
+{%
+  set inputs = [
+    {
+      'name': form.id + '-' + 'verify-code',
+      'type': 'password',
+      'icon': 'lock-open',
+      'placeholder': 'Enter Code'
+    }
+  ]
+%}
+
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - Reset Google Authenticator</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <main class="cs--page cs--page--registration">
+      <div class="cs--page__bg">
+        <img src="./img/registration-bg.jpg" alt="">
+      </div>
+      <div class="cs--container">
+        <div class="cs--page__wrapper">
+          <a href="javascript:void(0)" class="cs--logo cs--logo-lg">
+            <img src="./img/logo.png" alt="logo">
+          </a>
+          <h1 class="cs--page__title">Reset Google Authenticator</h1>
+          <div class="cs--page__content">
+            <div class="cs--page__content-image">
+              <img src="./img/img-check.svg" alt="">
+            </div>
+            <p>Your request to reset 2 Factor Authentication has been submited to CryptoSystem Support. We will follow up with you within the next couple of days to validate account ownership and assist you further.</p>
+          </div>
+          <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Back to Home</a>
+        </div>
+      </div>
+    </main>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>
