@@ -27,11 +27,12 @@
       }
     }
   }
-  .cs--sing-in {
+  .cs--form-support {
     margin-top: 35px;
     font-weight: 700;
     font-size: 12px;
     font-family: var(--font-secondary);
+    text-align: center;
     a {
       color: var(--color-blue-10);
     }
@@ -39,5 +40,8 @@
   .cs--container {
     position: relative;
     z-index: 1;
+  }
+  .cs--btn {
+    margin-top: 10px;
   }
 }

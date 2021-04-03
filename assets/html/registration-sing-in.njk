@@ -2,17 +2,23 @@
 
 {%
   set form = {
-    id: 'verify-account'
+    id: 'sing-in'
   }
 %}
 
 {%
   set inputs = [
     {
-      'name': form.id + '-' + 'verify-code',
+      'name': form.id + '-' + 'email',
+      'type': 'email',
+      'icon': 'mail',
+      'placeholder': 'Enter Your E-mail'
+    },
+    {
+      'name': form.id + '-' + 'pass',
       'type': 'password',
       'icon': 'lock-open',
-      'placeholder': 'Enter Code'
+      'placeholder': 'Enter Your Password'
     }
   ]
 %}
@@ -22,7 +28,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CryptoSystem - Verify account</title>
+    <title>CryptoSystem - Sign in to your account</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
@@ -42,7 +48,7 @@
           <a href="javascript:void(0)" class="cs--logo cs--logo-lg">
             <img src="./img/logo.png" alt="logo">
           </a>
-          <h1 class="cs--page__title">Enter the code from E-mail</h1>
+          <h1 class="cs--page__title">Sign in to your account</h1>
           <form id="{{ form.id }}" class="cs--reg-form">
             {% for input in inputs %}
               <label for="{{ input.name }}" class="cs--reg-form__input-wrapper">
@@ -50,8 +56,15 @@
                 <input id="{{ input.name }}" type="{{ input.type }}" class="cs--reg-form__input" placeholder="{{ input.placeholder }}">
               </label>
             {% endfor %}
-            <button type="submit" class="cs--btn cs--btn-grad-blue">Confirm registration</button>
+            <button type="submit" class="cs--btn cs--btn-grad-blue">Sing In</button>
           </form>
+          <div class="cs--form-support">
+            <p>
+              <a href="registration-forgot-pass.html">Forgot password?</a>
+            </p>
+            <p>Already have an account? <a href="registration-create-account.html">Sign Up</a>
+            </p>
+          </div>
         </div>
       </div>
     </main>
