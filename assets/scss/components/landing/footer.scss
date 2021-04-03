@@ -1,13 +1,61 @@
 .cs--landing-footer {
-  &__bottom {
-    padding: 25px 0 45px;
-    background-color: var(--color-blue-100);
-    color: var(--color-grey-70);
+  &__block {
+    &--bottom {
+      padding: 25px 0 45px;
+      background-color: var(--color-blue-100);
+      color: var(--color-grey-70);
+      font-size: 12px;
+      font-family: var(--font-secondary);
+      line-height: 1.6;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    &--top {
+      padding: 100px 0 60px;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-gap: 30px 60px;
+    @include media('<lg') {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__company {
+    color: var(--color-grey-15);
     font-size: 12px;
     font-family: var(--font-secondary);
-    line-height: 1.6;
-    p {
-      margin-bottom: 0;
+    line-height: 1.8;
+    .cs--logo {
+      margin-bottom: 10px;
     }
+  }
+  &__menu-group {
+    @extend %listreset;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px 10px;
+    padding-top: 10px;
+    @include media('<sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-title {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-family: var(--font-secondary);
+      text-transform: uppercase;
+    }
+  }
+  &__menu-list {
+    @extend %listreset;
+  }
+  &__menu-item {
+    color: var(--color-grey-15);
+    font-size: 14px;
+    font-family: var(--font-secondary);
+    line-height: 1.8;
   }
 }

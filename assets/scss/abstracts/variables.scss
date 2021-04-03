@@ -63,6 +63,7 @@ $media-expressions: (
   --color-grey: hsl(0, 0%, 60%);
   --color-grey-5: hsl(0, 0%, 96%);
   --color-grey-10: hsl(0, 0%, 93%);
+  --color-grey-15: hsl(0, 0%, 88%);
   --color-grey-20: hsl(0, 0%, 84%);
   --color-grey-30: hsl(0, 0%, 71%);
   --color-grey-70: hsl(0, 0%, 45%);
@@ -71,6 +72,7 @@ $media-expressions: (
   --color-blue: hsl(210, 100%, 60%);
   --color-blue-10: hsl(195, 100%, 49%);
   --color-blue-20: hsl(197, 100%, 48%);
+  --color-blue-30: hsl(200, 100%, 48%);
   --color-blue-40: hsl(209, 100%, 47%);
   --color-blue-60: hsl(221, 83%, 18%);
   --color-blue-70: hsl(221, 90%, 15%);
@@ -127,7 +129,7 @@ $media-expressions: (
   --headings-sizes-h6: 1.5rem;
 
   // icon
-  --icon-color: var(--white);
+  --icon-color: var(--color-white);
 
   @include media('<xlg') {
     --container-width: var(--lg);
