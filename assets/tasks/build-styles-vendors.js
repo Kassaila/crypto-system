@@ -17,7 +17,7 @@ module.exports = function () {
 
   return (done) =>
     gulp
-      .src(`./vendor_entries/${global.file.styles.vendor}.scss`)
+      .src(`./vendor_entries/css/${global.file.styles.vendor}.scss`)
       .pipe(sass.sync())
       .on('error', (error) => notifier.error(error.message, 'Vendor Sass compiling error', done))
       .pipe(postcss(plugins))

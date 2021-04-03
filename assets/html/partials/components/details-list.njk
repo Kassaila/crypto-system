@@ -1,0 +1,16 @@
+{% macro detailsList(itemList) %}
+  <ul class="cs--details-list">
+    {% for item in itemList %}
+      <li class="cs--details-wrapper">
+      <details class="cs--details-item">
+        <summary class="cs--details-summary">{{ item.summary }}</summary>
+        <div data-details-content class="cs--details-content">
+        {% for text in item.textList %}
+          <p>{{ text }}</p>
+        {% endfor %}
+        </div>
+      </details>
+    </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
