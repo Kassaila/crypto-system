@@ -1,0 +1,92 @@
+.cs--landing-contact-us {
+  padding: 110px 0;
+  @include media('<md') {
+    padding: 60px 0;
+  }
+  @include media('<xs') {
+    padding: 60px 0 30px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px 30px;
+    padding: 0 110px;
+    @include media('<xlg') {
+      padding: 0;
+    }
+    @include media('<sm') {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    margin-bottom: 50px;
+    font-size: 800;
+    font-size: 48px;
+    @include media('<md') {
+      font-size: 40px;
+    }
+    @include media('<xs') {
+      font-size: 32px;
+    }
+  }
+  &__subtitle {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: var(--font-secondary);
+  }
+  &__map {
+    position: relative;
+    align-self: center;
+    padding-bottom: 94%;
+    & > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .cs--contacts {
+    &-list {
+      @extend %listreset;
+      margin-bottom: 35px;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      &__icon-holder {
+        flex-shrink: 0;
+        margin-right: 25px;
+      }
+      & > * {
+        font-style: normal;
+        font-size: 18px;
+        font-family: var(--font-secondary);
+      }
+      a {
+        font-weight: 700;
+        text-decoration: underline;
+        @include media('hover') {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .cs--social-item {
+    @include animate(opacity);
+    @include media('hover') {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

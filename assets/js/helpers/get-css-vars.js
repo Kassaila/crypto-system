@@ -1,11 +1,12 @@
 /**
  * @function getCssValue
  * @param {string} variable
+ * @param {HTMLElement} el
  * @returns {*}
  * @description get CSS custom property and return value
  */
-function getCssValue(variable) {
-  return window.getComputedStyle(document.documentElement).getPropertyValue(variable);
+function getCssValue(variable, el = document.documentElement) {
+  return window.getComputedStyle(el).getPropertyValue(variable);
 }
 
 /**

@@ -21,6 +21,7 @@ p {
 a {
   color: var(--base-link-color);
   text-decoration: none;
+  @include word-wrap();
   @include media('hover') {
     &:hover {
       text-decoration: underline;
