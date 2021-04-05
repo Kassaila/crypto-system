@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - Contact Us</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/social-list.njk" import socialList %}
+
+  {%
+    set socItemList = [
+      {
+        'icon': 'c-twitter',
+        'link': 'javascript:void(0)'
+      }, {
+        'icon': 'c-facebook',
+        'link': 'javascript:void(0)'
+      }, {
+        'icon': 'c-telegram',
+        'link': 'javascript:void(0)'
+      }, {
+        'icon': 'c-watsapp',
+        'link': 'javascript:void(0)'
+      }, {
+        'icon': 'c-mail',
+        'link': 'javascript:void(0)'
+      }
+    ]
+  %}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    {% include './partials/components/landing/header.njk' %}
+    <main class="cs--page">
+      <section class="cs--section cs--landing-contact-us">
+        <div class="cs--container">
+          <div class="cs--landing-contact-us__wrapper">
+            <div class="cs--landing-contact-us__content">
+              <h1 class="cs--landing-contact-us__title">Contact Us</h1>
+              <p class="cs--landing-contact-us__subtitle">Want to get in touch?</p>
+              <ul class="cs--contacts-list">
+                <li class="cs--contacts-item">
+                  <div class="cs--contacts-item__icon-holder">
+                    <img src="./img/social/contacts-location.svg" alt="">
+                  </div>
+                  <address>
+                    <b>CryptoSystem</b><br>Spruss srt 18, 13211, New York, USA</address>
+                </li>
+                <li class="cs--contacts-item">
+                  <div class="cs--contacts-item__icon-holder">
+                    <img src="./img/social/contacts-mail.svg" alt="">
+                  </div>
+                  <a href="mailto:support@cryprosystem.com">support@cryprosystem.com</a>
+                </li>
+                <li class="cs--contacts-item">
+                  <div class="cs--contacts-item__icon-holder">
+                    <img src="./img/social/contacts-telegram.svg" alt="">
+                  </div>
+                  <a href="https://t.me/cryptosystem">https://t.me/cryptosystem</a>
+                </li>
+              </ul>
+              <p class="cs--landing-contact-us__subtitle">Be a part of our community</p>
+              {{ socialList(socItemList) }}
+            </div>
+            <div class="cs--landing-contact-us__map">
+              <img src="./img/contact-map.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include './partials/components/landing/footer.njk' %}
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>
