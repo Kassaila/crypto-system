@@ -1,0 +1,54 @@
+.cs--landing-free-trade {
+  padding: 145px 0;
+  @include media('<md') {
+    padding: 100px 0;
+  }
+  @include media('<sm') {
+    padding: 60px 0;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px 30px;
+    @include media('<lg') {
+      grid-template-columns: 2fr 1fr;
+    }
+    @include media('<sm') {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__content {
+    place-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 110px;
+    font-weight: 800;
+    font-size: 48px;
+    @include media('<xlg') {
+      padding-left: 0;
+    }
+    @include media('<md') {
+      font-size: 40px;
+    }
+    @include media('<sm') {
+      text-align: center;
+    }
+    @include media('<xs') {
+      font-size: 32px;
+    }
+    &--accent {
+      color: var(--color-orange-30);
+    }
+    & > * {
+      width: 100%;
+    }
+  }
+  &__decor {
+    display: flex;
+    justify-content: center;
+  }
+  .cs--container {
+    position: relative;
+    z-index: 1;
+  }
+}
