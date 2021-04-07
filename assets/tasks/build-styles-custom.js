@@ -8,6 +8,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sortMedia = require('postcss-sort-media-queries');
+const cssnano = require('cssnano');
 
 const notifier = require('../helpers/notifier');
 const global = require('../gulp-config.js');
@@ -19,8 +20,12 @@ module.exports = function () {
   const { isSortMedia } = global.buildStyles.custom.isSortMedia;
   const plugins = [autoprefixer()];
 
-  if (isSortMedia) {
+  if (isSortMedia && process.env.NODE_ENV === 'production') {
     plugins.push(sortMedia({ sort: global.buildStyles.sortType }));
+  }
+
+  if (process.env.NODE_ENV === 'production') {
+    plugins.push(cssnano());
   }
 
   return (done) =>
