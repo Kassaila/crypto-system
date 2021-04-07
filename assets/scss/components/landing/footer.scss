@@ -13,6 +13,15 @@
     }
     &--top {
       padding: 100px 0 60px;
+      @include media('<sm') {
+        padding: 40px 0 40px;
+      }
+      .cs--social {
+        &-item {
+          width: 25px;
+          height: 25px;
+        }
+      }
     }
   }
   &__content {
@@ -47,6 +56,10 @@
       font-weight: 700;
       font-family: var(--font-secondary);
       text-transform: uppercase;
+      @include media('<xs') {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
     }
   }
   &__menu-list {
@@ -57,5 +70,8 @@
     font-size: 14px;
     font-family: var(--font-secondary);
     line-height: 1.8;
+    @include media('<xs') {
+      font-size: 12px;
+    }
   }
 }

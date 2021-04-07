@@ -1,8 +1,10 @@
 .cs--landing {
   &-hero {
+    display: flex;
+    min-height: calc(100vh - var(--landing-header-height));
     padding: 120px 0 15px;
     @include media('<xs') {
-      padding: 60px 0 0;
+      padding: 60px 0 20px;
     }
     &__content {
       position: relative;
@@ -38,6 +40,7 @@
         font-size: 32px;
       }
       @include media('<xs') {
+        margin-bottom: 30px;
         font-size: 28px;
       }
       &--accent {
@@ -55,8 +58,14 @@
       --counter-item-max-width: 200px;
       @extend %listreset;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(var(--counter-item-max-width), 1fr));
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 20px 5px;
+      @include media('<md') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include media('<xs') {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     &__counter-item {
       --counter-item-height: 100px;
@@ -67,9 +76,10 @@
       align-items: center;
       max-width: var(--counter-item-max-width);
       height: var(--counter-item-height);
-      padding-left: 25px;
+      padding-left: calc(var(--counter-item-height) / 4);
       @include media('<sm') {
         --counter-item-height: 50px;
+        padding-left: calc(var(--counter-item-height) / 5);
       }
       &:before {
         content: '';
@@ -88,11 +98,17 @@
         margin-right: 10px;
         font-weight: 300;
         font-size: 30px;
+        @include media('<sm') {
+          font-size: 22px;
+        }
       }
       &-text {
         font-size: 14px;
         font-family: var(--font-secondary);
         word-spacing: 100vw;
+        @include media('<sm') {
+          font-size: 12px;
+        }
       }
     }
     .cs--section__bg {
@@ -102,6 +118,8 @@
     .cs--container {
       position: relative;
       z-index: 1;
+      align-self: center;
+      width: 100%;
       padding: 0 170px 0 190px;
       @include media('<xlg') {
         padding: 0 var(--container-padding);

@@ -40,6 +40,10 @@
     padding: 15px 35px 15px 55px;
     border: none;
     border-radius: 50px;
+    @include animate(box-shadow);
+    &:focus {
+      box-shadow: 0px 0px 5px 5px rgba(0, 187, 250, 0.4);
+    }
   }
   &__checkbox {
     position: absolute;
