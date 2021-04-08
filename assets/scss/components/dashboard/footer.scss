@@ -1,6 +1,7 @@
 .cs--dashboard-footer {
   --container-padding: 25px;
   padding: 40px 0 50px;
+  background-color: var(--color-blue-90);
   &__content {
     display: grid;
     grid-template-columns: 460px 1fr;
