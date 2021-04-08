@@ -18,8 +18,14 @@
       }
       .cs--social {
         &-item {
-          width: 25px;
-          height: 25px;
+          a {
+            --icon-size: 40px;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            @include media('<sm') {
+              --icon-size: 25px;
+            }
+          }
         }
       }
     }
@@ -66,12 +72,14 @@
     @extend %listreset;
   }
   &__menu-item {
-    color: var(--color-grey-15);
-    font-size: 14px;
-    font-family: var(--font-secondary);
-    line-height: 1.8;
-    @include media('<xs') {
-      font-size: 12px;
+    &-link {
+      color: var(--color-grey-15);
+      font-size: 14px;
+      font-family: var(--font-secondary);
+      line-height: 1.8;
+      @include media('<xs') {
+        font-size: 12px;
+      }
     }
   }
 }
