@@ -17,12 +17,21 @@
     font-weight: 800;
     font-size: 18px;
     cursor: pointer;
+    @include animate(background-color);
     @include media('<xs') {
       font-size: 16px;
+    }
+    @include media('hover') {
+      &:hover {
+        background-color: var(--color-blue-70);
+      }
     }
     &::-webkit-details-marker,
     &::marker {
       display: none;
+    }
+    &:focus {
+      background-color: var(--color-blue-70);
     }
     &:before,
     &:after {
@@ -42,12 +51,7 @@
   }
   &-item {
     background-color: var(--color-blue-90);
-    @include animate(background-color border);
-    @include media('hover') {
-      &:hover {
-        background-color: var(--color-blue-70);
-      }
-    }
+    @include animate(background-color);
     &[open] {
       background-color: var(--color-blue-70);
       .cs--details-summary {

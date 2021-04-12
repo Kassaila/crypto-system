@@ -1,0 +1,12 @@
+{% macro cardFilter(itemList) %}
+  <ul class="cs--card-filter__filter-list">
+    {% for item in itemList %}
+      <li class="cs--card-filter__filter-item">
+        <label for="{{ item.id }}" class="cs--card-filter__filter-label">
+          <input id="{{ item.id }}" type="checkbox" class="cs--card-filter__filter-input">
+          <span class="cs--card-filter__filter-title">{{ item.title }}</span>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

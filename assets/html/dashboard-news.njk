@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - News</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/card-list.njk" import cardList %}
+  {% from "./partials/components/card-filter.njk" import cardFilter %}
+  {% from "./partials/components/icon.njk" import icon %}
+
+  {% set itemList = [
+    {
+      'title': 'Morbi morbi et rhoncus commodo semper egestas',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-1.png'
+    }, {
+      'title': 'Odio at iaculis in arcu leo consequat',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-2.png'
+    }, {
+      'title': 'Nisl pulvinar urna id libero sit tellus',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-3.png'
+    }, {
+      'title': 'Morbi morbi et rhoncus commodo semper egestas',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-1.png'
+    }, {
+      'title': 'Odio at iaculis in arcu leo consequat',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-2.png'
+    }, {
+      'title': 'Nisl pulvinar urna id libero sit tellus',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-3.png'
+    }, {
+      'title': 'Morbi morbi et rhoncus commodo semper egestas',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-1.png'
+    }, {
+      'title': 'Odio at iaculis in arcu leo consequat',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-2.png'
+    }, {
+      'title': 'Nisl pulvinar urna id libero sit tellus',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-3.png'
+    }, {
+      'title': 'Morbi morbi et rhoncus commodo semper egestas',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-1.png'
+    }, {
+      'title': 'Odio at iaculis in arcu leo consequat',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-2.png'
+    }, {
+      'title': 'Nisl pulvinar urna id libero sit tellus',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-3.png'
+    }, {
+      'title': 'Morbi morbi et rhoncus commodo semper egestas',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-1.png'
+    }, {
+      'title': 'Odio at iaculis in arcu leo consequat',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-2.png'
+    }, {
+      'title': 'Nisl pulvinar urna id libero sit tellus',
+      'date': 'MARCH 17, 2021',
+      'link': 'javascript:void(0)',
+      'imgSrc': './img/examples/news-3.png'
+    }
+  ] %}
+
+  {%
+    set filterList = [
+      {
+        'id': 'Cryptocurrency',
+        'title': 'Cryptocurrency'
+      }, {
+        'id': 'BTC',
+        'title': 'BTC'
+      }, {
+        'id': 'ETH',
+        'title': 'ETH'
+      }, {
+        'id': 'USDT',
+        'title': 'USDT'
+      }
+    ]
+  %}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--news">
+        <section class="cs--section">
+          <div class="cs--container">
+            <div class="cs--dashboard--news__head">
+              <h1 class="cs--dashboard--news__title">Latest News</h1>
+              <form class="cs--card-filter__form">
+                {{ cardFilter(filterList) }}
+                <label for="card-filter-search" class="cs--card-filter__search-wrapper">
+                  <input type="text" class="cs--card-filter__search" placeholder="Search">
+                  <button type="button" class="cs--card-filter__search-btn">
+                    {{ icon('search') }}
+                  </button>
+                </label>
+              </form>
+            </div>
+            {{ cardList(itemList) }}
+          </div>
+        </section>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>
