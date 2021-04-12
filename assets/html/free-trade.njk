@@ -13,26 +13,28 @@
   </head>
   <body>
     <div class="cs--preloader" data-preloader></div>
-    {% include './partials/components/landing/header.njk' %}
-    <main class="cs--page">
-      <section class="cs--section cs--landing-free-trade">
-        <div class="cs--section__bg">
-          <img src="./img/registration-bg.svg" alt="">
-        </div>
-        <div class="cs--container">
-          <div class="cs--landing-free-trade__wrapper">
-            <h1 class="cs--landing-free-trade__content">
-              <span class="cs--landing-free-trade__content--accent">Trade for FREE</span>
-              <span>with CryptoSystem</span>
-            </h1>
-            <div class="cs--landing-free-trade__decor">
-              <img src="./img/free-trade-img.svg" alt="">
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page">
+        <section class="cs--section cs--landing-free-trade">
+          <div class="cs--section__bg">
+            <img src="./img/registration-bg.svg" alt="">
+          </div>
+          <div class="cs--container">
+            <div class="cs--landing-free-trade__wrapper">
+              <h1 class="cs--landing-free-trade__content">
+                <span class="cs--landing-free-trade__content--accent">Trade for FREE</span>
+                <span>with CryptoSystem</span>
+              </h1>
+              <div class="cs--landing-free-trade__decor">
+                <img src="./img/free-trade-img.svg" alt="">
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-    {% include './partials/components/landing/footer.njk' %}
+        </section>
+      </main>
+      {% include './partials/components/landing/footer.njk' %}
+    </div>
     {% include './partials/scripts/common.njk' %}
   </body>
 </html>

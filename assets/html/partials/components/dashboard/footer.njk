@@ -1,0 +1,112 @@
+{% from "../social-list.njk" import socialList %}
+
+{% set emptyLink = 'javascript:void(0)' %}
+
+{% set footerMenuList = [
+  {
+    'type': 'list',
+    'title': 'Platform',
+    'itemList': [
+      {
+        'title': 'Dashboard',
+        'link': emptyLink
+      }, {
+        'title': 'Portfolio',
+        'link': emptyLink
+      }, {
+        'title': 'Trade',
+        'link': emptyLink
+      }, {
+        'title': 'Bots',
+        'link': emptyLink
+      }, {
+        'title': 'Research',
+        'link': emptyLink
+      }, {
+        'title': 'News',
+        'link': emptyLink
+      }, {
+        'title': 'Plans & Pricing',
+        'link': emptyLink
+      }, {
+        'title': 'Support Center',
+        'link': emptyLink
+      }
+    ]
+  }, {
+    'type': 'list',
+    'title': 'Company',
+    'itemList': [
+      {
+        'title': 'About',
+        'link': emptyLink
+      }, {
+        'title': 'Contact Us',
+        'link': emptyLink
+      }, {
+        'title': 'Terms ofUse',
+        'link': emptyLink
+      }, {
+        'title': 'Privacy Policy',
+        'link': emptyLink
+      }
+    ]
+  }, {
+    'type': 'social',
+    'title': 'Share & Earn',
+    'itemList': [
+      {
+        'icon': 'm-twitter',
+        'link': emptyLink
+      }, {
+        'icon': 'm-facebook',
+        'link': emptyLink
+      }, {
+        'icon': 'm-telegram',
+        'link': emptyLink
+      }, {
+        'icon': 'm-watsapp',
+        'link': emptyLink
+      }, {
+        'icon': 'm-mail',
+        'link': emptyLink
+      }
+    ]
+  }
+] %}
+
+<footer class="cs--dashboard-footer">
+  <div class="cs--container">
+    <div class="cs--dashboard-footer__content">
+      <div class="cs--dashboard-footer__company">
+        <a class="cs--logo" href="javascript:void(0)">
+          <img src="./img/logo.png" alt="logo">
+        </a>
+        <p>Dust notice: Assets with value below the dust threshold are hidden and omitted from portfolio calculations.</p>
+        <p>Backtested or simulated performance results have inherent limitations and should not be interpreted as a recommendation to buy or sell any assets nor a guarantee of future returns. Actual results will vary from the analysis and Quadency makes no representation or warranty regarding future performance.</p>
+        <p>Copyright © CryptoSystem 2021</p>
+      </div>
+      <nav>
+        <ul class="cs--dashboard-footer__menu-group">
+          {% for groupMenu in footerMenuList %}
+            <li class="cs--dashboard-footer__menu-group-item">
+              <span class="cs--dashboard-footer__menu-group-title">{{ groupMenu.title }}</span>
+              {% if groupMenu.type == 'list' %}
+                <ul class="cs--dashboard-footer__menu-list">
+                  {% for item in groupMenu.itemList %}
+                    <li class="cs--dashboard-footer__menu-item">
+                      <a class="cs--dashboard-footer__menu-item-link" href="{{ item.link }}">{{ item.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if groupMenu.type == 'social' %}
+                {{ socialList(groupMenu.itemList) }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

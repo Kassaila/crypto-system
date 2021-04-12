@@ -64,7 +64,7 @@
           <form id="{{ form.id }}" class="cs--reg-form">
             {% for input in inputs %}
               <label for="{{ input.name }}" class="cs--reg-form__input-wrapper">
-                {{ icon(input.icon) }}
+                <div class="cs--reg-form__input-icon">{{ icon(input.icon) }}</div>
                 <input id="{{ input.name }}" type="{{ input.type }}" class="cs--reg-form__input" placeholder="{{ input.placeholder }}">
               </label>
             {% endfor %}
@@ -79,7 +79,7 @@
             </div>
             <div class="cs--reg-form__recaptcha">
               {# This img for example #}
-              <img src="./img/recaptcha.png" alt="">
+              <img src="./img/examples/recaptcha.png" alt="">
             </div>
             <button type="submit" class="cs--btn cs--btn-grad-blue">Create Account</button>
           </form>

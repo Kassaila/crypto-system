@@ -27,6 +27,7 @@
         font-size: 32px;
       }
       @include media('<xs') {
+        margin-bottom: 30px;
         font-size: 28px;
       }
     }

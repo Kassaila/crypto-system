@@ -1,4 +1,5 @@
 .cs--landing-footer {
+  margin-top: auto;
   &__block {
     &--bottom {
       padding: 25px 0 45px;
@@ -13,6 +14,21 @@
     }
     &--top {
       padding: 100px 0 60px;
+      @include media('<sm') {
+        padding: 40px 0 40px;
+      }
+      .cs--social {
+        &-item {
+          a {
+            --icon-size: 40px;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            @include media('<sm') {
+              --icon-size: 25px;
+            }
+          }
+        }
+      }
     }
   }
   &__content {
@@ -38,6 +54,9 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px 10px;
     padding-top: 10px;
+    @include media('<md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
     @include media('<sm') {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -47,15 +66,24 @@
       font-weight: 700;
       font-family: var(--font-secondary);
       text-transform: uppercase;
+      @include media('<xs') {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
     }
   }
   &__menu-list {
     @extend %listreset;
   }
   &__menu-item {
-    color: var(--color-grey-15);
-    font-size: 14px;
-    font-family: var(--font-secondary);
-    line-height: 1.8;
+    &-link {
+      color: var(--color-grey-15);
+      font-size: 14px;
+      font-family: var(--font-secondary);
+      line-height: 1.8;
+      @include media('<xs') {
+        font-size: 12px;
+      }
+    }
   }
 }

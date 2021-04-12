@@ -1,5 +1,11 @@
 .cs--page {
   position: relative;
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+  }
   &__bg {
     position: absolute;
     top: 0;

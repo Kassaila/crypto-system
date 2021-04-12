@@ -1,5 +1,5 @@
 {%
-    set links = [
+    set regFormList = [
       {
         'title': 'Registration - Create account',
         'href': 'registration-create-account.html'
@@ -21,7 +21,13 @@
       }, {
         'title': 'Registration - Reset Google Authenticator - 2',
         'href': 'registration-reset-auth-2.html'
-      }, {
+      }
+    ]
+  %}
+
+  {%
+    set landingList = [
+      {
         'title': 'Landing',
         'href': 'landing.html'
       }, {
@@ -30,6 +36,18 @@
       }, {
         'title': 'Contact Us',
         'href': 'contact-us.html'
+      }
+    ]
+  %}
+
+  {%
+    set dashboardList = [
+      {
+        'title': 'Coming Soon',
+        'href': 'dashboard-coming-soon.html'
+      }, {
+        'title': 'FAQ',
+        'href': 'dashboard-faq.html'
       }
     ]
   %}
@@ -49,11 +67,28 @@
 
   <body>
     <main style="padding: 20px 30px;">
-      <h1>Pages list:</h1>
+      <h1>Pages lists:</h1>
+      <h2>Registration pages:</h2>
       <ul>
-        {% for link in links %}
+        {% for item in regFormList %}
           <li style="margin-bottom: 10px;">
-            <a href="{{ link.href }}">{{ link.title }}</a>
+            <a href="{{ item.href }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <h2>Landing pages:</h2>
+      <ul>
+        {% for item in landingList %}
+          <li style="margin-bottom: 10px;">
+            <a href="{{ item.href }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <h2>Dashboard pages:</h2>
+      <ul>
+        {% for item in dashboardList %}
+          <li style="margin-bottom: 10px;">
+            <a href="{{ item.href }}">{{ item.title }}</a>
           </li>
         {% endfor %}
       </ul>

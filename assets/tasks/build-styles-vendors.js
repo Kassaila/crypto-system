@@ -2,18 +2,25 @@
  * Build styles for vendor from SASS
  */
 
+const env = require('../helpers/env');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssimport = require('postcss-import');
+const cssnano = require('cssnano');
 
 const notifier = require('../helpers/notifier');
 const global = require('../gulp-config.js');
 
+env({ path: process.env.DOTENV_CONFIG_PATH });
 sass.compiler = require('sass');
 
 module.exports = function () {
   const plugins = [cssimport()];
+
+  if (process.env.NODE_ENV === 'production') {
+    plugins.push(cssnano());
+  }
 
   return (done) =>
     gulp

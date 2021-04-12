@@ -20,12 +20,13 @@
   }
   &__title {
     margin-bottom: 50px;
-    font-size: 800;
+    font-weight: 800;
     font-size: 48px;
     @include media('<md') {
       font-size: 40px;
     }
     @include media('<xs') {
+      margin-bottom: 30px;
       font-size: 32px;
     }
   }
@@ -34,6 +35,9 @@
     font-weight: 700;
     font-size: 24px;
     font-family: var(--font-secondary);
+    @include media('<xs') {
+      font-size: 20px;
+    }
   }
   &__map {
     position: relative;
@@ -59,13 +63,21 @@
         margin-bottom: 20px;
       }
       &__icon-holder {
+        display: flex;
         flex-shrink: 0;
         margin-right: 25px;
+        @include media('<xs') {
+          width: 40px;
+          margin-right: 20px;
+        }
       }
       & > * {
         font-style: normal;
         font-size: 18px;
         font-family: var(--font-secondary);
+        @include media('<xs') {
+          font-size: 14px;
+        }
       }
       a {
         font-weight: 700;

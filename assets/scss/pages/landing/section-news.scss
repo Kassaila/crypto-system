@@ -1,6 +1,9 @@
 .cs--landing {
   &-news {
     padding: 50px 0 140px;
+    @include media('<sm') {
+      padding: 50px 0 60px;
+    }
     &__title {
       margin-bottom: 30px;
       font-weight: 800;

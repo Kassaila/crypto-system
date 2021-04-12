@@ -1,0 +1,79 @@
+.cs--dashboard-footer {
+  --container-padding: 25px;
+  padding: 40px 0 50px;
+  margin-top: auto;
+  background-color: var(--color-blue-90);
+  @include media('<xs') {
+    --container-padding: 15px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 460px 1fr;
+    grid-gap: 30px 60px;
+    @include media('<xlg') {
+      grid-template-columns: 350px 1fr;
+    }
+    @include media('<lg') {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__company {
+    color: var(--color-grey-30);
+    font-size: 9px;
+    font-family: var(--font-secondary);
+    line-height: 1.8;
+    .cs--logo {
+      margin-bottom: 10px;
+    }
+  }
+  &__menu-group {
+    @extend %listreset;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding-top: 10px;
+    @include media('<sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media('<xs') {
+      grid-template-columns: 1fr;
+    }
+    &-title {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-weight: 600;
+      @include media('<xs') {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+  &__menu-list {
+    @extend %listreset;
+    column-count: 2;
+  }
+  &__menu-item {
+    &-link {
+      color: var(--color-grey-30);
+      font-size: 14px;
+      font-family: var(--font-secondary);
+      line-height: 1.8;
+      @include media('<xs') {
+        font-size: 12px;
+      }
+    }
+  }
+  .cs--social {
+    &-item {
+      a {
+        --icon-size: 32px;
+        --icon-color: var(--color-grey-15);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        @include media('<sm') {
+          --icon-size: 25px;
+        }
+      }
+    }
+  }
+}

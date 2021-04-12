@@ -2,8 +2,8 @@
   &-acquaintance {
     padding: 158px 0 125px;
     @include media('<md') {
-        padding: 60px 0;
-      }
+      padding: 60px 0;
+    }
     &__wrapper {
       display: grid;
       grid-template-columns: 500px 1fr;
@@ -49,6 +49,11 @@
       padding: 0 170px 0 190px;
       @include media('<xlg') {
         padding: 0 var(--container-padding);
+      }
+    }
+    .cs--circle-blocks-wrapper {
+      @include media('<md') {
+        display: none;
       }
     }
   }

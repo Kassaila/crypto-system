@@ -16,8 +16,8 @@
     }
   }
   &-item {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: auto 1fr;
     overflow: hidden;
     border-radius: 10px;
     background-color: var(--color-blue-90);
