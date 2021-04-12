@@ -13,20 +13,22 @@
   </head>
   <body>
     <div class="cs--preloader" data-preloader></div>
-    {% include './partials/components/landing/header.njk' %}
-    <main class="cs--page cs--dashboard--coming-soon">
-      <section class="cs--section">
-        <div class="cs--container">
-          <div class="cs--dashboard--coming-soon__content">
-            <div class="cs--dashboard--coming-soon__decor">
-              <img src="./img/coming-soon-img.svg" alt="">
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--coming-soon">
+        <section class="cs--section">
+          <div class="cs--container">
+            <div class="cs--dashboard--coming-soon__content">
+              <div class="cs--dashboard--coming-soon__decor">
+                <img src="./img/coming-soon-img.svg" alt="">
+              </div>
+              <h1 class="cs--dashboard--coming-soon__title">Coming Soon!</h1>
             </div>
-            <h1 class="cs--dashboard--coming-soon__title">Coming Soon!</h1>
           </div>
-        </div>
-      </section>
-    </main>
-    {% include './partials/components/dashboard/footer.njk' %}
+        </section>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
     {% include './partials/scripts/common.njk' %}
   </body>
 </html>

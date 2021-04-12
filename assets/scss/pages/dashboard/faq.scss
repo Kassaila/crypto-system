@@ -1,0 +1,16 @@
+.cs--dashboard--faq {
+  padding: 65px 0 40px;
+  @include media('<sm') {
+    padding: 40px 0 40px;
+  }
+  &__title {
+    margin-bottom: 25px;
+    font-size: 22px;
+  }
+  .cs--container {
+    padding: 0 195px 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--container-padding);
+    }
+  }
+}

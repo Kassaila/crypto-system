@@ -13,17 +13,19 @@
   </head>
   <body>
     <div class="cs--preloader" data-preloader></div>
-    {% include './partials/components/landing/header.njk' %}
-    <main class="cs--page cs--page--landing">
-      {% include './partials/sections/landing/hero.njk' %}
-      {% include './partials/sections/landing/acquaintance.njk' %}
-      {% include './partials/sections/landing/benefits.njk' %}
-      {% include './partials/sections/landing/showreal.njk' %}
-      {% include './partials/sections/landing/questions.njk' %}
-      {% include './partials/sections/landing/news.njk' %}
-      {% include './partials/sections/landing/bring-trading.njk' %}
-    </main>
-    {% include './partials/components/landing/footer.njk' %}
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--page--landing">
+        {% include './partials/sections/landing/hero.njk' %}
+        {% include './partials/sections/landing/acquaintance.njk' %}
+        {% include './partials/sections/landing/benefits.njk' %}
+        {% include './partials/sections/landing/showreal.njk' %}
+        {% include './partials/sections/landing/questions.njk' %}
+        {% include './partials/sections/landing/news.njk' %}
+        {% include './partials/sections/landing/bring-trading.njk' %}
+      </main>
+      {% include './partials/components/landing/footer.njk' %}
+    </div>
     {% include './partials/scripts/common.njk' %}
   </body>
 </html>

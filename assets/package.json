@@ -76,7 +76,7 @@
     "format": "npx prettier --write --ignore-unknown",
     "dev": "npx gulp",
     "test": "npx gulp build --log-level -LLLL",
-    "build": "npx cross-env NODE_ENV=production npx gulp build",
+    "build": "npx cross-env NODE_ENV=production npx gulp build && npm run format ../public/**/*.html",
     "lint-html": "npx gulp lint-html",
     "lint-styles": "npx gulp lint-styles",
     "lint-js": "npx gulp lint-js",

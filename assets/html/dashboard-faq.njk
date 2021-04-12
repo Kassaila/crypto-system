@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - FAQ</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/details-list.njk" import detailsList %}
+
+  {%
+    set textList = [
+        'Quadency is a professional cryptocurrency trading terminal. By securely connecting with all major exchanges, you can trade from one place. Exchange accounts can be connected to Quadency using API keys. To learn more about how API keys work, click here.',
+        'Assets in your offline wallets (hardware, software, paper etc) such as Trezor, Ledger and MyEtherWallet can also be monitored by entering transaction manually. Automatic tracking of all major wallets and DeFi investments is coming soon!'
+      ]
+  %}
+
+  {% set itemList = [
+    {
+      'summary': 'How does it work?',
+      'textList': textList
+    }, {
+      'summary': 'What are bots?',
+      'textList': textList
+    }, {
+      'summary': 'Which exchanges are supported?',
+      'textList': textList
+    }, {
+      'summary': 'Is it secure?',
+      'textList': textList
+    }, {
+      'summary': 'How much does it cost, are there any transactions fees?',
+      'textList': textList
+    }, {
+      'summary': 'Is there a referral or affiliate program?',
+      'textList': textList
+    }
+  ] %}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--faq">
+        <section class="cs--section">
+          <div class="cs--container">
+            <h1 class="cs--dashboard--faq__title">Frequenty Asked Questions</h1>
+            {{ detailsList(itemList) }}
+          </div>
+        </section>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>

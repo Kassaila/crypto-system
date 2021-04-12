@@ -36,46 +36,48 @@
 
   <body>
     <div class="cs--preloader" data-preloader></div>
-    {% include './partials/components/landing/header.njk' %}
-    <main class="cs--page">
-      <section class="cs--section cs--landing-contact-us">
-        <div class="cs--container">
-          <div class="cs--landing-contact-us__wrapper">
-            <div class="cs--landing-contact-us__content">
-              <h1 class="cs--landing-contact-us__title">Contact Us</h1>
-              <p class="cs--landing-contact-us__subtitle">Want to get in touch?</p>
-              <ul class="cs--contacts-list">
-                <li class="cs--contacts-item">
-                  <div class="cs--contacts-item__icon-holder">
-                    <img src="./img/social/contacts-location.svg" alt="">
-                  </div>
-                  <address>
-                    <b>CryptoSystem</b><br>Spruss srt 18, 13211, New York, USA</address>
-                </li>
-                <li class="cs--contacts-item">
-                  <div class="cs--contacts-item__icon-holder">
-                    <img src="./img/social/contacts-mail.svg" alt="">
-                  </div>
-                  <a href="mailto:support@cryprosystem.com">support@cryprosystem.com</a>
-                </li>
-                <li class="cs--contacts-item">
-                  <div class="cs--contacts-item__icon-holder">
-                    <img src="./img/social/contacts-telegram.svg" alt="">
-                  </div>
-                  <a href="https://t.me/cryptosystem">https://t.me/cryptosystem</a>
-                </li>
-              </ul>
-              <p class="cs--landing-contact-us__subtitle">Be a part of our community</p>
-              {{ socialList(socItemList) }}
-            </div>
-            <div class="cs--landing-contact-us__map">
-              <img src="./img/examples/contact-map.jpg" alt="">
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page">
+        <section class="cs--section cs--landing-contact-us">
+          <div class="cs--container">
+            <div class="cs--landing-contact-us__wrapper">
+              <div class="cs--landing-contact-us__content">
+                <h1 class="cs--landing-contact-us__title">Contact Us</h1>
+                <p class="cs--landing-contact-us__subtitle">Want to get in touch?</p>
+                <ul class="cs--contacts-list">
+                  <li class="cs--contacts-item">
+                    <div class="cs--contacts-item__icon-holder">
+                      <img src="./img/social/contacts-location.svg" alt="">
+                    </div>
+                    <address>
+                      <b>CryptoSystem</b><br>Spruss srt 18, 13211, New York, USA</address>
+                  </li>
+                  <li class="cs--contacts-item">
+                    <div class="cs--contacts-item__icon-holder">
+                      <img src="./img/social/contacts-mail.svg" alt="">
+                    </div>
+                    <a href="mailto:support@cryprosystem.com">support@cryprosystem.com</a>
+                  </li>
+                  <li class="cs--contacts-item">
+                    <div class="cs--contacts-item__icon-holder">
+                      <img src="./img/social/contacts-telegram.svg" alt="">
+                    </div>
+                    <a href="https://t.me/cryptosystem">https://t.me/cryptosystem</a>
+                  </li>
+                </ul>
+                <p class="cs--landing-contact-us__subtitle">Be a part of our community</p>
+                {{ socialList(socItemList) }}
+              </div>
+              <div class="cs--landing-contact-us__map">
+                <img src="./img/examples/contact-map.jpg" alt="">
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-    {% include './partials/components/landing/footer.njk' %}
+        </section>
+      </main>
+      {% include './partials/components/landing/footer.njk' %}
+    </div>
     {% include './partials/scripts/common.njk' %}
   </body>
 </html>
