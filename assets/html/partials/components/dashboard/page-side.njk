@@ -1,0 +1,12 @@
+{% macro pageSide(side) %}
+  <aside class="cs--page-side">
+    <h3 class="cs--page-side__title">{{ side.title }}</h3>
+    {% for item in side.itemList %}
+      <ul class="cs--page-side__item-list">
+        <li class="cs--page-side__item">
+          <a href="item.link" class="cs--page-side__link">{{ item.title }}</a>
+        </li>
+      </ul>
+    {% endfor %}
+  </aside>
+{% endmacro %}
