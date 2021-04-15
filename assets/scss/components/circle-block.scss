@@ -10,9 +10,9 @@
   height: 100%;
   border: 1px dashed var(--color-blue-40);
   border-radius: 50%;
-   @include media('<xs') {
-      grid-gap: 20px;
-    }
+  @include media('<xs') {
+    grid-gap: 20px;
+  }
   &:before,
   &:after {
     content: '';

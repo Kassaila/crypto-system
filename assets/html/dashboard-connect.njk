@@ -13,6 +13,39 @@
   </head>
   {% from "./partials/components/dashboard/page-side.njk" import pageSide %}
 
+  {%
+    set side = {
+      'title': 'FAQs',
+      'itemList': [
+        {
+          'title': 'I don’t have an exchange account, do I need one?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Are there any additional fees for trading with CryprtoSystem platform?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'My exchange is not supported, how can I request it?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Are derivatives such as futures and perpetual swaps supported?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'How can I connect my wallets such as MetaMask, Trezor, or Ledger etc?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Visit Support Center',
+          'link': 'javasript:void(0)',
+          'accent': true
+        }
+      ]
+    }
+  %}
+
   <body>
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
@@ -20,9 +53,23 @@
       <main class="cs--page cs--dashboard--connect">
         <div class="cs--container">
           <h1 class="cs--page__title">Connect your Binance US Account</h1>
+          <p class="cs--page__sub-title">A secure connection with your exchange account is established using API keys. To learn more about how API keys work, click here.</p>
           <div class="cs--page-side-wrapper">
-            <form>
-
+            <form class="cs--dashboard-form">
+              <h2 class="cs--dashboard-form__title">Enter your API Key for Binance US</h2>
+              <div class="cs--dashboard-form__item">
+                <label for="" class="cs--dashboard-form__label">Api Key</label>
+                <input type="password" class="cs--dashboard-form__input">
+              </div>
+              <div class="cs--dashboard-form__item">
+                <label for="" class="cs--dashboard-form__label">Secret Key</label>
+                <input type="password" class="cs--dashboard-form__input">
+              </div>
+              <div class="cs--dashboard-form__item">
+                <label for="" class="cs--dashboard-form__label">Account Lable</label>
+                <input type="text" class="cs--dashboard-form__input">
+              </div>
+              <button type="submit" class="cs--btn cs--btn-grad-blue">Connect</button>
             </form>
             {{ pageSide(side) }}
           </div>
