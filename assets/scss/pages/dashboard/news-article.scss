@@ -1,15 +1,16 @@
 .cs--dashboard--news-article {
   padding: 40px 0;
-  &__title {
+  .cs--page__title {
     margin-bottom: 20px;
     margin-left: 20px;
-    font-weight: 700;
-    font-size: 22px;
   }
   .cs--article {
     margin-left: 20px;
     @include media('<xlg') {
       margin-left: 0;
     }
+  }
+  .cs--page-side {
+    margin-top: 30px;
   }
 }
