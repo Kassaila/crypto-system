@@ -51,7 +51,6 @@
   }
   &-item {
     background-color: var(--color-blue-90);
-    @include animate(background-color);
     &[open] {
       background-color: var(--color-blue-70);
       .cs--details-summary {

@@ -6,21 +6,20 @@
     align-items: flex-end;
     margin-bottom: 20px;
   }
-  &__title {
+  .cs--page__title {
     margin-right: 10px;
     margin-bottom: 0;
-    font-weight: 700;
-    font-size: 22px;
     @include media('<xlg') {
       margin-bottom: 20px;
     }
   }
   .cs--container {
-    padding-right: 45px;
-    padding-left: 105px;
+    padding: 0 45px 0 105px;
     @include media('<xlg') {
-      padding-right: var(--container-padding);
-      padding-left: var(--container-padding);
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
     }
   }
   .cs--card-list {

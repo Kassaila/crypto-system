@@ -1,8 +1,36 @@
 .cs--dashboard-form {
   padding: 25px 35px 50px;
   background-color: var(--color-blue-85);
+  box-shadow: 0px 0px 30px hsla(209, 62%, 32%, 0.15);
   &__title {
     font-weight: 700;
     font-size: 14px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    & + .cs--dashboard-form__item {
+      margin-top: 15px;
+    }
+    & + .cs--btn {
+      margin-top: 40px;
+    }
+  }
+  &__label {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  &__input {
+    padding: 10px 20px;
+    border: 1px solid var(--color-grey-blue-10);
+    border-radius: 3px;
+    background-color: transparent;
+    color: var(--color-white);
+    font-size: 14px;
+  }
+  .cs--btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 12px;
   }
 }
