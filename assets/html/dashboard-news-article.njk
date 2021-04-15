@@ -19,28 +19,44 @@
       'itemList': [
         {
           'title': 'What is 2FA?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'How do I link an exchange?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'Can I create a new exchange account through CryptoSystem?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'What are exchange APIs?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'Do you offer a referral rewards program?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'Can I deposit or withdraw assets from CryptoSystem?',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': false
         }, {
           'title': 'Visit Support Center',
-          'link': 'javasript:void(0)'
+          'link': 'javasript:void(0)',
+          'accent': true
         }
       ]
     }
+  %}
+
+  {%
+    set articleList = [
+      'Mattis vitae gravida eget metus quis enim.',
+      'Etiam blandit nulla ultricies nec, id natoque malesuada.',
+      'Cursus nunc, porta et in tempor nisl, justo.',
+      'Velit, tincidunt velit quis est.'
+    ]
   %}
 
   <body>
@@ -53,18 +69,30 @@
           <div class="cs--page-side-wrapper">
             <article class="cs--article">
               <div class="cs--article__content">
-                <img src="./img/examples/article-img-1.jpg" alt="">
+                <div class="cs--article__img-crop">
+                  <img src="./img/examples/article-img-1.jpg" alt="">
+                </div>
+                <div class="cs--article__meta">
+                  <span>MARCH 17, 2021</span>
+                </div>
                 <h2>Sit sit suscipit felis sit vel. Morbi scelerisque pellentesque eget tincidunt. Tempor feugiat sed odio lorem hendrerit venenatis volutpat, feugiat.</h2>
                 <p>Feugiat ut phasellus sagittis, vel tincidunt. Neque viverra dui neque, morbi quam senectus aliquet. Habitasse faucibus nam non ultrices elementum. Aliquet phasellus felis gravida donec risus mattis. Semper nulla faucibus in eget. Nunc tempus mattis arcu pharetra blandit praesent pellentesque. Placerat velit urna imperdiet imperdiet mus nec.</p>
                 <p>Viverra cras ut duis placerat eget accumsan. Lacus duis arcu sed urna quisque nisl. Aliquet molestie ultricies metus sollicitudin felis. Vitae mauris adipiscing a pretium elementum amet tincidunt sociis tortor. Sit enim id cursus fermentum libero. In faucibus elit nisl ultricies sit volutpat. Sagittis id etiam vitae arcu. Diam sem amet, purus risus nunc nulla risus. Nec ac nullam magna nulla enim mauris, nulla eu.</p>
                 <p>Adipiscing integer turpis accumsan in. Dignissim nisi, faucibus praesent augue amet volutpat id leo. Ac faucibus odio semper vitae posuere adipiscing dolor ultrices. Volutpat pellentesque tellus, varius quisque. Nulla id urna faucibus rutrum ullamcorper tempor, quam nibh tristique. In dolor a sit neque. Hendrerit cras tempus lectus purus rhoncus. Malesuada a, semper tortor rhoncus pretium lectus. Eu, purus laoreet id eu:</p>
                 <ul>
-                  <li></li>
+                  {% for text in articleList %}
+                    <li>{{ text }}</li>
+                  {% endfor %}
                 </ul>
                 <p>Neque, consequat sed sed tincidunt ut. Condimentum pharetra ut tristique sit. Facilisi viverra ullamcorper sit mi vulputate purus. Facilisi sit lectus urna scelerisque tortor. Scelerisque a, ac morbi scelerisque. Sem nunc suscipit sed pretium neque. Cras at sit dignissim turpis bibendum nulla. Cursus dapibus sociis adipiscing et eu eget. Quis eros urna nibh ac magna odio faucibus quisque. Feugiat diam tellus nisl faucibus dolor tellus id facilisis ac. Elementum ipsum proin nulla vitae faucibus interdum. Suspendisse a, massa, morbi diam cursus quis. Dolor, ultrices tortor blandit cursus aliquet sed posuere convallis euismod. Tristique turpis accumsan, dolor libero, egestas. Turpis eu ornare non facilisi at. Lectus varius nullam pharetra, odio pretium viverra orci faucibus.</p>
                 <img src="./img/examples/article-img-2.jpg" alt="">
                 <blockquote>Leo quis ac egestas vulputate. Cras nisl vulputate erat eu. Bibendum sit egestas cursus aliquam. Ornare semper vel tincidunt volutpat amet, ut convallis. Phasellus ullamcorper erat sit senectus molestie malesuada malesuada gravida lacus. Faucibus tempus eu ultricies donec quis et sed. Neque viverra gravida mattis nulla neque. Dictum vel ornare et nulla tempor, nullam. Ultricies sodales ut nullam neque, orci amet nisl fermentum mauris. Id nulla blandit nunc amet, sed viverra.</blockquote>
                 <p>Sed aenean sollicitudin quam a vestibulum justo diam varius velit. Fringilla elementum est aliquam nunc feugiat. Justo, tempus morbi pellentesque adipiscing duis in cursus eget mollis. Ut id molestie leo, vitae arcu integer. Cursus molestie sit egestas nibh proin eleifend magna volutpat integer. Urna maecenas nullam aenean dignissim aenean. Consectetur elit in sit tellus bibendum ornare quam. At risus auctor id felis. Cum sed pharetra venenatis morbi vel eget eget nisl. Felis dui id donec feugiat semper tempor.</p>
+                <ol>
+                  {% for text in articleList %}
+                    <li>{{ text }}</li>
+                  {% endfor %}
+                </ol>
                 <p>Nunc neque et amet vel magna vel. Donec mattis felis praesent gravida diam mauris, tristique. Est, sollicitudin dictum malesuada nisi imperdiet vivamus in quam tortor. Velit aliquet proin praesent enim tellus laoreet morbi vitae. Eleifend molestie scelerisque in fringilla massa neque fermentum est. Tortor euismod porttitor dolor lobortis a sed sed. Risus quam sed faucibus tempor sapien tincidunt. Vestibulum, diam cursus leo, mauris lectus ultricies lacinia. Id sit sodales in elit adipiscing diam et, iaculis eget. Eget scelerisque tincidunt molestie id consequat. Lectus morbi a amet senectus orci lectus vitae, aenean mauris. Hendrerit sed molestie dignissim et convallis vitae enim tempor. Morbi id etiam eget hendrerit velit lacus, amet elit amet. Sit nam porttitor volutpat ultricies egestas feugiat. Lectus ut porta eu fringilla morbi.</p>
               </div>
               <div class="cs--article__nav">

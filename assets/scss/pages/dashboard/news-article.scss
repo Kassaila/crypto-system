@@ -8,5 +8,8 @@
   }
   .cs--article {
     margin-left: 20px;
+    @include media('<xlg') {
+      margin-left: 0;
+    }
   }
 }
