@@ -69,24 +69,31 @@ $media-expressions: (
   --color-grey-70: hsl(0, 0%, 45%);
   --color-grey-80: hsl(0, 0%, 40%);
   --color-grey-100: hsl(0, 0%, 13%);
+  --color-light-blue-50: hsl(206, 78%, 78%);
   --color-blue: hsl(210, 100%, 60%);
   --color-blue-10: hsl(195, 100%, 49%);
   --color-blue-20: hsl(197, 100%, 48%);
   --color-blue-30: hsl(200, 100%, 48%);
   --color-blue-40: hsl(209, 100%, 47%);
+  --color-blue-50: hsl(221, 63%, 22%);
   --color-blue-60: hsl(221, 83%, 18%);
   --color-blue-70: hsl(221, 90%, 15%);
   --color-blue-80: hsl(221, 93%, 12%);
+   --color-blue-85: hsl(221, 92%, 10%);
   --color-blue-90: hsl(220, 92%, 10%);
   --color-blue-100: hsl(222, 89%, 7%);
+  --color-grey-blue-10: hsl(223, 21%, 28%);
+  --color-grey-blue-50: hsl(220, 1%, 51%);
   --color-orange-30: hsl(25, 98%, 62%);
   --color-orange-50: hsl(22, 90%, 59%);
-  // --c: #021131;
+  --color-green-30: hsl(140, 81%, 40%);
+  // --c: #F57D38;
 
   --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
   --grad-orange: linear-gradient(271.95deg, #fb7e37 14.29%, #ff9a44 98.96%);
   --grad-orange-10: linear-gradient(53.13deg, #c07945 3.66%, #fa7e37 92.94%);
   --grad-orange-20: linear-gradient(90deg, #f83600 0%, #f9d423 100%);
+  --radial-blue: radial-gradient(123.22% 129.67% at 100.89% -5.6%, #02143b 0%, #01123a 100%);
 
   // Fonts
   --font-sans-serif: 'Montserrat', Helvetica, sans-serif;

@@ -1,0 +1,50 @@
+.cs--dashboard--news {
+  padding: 20px 0 30px;
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 22px;
+    @include media('<xlg') {
+      margin-bottom: 20px;
+    }
+  }
+  .cs--container {
+    padding-right: 45px;
+    padding-left: 105px;
+    @include media('<xlg') {
+      padding-right: var(--container-padding);
+      padding-left: var(--container-padding);
+    }
+  }
+  .cs--card-list {
+    --card-list-columns: 5;
+    grid-gap: 25px;
+    @include media('<xlg') {
+      --card-list-columns: 4;
+    }
+    @include media('<md') {
+      --card-list-columns: 3;
+    }
+    @include media('<sm') {
+      --card-list-columns: 2;
+      grid-gap: 20px;
+    }
+    @include media('<xs') {
+      --card-list-columns: 1;
+    }
+  }
+  .cs--card-item__content {
+    padding: 15px 20px 20px;
+  }
+  .cs--card-item__title {
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+}

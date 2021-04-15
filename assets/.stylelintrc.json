@@ -24,6 +24,8 @@
       "rules"
     ],
     "order/properties-order": [
+      "counter-increment",
+      "counter-reset",
       "content",
       "position",
       "top",
@@ -178,8 +180,6 @@
       "line-height",
       "letter-spacing",
       "quotes",
-      "counter-increment",
-      "counter-reset",
       "-ms-writing-mode",
       "text-align",
       "text-align-last",

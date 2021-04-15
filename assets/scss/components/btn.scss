@@ -27,13 +27,17 @@
       position: absolute;
       top: 50%;
       left: 0;
-      z-index: -1;
+      z-index: 0;
       width: 100%;
       height: 50%;
       background-image: var(--grad-blue);
       filter: blur(50px);
       transform: translateY(-50%);
       @include animate(filter);
+    }
+    & > * {
+      position: relative;
+      z-index: 1;
     }
   }
   &-transparent-grad-blue {
