@@ -12,6 +12,7 @@
     {% include './partials/head/common.njk' %}
   </head>
   {% from "./partials/components/dashboard/page-side.njk" import pageSide %}
+  {% from "./partials/components/dashboard/input.njk" import dashInput %}
 
   {%
     set side = {
@@ -46,6 +47,27 @@
     }
   %}
 
+  {%
+    set inputList = [
+      {
+        'title': 'Api Key',
+        'id': 'dashboard--api-key',
+        'type': 'password',
+        'placeholder': '*****'
+      }, {
+        'title': 'Secret Key',
+        'id': 'dashboard--secret-key',
+        'type': 'password',
+        'placeholder': '*****'
+      }, {
+        'title': 'Account Lable',
+        'id': 'dashboard--account-lable',
+        'type': 'text',
+        'placeholder': 'Label'
+      }
+    ]
+  %}
+
   <body>
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
@@ -57,18 +79,9 @@
           <div class="cs--page-side-wrapper">
             <form class="cs--dashboard-form">
               <h2 class="cs--dashboard-form__title">Enter your API Key for Binance US</h2>
-              <div class="cs--dashboard-form__item">
-                <label for="" class="cs--dashboard-form__label">Api Key</label>
-                <input type="password" class="cs--dashboard-form__input">
-              </div>
-              <div class="cs--dashboard-form__item">
-                <label for="" class="cs--dashboard-form__label">Secret Key</label>
-                <input type="password" class="cs--dashboard-form__input">
-              </div>
-              <div class="cs--dashboard-form__item">
-                <label for="" class="cs--dashboard-form__label">Account Lable</label>
-                <input type="text" class="cs--dashboard-form__input">
-              </div>
+              {% for input in inputList %}
+                {{ dashInput(input) }}
+              {% endfor %}
               <button type="submit" class="cs--btn cs--btn-grad-blue">Connect</button>
             </form>
             {{ pageSide(side) }}

@@ -1,0 +1,23 @@
+{% macro dashInput(item) %}
+  <div class="cs--dashboard-form__item">
+    <label for="{{ item.id }}" class="cs--dashboard-form__label">{{ item.title }}</label>
+    {% if item.type == 'textarea' %}
+      <textarea id="{{ item.id }}" class="cs--dashboard-form__input" placeholder="{{ item.placeholder }}"></textarea>
+    {% elif item.type == 'select' %}
+      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input' if item.valid }} {{ 'cs--dashboard-form__input--arrow' if item.type == 'select' }}">
+        <select id="{{ item.id }}" class="cs--dashboard-form__input" required>
+          {% if item.placeholder %}
+            <option value="" disabled selected hidden>{{ item.placeholder }}</option>
+          {% endif %}
+          {% for option in item.optionList %}
+            <option value="{{ option.value }}">{{ option.text }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% else %}
+      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input--success' if item.valid }}">
+        <input id="{{ item.id }}" type="{{ item.type }}" class="cs--dashboard-form__input" placeholder="{{ item.placeholder }}">
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

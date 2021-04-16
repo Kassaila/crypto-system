@@ -21,16 +21,60 @@
     font-size: 12px;
   }
   &__input {
+    width: 100%;
     padding: 10px 20px;
     border: 1px solid var(--color-grey-blue-10);
     border-radius: 3px;
     background-color: transparent;
     color: var(--color-white);
     font-size: 14px;
+    &-wrapper {
+      --side-padding: 15px;
+      --arrow-size: 6px;
+      position: relative;
+    }
+    &--arrow {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: var(--side-padding);
+        z-index: 1;
+        width: var(--arrow-size);
+        height: var(--arrow-size);
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: #0096f3;
+        pointer-events: none;
+        transform: translateY(-50%) rotateZ(135deg);
+      }
+    }
+    &--success {
+      --valid-size: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: var(--side-padding);
+        width: var(--valid-size);
+        height: var(--valid-size);
+        background: url('/img/icon/dash-input_success.svg') center / contain no-repeat;
+        transform: translateY(-50%);
+      }
+    }
   }
   .cs--btn {
     padding-top: 12px;
     padding-bottom: 12px;
     font-size: 12px;
   }
+}
+select.cs--dashboard-form__input {
+  padding: 10px var(--side-padding);
+  &:invalid {
+    color: var(--placeholder-color);
+  }
+}
+textarea.cs--dashboard-form__input {
+  min-height: 100px;
 }
