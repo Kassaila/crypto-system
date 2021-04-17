@@ -22,21 +22,7 @@
   }
   .cs--dashboard-form {
     &__title {
-      --marker-size: 12px;
-      position: relative;
-      padding-left: 20px;
       margin-bottom: 30px;
-      &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: var(--marker-size);
-        height: var(--marker-size);
-        border-radius: 50%;
-        background-color: var(--color-orange-50);
-        transform: translateY(-50%);
-      }
     }
     .cs--btn {
       padding-right: 47px;
