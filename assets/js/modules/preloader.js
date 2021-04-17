@@ -1,5 +1,5 @@
 function preloading() {
-  const preloader = document.querySelector('[data-preloader');
+  const preloader = document.querySelector('[data-preloader]');
 
   if (!preloader) return;
 

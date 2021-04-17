@@ -10,6 +10,11 @@
     font-weight: 700;
     font-size: 22px;
   }
+  &__content {
+    &--accent {
+      color: var(--color-orange-50);
+    }
+  }
   &__bg {
     position: absolute;
     top: 0;

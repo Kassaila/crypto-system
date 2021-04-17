@@ -1,4 +1,6 @@
 .cs--dashboard-form {
+  display: flex;
+  flex-direction: column;
   padding: 25px 35px 50px;
   background-color: var(--color-blue-85);
   box-shadow: 0px 0px 30px hsla(209, 62%, 32%, 0.15);
@@ -6,15 +8,32 @@
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 14px;
+    &--mark {
+      --marker-size: 12px;
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: var(--marker-size);
+        height: var(--marker-size);
+        border-radius: 50%;
+        background-color: var(--color-orange-50);
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &__sub-title {
+    margin-bottom: 40px;
+    font-size: 12px;
   }
   &__item {
     display: flex;
     flex-direction: column;
     & + .cs--dashboard-form__item {
       margin-top: 15px;
-    }
-    & + .cs--btn {
-      margin-top: 40px;
     }
   }
   &__label {
@@ -31,6 +50,11 @@
       }
     }
   }
+  &__input-wrapper {
+    --side-padding: 15px;
+    --arrow-size: 6px;
+    position: relative;
+  }
   &__input {
     width: 100%;
     padding: 10px 20px;
@@ -46,11 +70,6 @@
           opacity: 1;
         }
       }
-    }
-    &-wrapper {
-      --side-padding: 15px;
-      --arrow-size: 6px;
-      position: relative;
     }
     &--arrow {
       &:after {
@@ -110,6 +129,114 @@
         background-color: #0096f3;
         opacity: 0;
       }
+    }
+  }
+  &__btn-group {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    .cs--btn {
+      @include media('<sm') {
+        width: auto;
+        padding: 8px 16px;
+        border-radius: 25px;
+      }
+    }
+  }
+  &__market-group {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    align-self: center;
+    padding: 80px 0;
+    @include media('<sm') {
+      grid-template-columns: 1fr;
+      padding: 40px 0;
+    }
+    & > * {
+      display: flex;
+      @include animate(box-shadow);
+      @include media('hover') {
+        &:hover {
+          box-shadow: 0px 0px 20px rgba(31, 83, 132, 0.7);
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__qr {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 144px 1fr;
+      grid-gap: 60px;
+      padding: 30px 0 40px;
+      @include media('<lg') {
+        grid-gap: 30px;
+      }
+      @include media('<sm') {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+    }
+    &-code {
+      --qr-code-width: 100%;
+      position: relative;
+      flex-shrink: 0;
+      place-self: center;
+      width: var(--qr-code-width);
+      padding-bottom: var(--qr-code-width);
+      @include media('<sm') {
+        --qr-code-width: 50%;
+      }
+      @include media('<xs') {
+        --qr-code-width: 75%;
+      }
+      & > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-content {
+      align-self: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    &-text {
+      margin-bottom: 20px;
+      font-weight: 12px;
+    }
+  }
+  &__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 110px 0 20px;
+    @include media('<sm') {
+      padding: 40px 0 20px;
+    }
+    &-img {
+      margin-bottom: 30px;
+    }
+    &-title {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 36px;
+      text-align: center;
+      @include media('<sm') {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+    }
+    &-text {
+      max-width: 400px;
+      font-size: 12px;
+      text-align: center;
     }
   }
   .cs--btn {

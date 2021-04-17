@@ -37,9 +37,6 @@
     @include media('<xs') {
       font-size: 32px;
     }
-    &--accent {
-      color: var(--color-orange-30);
-    }
     & > * {
       width: 100%;
     }

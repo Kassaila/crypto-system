@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CryptoSystem - Connect</title>
+    <title>CryptoSystem - 2FA - Step 1</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
@@ -12,30 +12,33 @@
     {% include './partials/head/common.njk' %}
   </head>
   {% from "./partials/components/dashboard/page-side.njk" import pageSide %}
-  {% from "./partials/components/dashboard/input.njk" import dashInput %}
 
   {%
     set side = {
       'title': 'FAQs',
       'itemList': [
         {
-          'title': 'I don’t have an exchange account, do I need one?',
+          'title': 'What is 2FA?',
           'link': 'javasript:void(0)',
           'accent': false
         }, {
-          'title': 'Are there any additional fees for trading with CryprtoSystem platform?',
+          'title': 'How do I link an exchange?',
           'link': 'javasript:void(0)',
           'accent': false
         }, {
-          'title': 'My exchange is not supported, how can I request it?',
+          'title': 'Can I create a new exchange account through CryptoSystem?',
           'link': 'javasript:void(0)',
           'accent': false
         }, {
-          'title': 'Are derivatives such as futures and perpetual swaps supported?',
+          'title': 'What are exchange APIs?',
           'link': 'javasript:void(0)',
           'accent': false
         }, {
-          'title': 'How can I connect my wallets such as MetaMask, Trezor, or Ledger etc?',
+          'title': 'Do you offer a referral rewards program?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Can I deposit or withdraw assets from CryptoSystem?',
           'link': 'javasript:void(0)',
           'accent': false
         }, {
@@ -47,43 +50,28 @@
     }
   %}
 
-  {%
-    set inputList = [
-      {
-        'title': 'Api Key',
-        'id': 'dashboard--api-key',
-        'type': 'password',
-        'placeholder': '*****'
-      }, {
-        'title': 'Secret Key',
-        'id': 'dashboard--secret-key',
-        'type': 'password',
-        'placeholder': '*****'
-      }, {
-        'title': 'Account Lable',
-        'id': 'dashboard--account-lable',
-        'type': 'text',
-        'placeholder': 'Label'
-      }
-    ]
-  %}
-
   <body>
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
       {% include './partials/components/landing/header.njk' %}
-      <main class="cs--page cs--dashboard--connect">
+      <main class="cs--page cs--dashboard--2fa">
         <div class="cs--container">
-          <h1 class="cs--page__title">Connect your Binance US Account</h1>
-          <p class="cs--page__sub-title">A secure connection with your exchange account is established using API keys. To learn more about how API keys work, click here.</p>
+          <h1 class="cs--page__title">2 Factor Authentication</h1>
           <div class="cs--page-side-wrapper">
             <form class="cs--dashboard-form">
-              <h2 class="cs--dashboard-form__title cs--dashboard-form__title--mark">Enter your API Key for Binance US</h2>
-              {% for input in inputList %}
-                {{ dashInput(input) }}
-              {% endfor %}
+              <h2 class="cs--dashboard-form__title cs--dashboard-form__title--mark">Step 1</h2>
+              <h3 class="cs--dashboard-form__sub-title">Download the Google Authenticator App</h3>
+              <div class="cs--dashboard-form__market-group">
+                <a href="javascript:void(0)">
+                  <img src="./img/app-store-badge.svg" alt="">
+                </a>
+                <a href="javascript:void(0)">
+                  <img src="./img/google-play-badge.svg" alt="">
+                </a>
+              </div>
               <div class="cs--dashboard-form__btn-group">
-                <button type="submit" class="cs--btn cs--btn-grad-blue">Connect</button>
+                <button type="button" class="cs--btn cs--btn-transparent-grad-blue">Back</button>
+                <button type="submit" class="cs--btn cs--btn-grad-blue ml-auto">I have the App</button>
               </div>
             </form>
             {{ pageSide(side) }}
