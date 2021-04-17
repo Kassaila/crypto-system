@@ -50,9 +50,15 @@ $media-expressions: (
   --lg: #{map-get($breakpoints, 'lg')};
   --xlg: #{map-get($breakpoints, 'xlg')};
 
+  // padding
+  --padding-xxlg: 80px;
+  --padding-xlg: 60px;
+  --padding-md: 30px;
+  --padding-sm: 25px;
+  --padding-xs: 15px;
   // container
   --container-width: var(--xlg);
-  --container-padding: 80px;
+  --container-padding: var(--padding-xxlg);
   // header size
   --landing-header-width: 0;
   --landing-header-height: 0;
@@ -66,6 +72,7 @@ $media-expressions: (
   --color-grey-15: hsl(0, 0%, 88%);
   --color-grey-20: hsl(0, 0%, 84%);
   --color-grey-30: hsl(0, 0%, 71%);
+  --color-grey-40: hsl(0, 0%, 67%);
   --color-grey-70: hsl(0, 0%, 45%);
   --color-grey-80: hsl(0, 0%, 40%);
   --color-grey-100: hsl(0, 0%, 13%);
@@ -143,15 +150,16 @@ $media-expressions: (
 
   @include media('<xlg') {
     --container-width: var(--lg);
-    --container-padding: 30px;
+    --container-padding: var(--padding-md);
   }
   @include media('<lg') {
     --container-width: var(--md);
   }
   @include media('<md') {
     --container-width: var(--sm);
+    --container-padding: var(--padding-sm);
   }
   @include media('<xs') {
-    --container-padding: 15px;
+    --container-padding: var(--padding-xs);
   }
 }

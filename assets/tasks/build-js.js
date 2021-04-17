@@ -61,6 +61,10 @@ module.exports = function () {
         ],
       };
 
+      if (process.env.NODE_ENV === 'production') {
+        config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
+      }
+
       webpack(config, (error, stats) => {
         if (error) {
           throw new Error(error);

@@ -1,11 +1,15 @@
 .cs--dashboard--news-article {
   padding: 40px 0;
+  .cs--container {
+    padding: 0 60px 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+  }
   .cs--page__title {
     margin-bottom: 20px;
-    margin-left: 20px;
   }
   .cs--article {
-    margin-left: 20px;
     @include media('<xlg') {
       margin-left: 0;
     }

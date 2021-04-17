@@ -28,5 +28,6 @@ module.exports = function () {
       .pipe(sass.sync())
       .on('error', (error) => notifier.error(error.message, 'Vendor Sass compiling error', done))
       .pipe(postcss(plugins))
+      .on('error', (error) => notifier.error(error.message, 'Vendor PostCSS compiling error', done))
       .pipe(gulp.dest(`../${global.folder.build}/css`));
 };

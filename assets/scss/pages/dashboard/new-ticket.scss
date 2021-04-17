@@ -1,0 +1,21 @@
+.cs--dashboard--new-ticket {
+  padding: 65px 0 35px;
+  .cs--container {
+    padding: 0 var(--padding-sm) 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
+  }
+  .cs--page__title {
+    margin-bottom: 25px;
+  }
+  .cs--page__sub-title {
+    width: 95%;
+    margin-bottom: 30px;
+    color: var(--color-grey-40);
+    font-size: 12px;
+  }
+}

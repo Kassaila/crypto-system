@@ -1,8 +1,127 @@
 .cs--dashboard-form {
   padding: 25px 35px 50px;
   background-color: var(--color-blue-85);
+  box-shadow: 0px 0px 30px hsla(209, 62%, 32%, 0.15);
   &__title {
+    margin-bottom: 20px;
     font-weight: 700;
     font-size: 14px;
   }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    & + .cs--dashboard-form__item {
+      margin-top: 15px;
+    }
+    & + .cs--btn {
+      margin-top: 40px;
+    }
+  }
+  &__label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    &--radio {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 10px;
+      place-items: center;
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--color-grey-blue-10);
+    border-radius: 3px;
+    background-color: transparent;
+    color: var(--color-white);
+    font-size: 14px;
+    &--radio {
+      display: none;
+      &:checked ~ .cs--dashboard-form__radio-box {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    &-wrapper {
+      --side-padding: 15px;
+      --arrow-size: 6px;
+      position: relative;
+    }
+    &--arrow {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: var(--side-padding);
+        z-index: 1;
+        width: var(--arrow-size);
+        height: var(--arrow-size);
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: #0096f3;
+        pointer-events: none;
+        transform: translateY(-50%) rotateZ(135deg);
+      }
+    }
+    &--success {
+      --valid-size: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: var(--side-padding);
+        width: var(--valid-size);
+        height: var(--valid-size);
+        background: url('/img/icon/dash-input_success.svg') center / contain no-repeat;
+        transform: translateY(-50%);
+      }
+      &.cs--dashboard-form__input--arrow {
+        &:before {
+          right: calc(2 * var(--side-padding));
+        }
+      }
+    }
+  }
+  &__radio {
+    &-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-box {
+      position: relative;
+      display: grid;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #0096f3;
+      border-radius: 50%;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        place-self: center;
+        background-color: #0096f3;
+        opacity: 0;
+      }
+    }
+  }
+  .cs--btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 12px;
+  }
+}
+select.cs--dashboard-form__input {
+  padding: 10px var(--side-padding);
+  background-color: var(--color-blue-85);
+}
+textarea.cs--dashboard-form__input {
+  min-height: 100px;
 }

@@ -4,7 +4,7 @@
     <ul class="cs--page-side__item-list">
       {% for item in side.itemList %}
         <li class="cs--page-side__item">
-          <a href="item.link" class="cs--page-side__link {{ 'cs--page-side__link--accent' if item.accent }}">{{ item.title }}</a>
+          <a href="{{ item.link }}" class="cs--page-side__link {{ 'cs--page-side__link--accent' if item.accent }}">{{ item.title }}</a>
         </li>
       {% endfor %}
     </ul>

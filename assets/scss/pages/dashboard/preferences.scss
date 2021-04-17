@@ -1,0 +1,33 @@
+.cs--dashboard--preferences {
+  padding: 35px 0 30px;
+  .cs--container {
+    padding: 0 var(--padding-xlg) 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
+  }
+  .cs--page-side {
+    margin-top: 30px;
+  }
+  .cs--page__title {
+    margin-bottom: 50px;
+  }
+  .cs--dashboard-form__item {
+    width: 50%;
+    @include media('<sm') {
+      width: 100%;
+    }
+  }
+  .cs--dashboard-form__label {
+    margin-bottom: 20px;
+    &:not(.cs--dashboard-form__label--radio) {
+      color: var(--color-grey-blue-50);
+    }
+    &--radio {
+      margin-bottom: 0;
+    }
+  }
+}

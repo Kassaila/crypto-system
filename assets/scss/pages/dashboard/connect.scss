@@ -1,8 +1,13 @@
 .cs--dashboard--connect {
   padding: 35px 0;
   .cs--container {
-    padding-right: 25px;
-    padding-left: 100px;
+    padding: 0 var(--padding-sm) 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
   }
   .cs--page-side {
     margin-top: 10px;
