@@ -100,5 +100,10 @@
         opacity: 0.7;
       }
     }
+    a {
+      --icon-size: 33px;
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
   }
 }

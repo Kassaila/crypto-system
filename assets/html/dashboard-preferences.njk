@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - Preferences</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/dashboard/page-side.njk" import pageSide %}
+  {% from "./partials/components/dashboard/input.njk" import dashInput %}
+
+  {%
+    set side = {
+      'title': 'FAQs',
+      'itemList': [
+        {
+          'title': 'What is 2FA?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'How do I link an exchange?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Can I create a new exchange account through CryptoSystem?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'What are exchange APIs?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Do you offer a referral rewards program?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Can I deposit or withdraw assets from CryptoSystem?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Visit Support Center',
+          'link': 'javasript:void(0)',
+          'accent': true
+        }
+      ]
+    }
+  %}
+
+  {%
+    set inputCurrency = {
+      'id': 'dashboard--currency',
+      'type': 'select',
+      'optionList': [
+        {
+          'text': 'BTC',
+          'value': 'btc'
+        }, {
+          'text': 'ETHR',
+          'value': 'ethr'
+        }
+      ]
+    }
+  %}
+
+  {%
+    set inputInterface = {
+      'title': 'Theme',
+      'name': 'dashboard--interface',
+      'type': 'radio',
+      'radioList': [
+        {
+          'title': 'Dark',
+          'value': 'dark',
+          'id': 'dark',
+          'selected': true
+        }, {
+          'title': 'Light',
+          'value': 'light',
+          'id': 'light'
+        }
+      ]
+    }
+  %}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--preferences">
+        <div class="cs--container">
+          <h1 class="cs--page__title">Preferences</h1>
+          <div class="cs--page-side-wrapper">
+            <form class="cs--dashboard-form">
+              <h2 class="cs--dashboard-form__title">Interface</h2>
+                {{ dashInput(inputInterface) }}
+              <hr>
+              <h2 class="cs--dashboard-form__title">Preferred Currency</h2>
+              {{ dashInput(inputCurrency) }}
+              <button type="submit" class="cs--btn cs--btn-grad-blue">Save changes</button>
+            </form>
+            {{ pageSide(side) }}
+          </div>
+        </div>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>

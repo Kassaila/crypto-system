@@ -21,4 +21,10 @@
   &[class*='cs--dashboard'] {
     background-image: var(--radial-blue);
   }
+  hr {
+    height: 1px;
+    margin: 25px 0;
+    border: none;
+    background-color: var(--color-grey-blue-10);
+  }
 }

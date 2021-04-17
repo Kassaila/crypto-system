@@ -1,18 +1,30 @@
 {% macro dashInput(item) %}
   <div class="cs--dashboard-form__item">
-    <label for="{{ item.id }}" class="cs--dashboard-form__label">{{ item.title }}</label>
+    {% if item.title and item.type != 'radio' %}
+      <label for="{{ item.id }}" class="cs--dashboard-form__label">{{ item.title }}</label>
+    {% elif item.title %}
+      <span class="cs--dashboard-form__label">{{ item.title }}</span>
+    {% endif %}
     {% if item.type == 'textarea' %}
       <textarea id="{{ item.id }}" class="cs--dashboard-form__input" placeholder="{{ item.placeholder }}"></textarea>
     {% elif item.type == 'select' %}
-      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input' if item.valid }} {{ 'cs--dashboard-form__input--arrow' if item.type == 'select' }}">
-        <select id="{{ item.id }}" class="cs--dashboard-form__input" required>
-          {% if item.placeholder %}
-            <option value="" disabled selected hidden>{{ item.placeholder }}</option>
-          {% endif %}
+      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input--success' if item.valid }} {{ 'cs--dashboard-form__input--arrow' if item.type == 'select' }}">
+        <select id="{{ item.id }}" class="cs--dashboard-form__input">
+          <option value="" disabled selected hidden></option>
           {% for option in item.optionList %}
             <option value="{{ option.value }}">{{ option.text }}</option>
           {% endfor %}
         </select>
+      </div>
+    {% elif item.type == 'radio' %}
+      <div class="cs--dashboard-form__radio-group">
+        {% for radio in item.radioList %}
+          <label for="{{ radio.id }}" class="cs--dashboard-form__label cs--dashboard-form__label--radio">
+            <input name="{{ item.name }}" id="{{ radio.id }}" type="{{ item.type }}" value="{{ radio.value }}" {{ 'checked' if radio.selected }} class="cs--dashboard-form__input cs--dashboard-form__input--radio">
+            <span class="cs--dashboard-form__radio-box"></span>
+            <span class="cs--dashboard-form__radio-title">{{ radio.title }}</span>
+          </label>
+        {% endfor %}
       </div>
     {% else %}
       <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input--success' if item.valid }}">
