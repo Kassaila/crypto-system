@@ -39,6 +39,9 @@
   &__label {
     margin-bottom: 10px;
     font-size: 12px;
+    &:not(.cs--dashboard-form__label--radio) {
+      color: var(--color-grey-blue-50);
+    }
     &--radio {
       display: grid;
       grid-template-columns: auto auto;

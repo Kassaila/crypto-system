@@ -2,7 +2,7 @@
  * @function getCssValue
  * @param {string} variable
  * @param {HTMLElement} el
- * @returns {*}
+ * @returns {string}
  * @description get CSS custom property and return value
  */
 function getCssValue(variable, el = document.documentElement) {
