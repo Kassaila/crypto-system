@@ -6,6 +6,11 @@
     align-items: stretch;
     min-height: 100vh;
   }
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
   &__title {
     font-weight: 700;
     font-size: 22px;

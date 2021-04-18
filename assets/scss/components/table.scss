@@ -57,11 +57,10 @@
   }
   th,
   td {
-    min-width: 100px;
     padding: var(--cell-padding-y) var(--cell-padding-x);
     @include media('<sm') {
-     --cell-padding-y: 10px;
-     --cell-padding-x: 15px;
+      --cell-padding-y: 10px;
+      --cell-padding-x: 15px;
     }
   }
   th {

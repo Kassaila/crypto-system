@@ -116,6 +116,29 @@
         }
       }
     }
+    &--search-wrapper {
+      position: relative;
+      display: flex;
+    }
+    &--search-btn {
+      --icon-color: var(--color-grey-blue-10);
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      display: flex;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      transform: translateY(-50%);
+      @include media('hover') {
+        &:hover {
+          --icon-color: var(--color-white);
+        }
+      }
+    }
+    &--search {
+      width: 100%;
+    }
   }
   &__radio {
     &-group {

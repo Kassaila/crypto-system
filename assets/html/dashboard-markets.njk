@@ -42,7 +42,7 @@
         {
           'class': [
             '',
-            '',
+            'no-wrap',
             '',
             '',
             '',
@@ -67,12 +67,12 @@
         }, {
           'class': [
             '',
-            '',
+            'no-wrap',
             '',
             '',
             '',
             'no-wrap',
-            'no-wrap cs--color-danger',
+            'no-wrap cs--color-success',
             ''
           ],
           'list': [
@@ -92,7 +92,7 @@
         }, {
           'class': [
             '',
-            '',
+            'no-wrap',
             '',
             '',
             '',
@@ -116,15 +116,15 @@
           ]
         }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '4',
           {
@@ -141,15 +141,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-success',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '5',
           {
@@ -166,15 +166,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '6',
           {
@@ -191,15 +191,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-success',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '7',
           {
@@ -216,15 +216,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '8',
           {
@@ -241,15 +241,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '9',
           {
@@ -266,15 +266,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-success',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '10',
           {
@@ -291,15 +291,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '11',
           {
@@ -316,15 +316,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-success',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '12',
           {
@@ -341,15 +341,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-danger',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '13',
           {
@@ -366,15 +366,15 @@
         ]
       }, {
         'class': [
-          '',
-          '',
-          '',
-          '',
-          '',
-          'no-wrap',
-          'no-wrap cs--color-success',
-          ''
-        ],
+            '',
+            'no-wrap',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
         'list': [
           '14',
           {
@@ -400,17 +400,15 @@
       {% include './partials/components/landing/header.njk' %}
       <main class="cs--page cs--dashboard--markets">
         <div class="cs--container">
-          <div>
+          <div class="cs--page__head">
             <h1 class="cs--page__title">Market Overview</h1>
-            <div>
-              <span>8757 Active pairs</span>
-              <label for="card-filter-search" class="cs--card-filter__search-wrapper">
-                <input type="text" class="cs--card-filter__search" placeholder="Search">
-                <button type="button" class="cs--card-filter__search-btn">
-                  {{ icon('search') }}
-                </button>
-              </label>
-            </div>
+            <span class="cs--color-secondary">8757 Active pairs</span>
+            <label for="search" class="cs--dashboard-form__input--search-wrapper ml-auto">
+              <input id="search" type="text" class="cs--dashboard-form__input cs--dashboard-form__input--search" placeholder="Search">
+              <button type="button" class="cs--dashboard-form__input--search-btn">
+                {{ icon('search') }}
+              </button>
+            </label>
           </div>
             <div class="cs--table-wrapper">
               <table class="cs--table cs--table--bordered">
