@@ -11,5 +11,8 @@
     @include media('<xlg') {
       padding: 0 var(--padding-sm);
     }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
   }
 }

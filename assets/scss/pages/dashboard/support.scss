@@ -1,0 +1,27 @@
+.cs--dashboard--support {
+  padding: 65px 0 45px;
+  @include media('<xs') {
+    padding: 30px 0;
+  }
+  .cs--page {
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__sub-title {
+      margin-bottom: 30px;
+      color: var(--color-grey-40);
+    }
+  }
+  .cs--container {
+    padding: 0 250px 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
+  }
+  .cs--table__title {
+    margin-top: 45px;
+  }
+}

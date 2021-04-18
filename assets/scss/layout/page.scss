@@ -10,6 +10,10 @@
     font-weight: 700;
     font-size: 22px;
   }
+  &__sub-title {
+    font-size: 12px;
+    line-height: 1.4;
+  }
   &__content {
     &--accent {
       color: var(--color-orange-50);
