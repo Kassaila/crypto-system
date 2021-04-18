@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - Select Exchange</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+{%
+  set cardList = [
+    {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-binance.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-okex.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-okex.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-binance.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-kucoin.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-liquid.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-liquid.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }, {
+      'title': 'Bonus Offer',
+      'imgSrc': './img/logo-kucoin.svg',
+      'textList': [
+        '6 months free Quadency Pro + $100 bonus for new accounts',
+        '3 months free Quadency Pro for existing accounts'
+      ]
+    }
+  ]
+%}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--select-exchange">
+        <div class="cs--container">
+          <h1 class="cs--page__title">SuppSelect Exchangeort</h1>
+          <p class="cs--page__sub-title">CryptoSystem Platform offers high-performance connectivity with the following leading global cryptocurrency exchanges.<br>Open a new account or connect an existing account to get started.</p>
+          <ul class="cs--exchange-list">
+            {% for cardItem in cardList %}
+              <li class="cs--exchange-card">
+                <div class="cs--exchange-card__img">
+                  <img src="{{ cardItem.imgSrc }}" alt="">
+                </div>
+                <div class="cs--exchange-card__content">
+                  <h2 class="cs--exchange-card__title">{{ cardItem.title }}</h2>
+                  <ul class="cs--bullet-list">
+                    {% for text in cardItem.textList %}
+                      <li class="cs--bullet-list__item">{{ text }}</li>
+                    {% endfor %}
+                  </ul>
+                  <div class="cs--exchange-card__btn-group">
+                    <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Open</a>
+                    <a href="javascript:void(0)" class="cs--btn cs--btn-transparent-grad-blue">Connect</a>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>

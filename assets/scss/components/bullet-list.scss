@@ -1,0 +1,22 @@
+.cs--bullet-list {
+  @extend %listreset;
+  &__item {
+    --marker-size: 8px;
+    position: relative;
+    padding-left: 35px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: calc(1em / 2);
+      left: 12px;
+      width: var(--marker-size);
+      height: var(--marker-size);
+      border-radius: 50%;
+      background-color: var(--color-orange-50);
+      transform: translateY(-50%);
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
