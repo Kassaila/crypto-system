@@ -4,7 +4,7 @@
   grid-gap: 25px;
   align-items: flex-start;
   @include media('<lg') {
-    grid-template-columns: 1fr;
+    display: block;
   }
 }
 .cs--page-side {

@@ -11,71 +11,73 @@
     {% include './partials/head/fonts.njk' %}
     {% include './partials/head/common.njk' %}
   </head>
+  {% from "./partials/components/table.njk" import table %}
 
 {%
-  set table = {
-    head: {
-      class: [
+  set historyTable = {
+    'striped': true,
+    'head': {
+      'class': [
         '',
         'cs--table__cell--min-w',
         '',
         ''
       ],
-      list: [
+      'list': [
         'Date',
         'Topic',
         'Status',
         'View'
       ]
     },
-    body: [
+    'body': [
       {
-        class: [
+        'class': [
           'no-wrap',
           '',
           'cs--color-success',
           'cs--color-success'
         ],
-        list: [
+        'list': [
           '18 mar 2021',
           'Eu interdum quis eget praesent lectus aenean venenatis at viverra. Eget dignissim egestas in viverra volutpat vitae pellentesque risus.',
           'Confirmed',
           'Viewed'
         ]
       }, {
-        class: [
+        'class': [
           'no-wrap',
           '',
           'cs--color-success',
           'cs--color-success'
         ],
-        list: [
+        'list': [
           '18 mar 2021',
           'Eu interdum quis eget praesent lectus aenean venenatis at viverra. Eget dignissim egestas in viverra volutpat vitae pellentesque risus.',
           'Confirmed',
           'Viewed'
         ]
       }, {
-        class: [
+        'class': [
           'no-wrap',
           '',
           'cs--color-success',
           'cs--color-success'
         ],
-        list: [
+        'list': [
           '18 mar 2021',
           'Eu interdum quis eget praesent lectus aenean venenatis at viverra. Eget dignissim egestas in viverra volutpat vitae pellentesque risus.',
           'Confirmed',
           'Viewed'
         ]
       }, {
-        class: [
+        'class': [
           'no-wrap',
           '',
           'cs--color-success',
           'cs--color-success'
         ],
-        list: [
+        'list': [
           '18 mar 2021',
           'Eu interdum quis eget praesent lectus aenean venenatis at viverra. Eget dignissim egestas in viverra volutpat vitae pellentesque risus.',
           'Confirmed',
@@ -98,26 +100,7 @@
             <a href="javascript:void(0)" class="cs--btn cs--btn-grad-blue">Create New Ticket</a>
           </div>
           <h2 class="cs--table__title">History</h2>
-          <div class="cs--table-wrapper">
-            <table class="cs--table cs--table--striped">
-              <thead>
-                <tr>
-                  {% for name in table.head.list %}
-                    <th class="{{ table.head.class[loop.index - 1] }}">{{ name }}</th>
-                  {% endfor %}
-                </tr>
-              </thead>
-              <tbody>
-                {% for value in table.body %}
-                  <tr>
-                    {% for name in table.head.list %}
-                      <td class="{{ value.class[loop.index - 1] }}">{{ value.list[loop.index - 1] }}</td>
-                    {% endfor %}
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
+          {{ table(historyTable) }}
         </div>
       </main>
       {% include './partials/components/dashboard/footer.njk' %}

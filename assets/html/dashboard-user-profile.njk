@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - User Profile</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/dashboard/page-side.njk" import pageSide %}
+  {% from "./partials/components/dashboard/input.njk" import dashInput %}
+  {% from "./partials/components/table.njk" import table %}
+
+  {%
+    set side = {
+      'title': 'FAQs',
+      'itemList': [
+        {
+          'title': 'What is 2FA?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'How do I link an exchange?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Can I create a new exchange account through CryptoSystem?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'What are exchange APIs?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Do you offer a referral rewards program?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Can I deposit or withdraw assets from CryptoSystem?',
+          'link': 'javasript:void(0)',
+          'accent': false
+        }, {
+          'title': 'Visit Support Center',
+          'link': 'javasript:void(0)',
+          'accent': true
+        }
+      ]
+    }
+  %}
+
+  {%
+    set inputList = [
+      {
+        'title': 'Current Password',
+        'id': 'dashboard--current-password',
+        'type': 'password',
+        'placeholder': '*****'
+      }, {
+        'title': 'New Password',
+        'id': 'dashboard--new-password',
+        'type': 'password',
+        'placeholder': '*****'
+      }, {
+        'title': 'Confirm Password',
+        'id': 'dashboard--confirm-password',
+        'type': 'password',
+        'placeholder': '*****'
+      }
+    ]
+  %}
+
+  {%
+  set logTable = {
+    'striped': true,
+    'head': {
+      'class': [],
+      'list': [
+        'Activity',
+        'Date/Time',
+        'IP Address',
+        'Location'
+      ]
+    },
+    'body': [
+      {
+        'class': [],
+        'list': [
+          'Login',
+          '23 Mar 2021, 11:12 AM',
+          '188.163.43.68',
+          'Unknown'
+        ]
+      }, {
+        'class': [],
+        'list': [
+          'Login',
+          '23 Mar 2021, 11:12 AM',
+          '188.163.43.68',
+          'Unknown'
+        ]
+      }, {
+        'class': [],
+        'list': [
+          'Login',
+          '23 Mar 2021, 11:12 AM',
+          '188.163.43.68',
+          'Unknown'
+        ]
+      }, {
+        'class': [],
+        'list': [
+          'Login',
+          '23 Mar 2021, 11:12 AM',
+          '188.163.43.68',
+          'Unknown'
+        ]
+      }
+    ]
+  }
+%}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--user-profile">
+        <div class="cs--container">
+          <h1 class="cs--page__title">User Profile</h1>
+          <div class="cs--page-side-wrapper">
+            <form class="cs--dashboard-form">
+              <h2 class="cs--dashboard-form__title">Change Password</h2>
+                {% for input in inputList %}
+                  {{ dashInput(input) }}
+                {% endfor %}
+                <div class="cs--dashboard-form__btn-group">
+                  <button type="submit" class="cs--btn cs--btn-grad-blue">Save changes</button>
+                </div>
+              <hr>
+              <h2 class="cs--dashboard-form__title">Activity Log</h2>
+              {{ table(logTable) }}
+            </form>
+            {{ pageSide(side) }}
+          </div>
+        </div>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>

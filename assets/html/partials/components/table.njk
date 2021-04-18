@@ -1,0 +1,22 @@
+{% macro table(data) %}
+  <div class="cs--table-wrapper">
+    <table class="cs--table {{ 'cs--table--striped' if data.striped }}">
+      <thead>
+        <tr>
+          {% for name in data.head.list %}
+            <th class="{{ data.head.class[loop.index - 1] }}">{{ name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for value in data.body %}
+          <tr>
+            {% for name in data.head.list %}
+              <td class="{{ value.class[loop.index - 1] }}">{{ value.list[loop.index - 1] }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endmacro %}
