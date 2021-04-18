@@ -31,3 +31,21 @@ a {
     text-decoration: underline;
   }
 }
+
+.cs--color {
+  &-primary {
+    color: var(--color-blue);
+  }
+  &-secondary {
+    color: var(--color-grey);
+  }
+  &-success {
+    color: var(--color-green);
+  }
+  &-danger {
+    color: var(--color-red);
+  }
+  &-warn {
+    color: var(--color-yellow);
+  }
+}

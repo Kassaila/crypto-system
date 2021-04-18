@@ -1,0 +1,40 @@
+.cs--dashboard--markets {
+  padding: 65px 0 35px;
+  .cs--container {
+    padding: 0 45px 0 100px;
+    @include media('<xlg') {
+      padding: 0 var(--padding-sm);
+    }
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
+  }
+  .cs--page {
+    &__head {
+      margin-bottom: 15px;
+    }
+    &__title {
+      margin-right: 25px;
+      margin-bottom: 0;
+      @include media('<md') {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .cs--table {
+    background-color: var(--color-blue-85);
+  }
+  .cs--dashboard-form__input {
+    &--search-wrapper {
+      @include media('<md') {
+        width: 50%;
+      }
+      @include media('<sm') {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+}

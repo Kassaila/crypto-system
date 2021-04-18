@@ -1,9 +1,17 @@
 .cs--dashboard-form {
+  --form-padding-top: 25px;
+  --form-padding-side: 35px;
+  --form-padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  padding: 25px 35px 50px;
+  padding: var(--form-padding-top) var(--form-padding-side) var(--form-padding-bottom);
   background-color: var(--color-blue-85);
   box-shadow: 0px 0px 30px hsla(209, 62%, 32%, 0.15);
+  @include media('<xs') {
+    --form-padding-top: 10px;
+    --form-padding-side: 15px;
+    --form-padding-bottom: 20px;
+  }
   &__title {
     margin-bottom: 20px;
     font-weight: 700;
@@ -39,6 +47,9 @@
   &__label {
     margin-bottom: 10px;
     font-size: 12px;
+    &:not(.cs--dashboard-form__label--radio) {
+      color: var(--color-grey-blue-50);
+    }
     &--radio {
       display: grid;
       grid-template-columns: auto auto;
@@ -104,6 +115,29 @@
           right: calc(2 * var(--side-padding));
         }
       }
+    }
+    &--search-wrapper {
+      position: relative;
+      display: flex;
+    }
+    &--search-btn {
+      --icon-color: var(--color-grey-blue-10);
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      display: flex;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      transform: translateY(-50%);
+      @include media('hover') {
+        &:hover {
+          --icon-color: var(--color-white);
+        }
+      }
+    }
+    &--search {
+      width: 100%;
     }
   }
   &__radio {
@@ -243,6 +277,34 @@
     padding-top: 12px;
     padding-bottom: 12px;
     font-size: 12px;
+  }
+  .cs--table-wrapper {
+    margin: 0 calc(-1 * var(--form-padding-side)) calc(-1 * var(--form-padding-bottom));
+  }
+  .cs--table {
+    &--striped {
+      & > tbody {
+        & > tr {
+          &:nth-of-type(even) {
+            background-color: var(--color-blue-100);
+          }
+        }
+      }
+    }
+    tr {
+      * {
+        &:first-child {
+          padding-left: var(--form-padding-side);
+        }
+        &:last-child {
+          padding-right: var(--form-padding-side);
+        }
+      }
+    }
+    th {
+      background-color: transparent;
+      color: var(--color-grey-blue-50);
+    }
   }
 }
 select.cs--dashboard-form__input {

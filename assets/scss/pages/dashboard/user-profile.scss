@@ -1,0 +1,9 @@
+.cs--dashboard--user-profile {
+  padding: 35px 0 30px;
+  .cs--page__title {
+    margin-bottom: 50px;
+    @include media('<sm') {
+      margin-bottom: 20px;
+    }
+  }
+}

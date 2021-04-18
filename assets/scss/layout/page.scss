@@ -6,9 +6,18 @@
     align-items: stretch;
     min-height: 100vh;
   }
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
   &__title {
     font-weight: 700;
     font-size: 22px;
+  }
+  &__sub-title {
+    font-size: 12px;
+    line-height: 1.4;
   }
   &__content {
     &--accent {

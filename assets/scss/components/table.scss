@@ -1,0 +1,76 @@
+.cs--table-wrapper {
+  overflow-x: auto;
+}
+.cs--table {
+  --cell-padding-x: 25px;
+  --cell-padding-y: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  &--striped {
+    & > tbody {
+      & > tr {
+        &:nth-of-type(even) {
+          background-color: var(--color-blue-85);
+        }
+      }
+    }
+  }
+  &--bordered {
+    & > tbody {
+      & > tr {
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-blue-70);
+        }
+      }
+    }
+  }
+  &__cell {
+    &--min-w {
+      min-width: 200px;
+    }
+    &--chart {
+      min-width: calc(2 * var(--cell-padding-x) + 185px);
+    }
+  }
+  &__card {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 13px;
+    }
+    &-abbr {
+      color: var(--color-grey-50);
+      font-weight: 300;
+    }
+  }
+  th,
+  td {
+    padding: var(--cell-padding-y) var(--cell-padding-x);
+    @include media('<sm') {
+      --cell-padding-y: 10px;
+      --cell-padding-x: 15px;
+    }
+  }
+  th {
+    background-color: var(--color-blue-100);
+    font-weight: normal;
+    font-size: 13px;
+    text-align: left;
+  }
+  td {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}

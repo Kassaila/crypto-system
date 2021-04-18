@@ -68,3 +68,19 @@
     margin-right: auto;
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.w {
+  &-25 {
+    width: 25vw;
+  }
+  &-50 {
+    width: 50vw;
+  }
+  &-75 {
+    width: 75vw;
+  }
+}
