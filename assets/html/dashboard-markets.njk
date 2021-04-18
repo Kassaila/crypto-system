@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CryptoSystem - Markets</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
+/>
+    {% include './partials/head/fonts.njk' %}
+    {% include './partials/head/common.njk' %}
+  </head>
+  {% from "./partials/components/icon.njk" import icon %}
+
+{%
+  set marketTable = {
+    'striped': true,
+    'head': {
+      'class': [
+        '',
+        '',
+        '',
+        '',
+        '',
+        'cs--table__cell--min-w',
+        '',
+        'cs--table__cell--chart'
+      ],
+      'list': [
+        'Rank',
+        'Name',
+        'Market Cap (BTC)',
+        'Circulating Supply',
+        '24h Volume',
+        'Avg Price',
+        '24h % Change',
+        'Chart (24h)'
+      ]
+    },
+    'body': [
+        {
+          'class': [
+            '',
+            '',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
+          'list': [
+            '1',
+            {
+              'crypto': 'Bitcoin',
+              'abbr': 'BTC',
+              'imgSrc': './img/crypto-icon/btc.svg'
+            },
+            '18.67m',
+            '18.67',
+            '80.10b',
+            '0.0000323225',
+            '+2.40%',
+            './img/examples/chart-plus.svg'
+          ]
+        }, {
+          'class': [
+            '',
+            '',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-danger',
+            ''
+          ],
+          'list': [
+            '2',
+            {
+              'crypto': 'Ethereum',
+              'abbr': 'ETH',
+              'imgSrc': './img/crypto-icon/eth.svg'
+            },
+            '18.67m',
+            '18.67',
+            '80.10b',
+            '0.0000323225',
+            '-2.40%',
+            './img/examples/chart-minus.svg'
+          ]
+        }, {
+          'class': [
+            '',
+            '',
+            '',
+            '',
+            '',
+            'no-wrap',
+            'no-wrap cs--color-success',
+            ''
+          ],
+          'list': [
+            '3',
+            {
+              'crypto': 'Tether',
+              'abbr': 'USDT',
+              'imgSrc': './img/crypto-icon/usdt.svg'
+            },
+            '18.67m',
+            '18.67',
+            '80.10b',
+            '0.0000323225',
+            '+2.40%',
+            './img/examples/chart-plus.svg'
+          ]
+        }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '4',
+          {
+            'crypto': 'Binance Coin',
+            'abbr': 'BNB',
+            'imgSrc': './img/crypto-icon/bnb.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-success',
+          ''
+        ],
+        'list': [
+          '5',
+          {
+            'crypto': 'Cardano',
+            'abbr': 'ADA',
+            'imgSrc': './img/crypto-icon/ada.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '+2.40%',
+          './img/examples/chart-plus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '6',
+          {
+            'crypto': 'Polkadot',
+            'abbr': 'DOT',
+            'imgSrc': './img/crypto-icon/dot.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-success',
+          ''
+        ],
+        'list': [
+          '7',
+          {
+            'crypto': 'XRP',
+            'abbr': 'XRP',
+            'imgSrc': './img/crypto-icon/xrp.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '+2.40%',
+          './img/examples/chart-plus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '8',
+          {
+            'crypto': 'Uniswap',
+            'abbr': 'UNI',
+            'imgSrc': './img/crypto-icon/uni.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '9',
+          {
+            'crypto': 'Theta Token',
+            'abbr': 'THETA',
+            'imgSrc': './img/crypto-icon/theta.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-success',
+          ''
+        ],
+        'list': [
+          '10',
+          {
+            'crypto': 'Litecoin',
+            'abbr': 'LTC',
+            'imgSrc': './img/crypto-icon/ltc.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '+2.40%',
+          './img/examples/chart-plus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '11',
+          {
+            'crypto': 'Chainlink',
+            'abbr': 'LINK',
+            'imgSrc': './img/crypto-icon/link.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-success',
+          ''
+        ],
+        'list': [
+          '12',
+          {
+            'crypto': 'USD Coin',
+            'abbr': 'USCF',
+            'imgSrc': './img/crypto-icon/uscf.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '+2.40%',
+          './img/examples/chart-plus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-danger',
+          ''
+        ],
+        'list': [
+          '13',
+          {
+            'crypto': 'Bitcoin Cash',
+            'abbr': 'BCH',
+            'imgSrc': './img/crypto-icon/bch.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '-2.40%',
+          './img/examples/chart-minus.svg'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          '',
+          '',
+          'no-wrap',
+          'no-wrap cs--color-success',
+          ''
+        ],
+        'list': [
+          '14',
+          {
+            'crypto': 'Terra',
+            'abbr': 'LUNA',
+            'imgSrc': './img/crypto-icon/luna.svg'
+          },
+          '18.67m',
+          '18.67',
+          '80.10b',
+          '0.0000323225',
+          '+2.40%',
+          './img/examples/chart-plus.svg'
+        ]
+      }
+    ]
+  }
+%}
+
+  <body>
+    <div class="cs--preloader" data-preloader></div>
+    <div class="cs--page-wrapper">
+      {% include './partials/components/landing/header.njk' %}
+      <main class="cs--page cs--dashboard--markets">
+        <div class="cs--container">
+          <div>
+            <h1 class="cs--page__title">Market Overview</h1>
+            <div>
+              <span>8757 Active pairs</span>
+              <label for="card-filter-search" class="cs--card-filter__search-wrapper">
+                <input type="text" class="cs--card-filter__search" placeholder="Search">
+                <button type="button" class="cs--card-filter__search-btn">
+                  {{ icon('search') }}
+                </button>
+              </label>
+            </div>
+          </div>
+            <div class="cs--table-wrapper">
+              <table class="cs--table cs--table--bordered">
+                <thead>
+                  <tr>
+                    {% for name in marketTable.head.list %}
+                      <th class="{{ marketTable.head.class[loop.index - 1] }}">{{ name }}</th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for value in marketTable.body %}
+                    <tr>
+                      {% for name in marketTable.head.list %}
+                        {% if loop.index == 2 %}
+                          <td class="{{ value.class[loop.index - 1] }}">
+                            <div class="cs--table__card">
+                              <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
+                              <div class="cs--table__card-content">
+                                <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
+                                <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
+                              </div>
+                            </div>
+                          </td>
+                        {% elif loop.index == 8 %}
+                          <td class="{{ value.class[loop.index - 1] }}">
+                            <img src="{{ value.list[loop.index - 1] }}" alt="">
+                          </td>
+                        {% else %}
+                          <td class="{{ value.class[loop.index - 1] }}">{{ value.list[loop.index - 1] }}</td>
+                        {% endif %}
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </main>
+      {% include './partials/components/dashboard/footer.njk' %}
+    </div>
+    {% include './partials/scripts/common.njk' %}
+  </body>
+</html>
