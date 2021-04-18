@@ -74,6 +74,10 @@
     background-color: transparent;
     color: var(--color-white);
     font-size: 14px;
+    @include animate(border);
+    &:focus {
+      border-color: var(--color-blue-30);
+    }
     &--radio {
       display: none;
       &:checked ~ .cs--dashboard-form__radio-box {
@@ -93,7 +97,7 @@
         height: var(--arrow-size);
         border-width: 2px 2px 0 0;
         border-style: solid;
-        border-color: #0096f3;
+        border-color: var(--color-blue-30);
         pointer-events: none;
         transform: translateY(-50%) rotateZ(135deg);
       }
@@ -151,7 +155,7 @@
       flex-shrink: 0;
       width: 18px;
       height: 18px;
-      border: 1px solid #0096f3;
+      border: 1px solid var(--color-blue-30);
       border-radius: 50%;
       &:before {
         content: '';
@@ -160,7 +164,7 @@
         height: 8px;
         border-radius: 50%;
         place-self: center;
-        background-color: #0096f3;
+        background-color: var(--color-blue-30);
         opacity: 0;
       }
     }
