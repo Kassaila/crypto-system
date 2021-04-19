@@ -1,0 +1,36 @@
+{% set navList = [
+  {
+    'title': 'Platform',
+    'link': 'javascript:void(0)'
+  }, {
+    'title': 'News',
+    'link': 'javascript:void(0)'
+  }, {
+    'title': 'FAQ',
+    'link': 'javascript:void(0)'
+  }
+]
+%}
+
+<header class="cs--dashboard-header" data-landing-header>
+  <div class="cs--container">
+    <div class="cs--dashboard-header__wrapper">
+      <a href="javascript:void(0)" class="cs--logo cs--logo--xs">
+        <img src="./img/logo-icon.png" alt="logo">
+      </a>
+      <nav class="cs--dashboard-nav" data-landing-menu data-expanded="false">
+        <ul class="cs--dashboard-nav__list">
+          {% for navItem in navList %}
+            <li class="cs--dashboard-nav__item">
+              <a href="{{ navItem.link }}">{{ navItem.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="cs--dashboard-options">
+      </div>
+      <button type="button" class="cs--landing-header__menu" data-landing-expander aria-expanded="false">
+        <span></span></button>
+    </div>
+  </div>
+</header>

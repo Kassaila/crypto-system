@@ -1,16 +1,16 @@
 .cs--dashboard--news {
   padding: 20px 0 30px;
-  &__head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    margin-bottom: 20px;
-  }
-  .cs--page__title {
-    margin-right: 10px;
-    margin-bottom: 0;
-    @include media('<xlg') {
+  .cs--page {
+    &__head {
+      align-items: flex-end;
       margin-bottom: 20px;
+    }
+    &__title {
+      margin-right: 10px;
+      margin-bottom: 0;
+      @include media('<xlg') {
+        margin-bottom: 20px;
+      }
     }
   }
   .cs--container {
@@ -45,5 +45,16 @@
   .cs--card-item__title {
     margin-bottom: 15px;
     font-size: 13px;
+  }
+  .cs--dashboard-form__input {
+    &--search-wrapper {
+      align-self: center;
+      @include media('<md') {
+        width: 50%;
+      }
+      @include media('<sm') {
+        width: 100%;
+      }
+    }
   }
 }

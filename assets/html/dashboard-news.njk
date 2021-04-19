@@ -119,13 +119,13 @@
       <main class="cs--page cs--dashboard--news">
         <section class="cs--section">
           <div class="cs--container">
-            <div class="cs--dashboard--news__head">
+            <div class="cs--page__head">
               <h1 class="cs--page__title">Latest News</h1>
               <form class="cs--card-filter__form">
                 {{ cardFilter(filterList) }}
-                <label for="card-filter-search" class="cs--card-filter__search-wrapper">
-                  <input type="text" class="cs--card-filter__search" placeholder="Search">
-                  <button type="button" class="cs--card-filter__search-btn">
+                <label for="search" class="cs--dashboard-form__input--search-wrapper ml-auto">
+                  <input id="search" type="text" class="cs--dashboard-form__input cs--dashboard-form__input--search" placeholder="Search">
+                  <button type="button" class="cs--dashboard-form__input--search-btn">
                     {{ icon('search') }}
                   </button>
                 </label>
