@@ -1,0 +1,60 @@
+.cs--dashboard-header {
+  position: relative;
+  z-index: 10;
+  padding: 15px 0;
+  background-color: var(--color-blue-85);
+  box-shadow: 0px 4px 4px rgba(31, 85, 134, 0.15);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .cs--container {
+    padding: 0 var(--padding-sm);
+    @include media('<xs') {
+      padding: 0 var(--padding-xs);
+    }
+  }
+}
+.cs--dashboard-nav {
+  margin-left: 55px;
+  @include media('<md') {
+    position: absolute;
+    top: var(--landing-header-height);
+    left: 0;
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: calc(100vh - var(--landing-header-height));
+    margin-left: 0;
+    background-color: var(--color-blue-80);
+    &[data-expanded='true'] {
+      display: block;
+    }
+  }
+  &__list {
+    @extend %listreset;
+    display: flex;
+    @include media('<md') {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+  }
+  &__item {
+    font-weight: 700;
+    font-size: 14px;
+    @include media('<md') {
+      font-size: 16px;
+    }
+    &:not(:last-child) {
+      margin-right: 30px;
+      @include media('<md') {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.cs--dashboard-options {
+  margin-left: auto;
+}
