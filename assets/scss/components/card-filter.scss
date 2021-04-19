@@ -21,6 +21,8 @@
       flex-wrap: wrap;
     }
     &-item {
+      margin-top: 5px;
+      margin-bottom: 5px;
       &:not(:last-child) {
         margin-right: 12px;
       }

@@ -433,12 +433,14 @@
                               </div>
                             </div>
                           </td>
+                        {% elif loop.index == 3 %}
+                          <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b> <span class="cs--color-secondary">BTC</span></td>
                         {% elif loop.index == 8 %}
                           <td class="{{ value.class[loop.index - 1] }}">
                             <img src="{{ value.list[loop.index - 1] }}" alt="">
                           </td>
                         {% else %}
-                          <td class="{{ value.class[loop.index - 1] }}">{{ value.list[loop.index - 1] }}</td>
+                          <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
                         {% endif %}
                       {% endfor %}
                     </tr>
