@@ -1,0 +1,12 @@
+.cs--color-theme {
+  &__btn {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    @include media('hover') {
+      &:hover {
+        --icon-color: var(--color-blue-30);
+      }
+    }
+  }
+}
