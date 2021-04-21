@@ -3,7 +3,7 @@ class Details {
     // Store the <details> element
     this.el = el;
     // Store the <summary> element
-    this.summary = el.querySelector('summary');
+    this.summary = el.querySelector('[data-details-summary]');
     // Store the [data-detail-content] element
     this.content = el.querySelector('[data-details-content]');
 

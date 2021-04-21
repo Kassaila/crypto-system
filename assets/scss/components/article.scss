@@ -24,6 +24,7 @@
   &__content {
     margin-bottom: 40px;
     font-size: 12px;
+    line-height: 1.4;
     h2 {
       margin-bottom: 25px;
       font-weight: 700;
@@ -46,7 +47,7 @@
       margin-bottom: 20px;
       font-size: inherit;
     }
-    img:not(.cs--article__img-crop) {
+    img:not(.cs--article__img-crop img) {
       overflow: hidden;
       margin-bottom: 20px;
       border-radius: 3px;
@@ -113,7 +114,6 @@
     margin-bottom: 15px;
     color: var(--color-grey-30);
     font-size: 10px;
-    line-height: 1.4;
     text-transform: uppercase;
   }
 }

@@ -1,6 +1,6 @@
 import Details from '@vendor/details';
 
-const detailsList = document.querySelectorAll('details');
+const detailsList = document.querySelectorAll('[data-details]');
 
 function init() {
   if (detailsList.length === 0) return;
