@@ -1,5 +1,7 @@
 .cs--color-theme {
   &__btn {
+    display: flex;
+    padding: 0;
     border: none;
     background-color: transparent;
     outline: none;

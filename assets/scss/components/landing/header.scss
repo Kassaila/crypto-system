@@ -21,6 +21,9 @@
     border: none;
     background-color: transparent;
     @include media('<md') {
+      margin-left: 10px;
+    }
+    @include media('<xs') {
       display: block;
     }
     @include media('hover') {

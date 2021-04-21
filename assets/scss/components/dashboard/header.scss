@@ -64,6 +64,9 @@
     display: block;
     padding-left: 10px;
     font-size: 10px;
+    @include media('<xs') {
+      padding-left: 0;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -74,6 +77,11 @@
       border-radius: 50%;
       background-color: var(--color-green-30);
       transform: translateY(-50%);
+    }
+    &-text {
+      @include media('<xs') {
+        display: none;
+      }
     }
   }
   &__lang {
@@ -91,6 +99,9 @@
   & > * {
     &:not(:last-child) {
       margin-right: 15px;
+      @include media('<xs') {
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -106,5 +117,14 @@
     height: var(--user-igm-size);
     margin-right: 10px;
     border-radius: 50%;
+    @include media('<xs') {
+      display: none;
+    }
+  }
+  .cs--dropdown {
+    &__btn {
+      max-width: 100px;
+      @include ellipsis;
+    }
   }
 }
