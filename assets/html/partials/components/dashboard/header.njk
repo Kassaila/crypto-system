@@ -1,3 +1,5 @@
+{% from "../icon.njk" import icon %}
+
 {%
   set navList = [
     {
@@ -59,8 +61,10 @@
         </ul>
       </nav>
       <div class="cs--dashboard-options">
-        <span class="cs--dashboard-options__status">Connected</span>
-        <details class="cs--dashboard-options__lang cs--dropdown">
+        <div class="cs--dashboard-options__status">
+          <span class="cs--dashboard-options__status-text">Connected</span>
+        </div>
+        <details data-dropdown class="cs--dashboard-options__lang cs--dropdown">
           <summary class="cs--dropdown__btn">en</summary>
           <ul class="cs--dropdown__list">
             {% for item in langList %}
@@ -74,14 +78,14 @@
             {% endfor %}
           </ul>
         </details>
-        <button type="button">
-          <img src="./img/icon/sun-solid.svg" alt="">
+        <button type="button" data-color-theme-toggler class="cs--color-theme__btn">
+          {{ icon('color-theme') }}
         </button>
         <div class="cs--user-menu">
           <div class="cs--user-menu__img">
             <img src="./img/examples/user-photo.png" alt="">
           </div>
-          <details class="cs--dropdown">
+          <details data-dropdown class="cs--dropdown">
             <summary class="cs--dropdown__btn">Ivan Ivanov</summary>
             <ul class="cs--dropdown__list">
               {% for item in userMenu %}
