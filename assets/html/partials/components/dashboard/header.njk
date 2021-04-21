@@ -1,15 +1,46 @@
-{% set navList = [
-  {
-    'title': 'Platform',
-    'link': 'javascript:void(0)'
-  }, {
-    'title': 'News',
-    'link': 'javascript:void(0)'
-  }, {
-    'title': 'FAQ',
-    'link': 'javascript:void(0)'
-  }
-]
+{%
+  set navList = [
+    {
+      'title': 'Platform',
+      'link': 'javascript:void(0)'
+    }, {
+      'title': 'News',
+      'link': 'javascript:void(0)'
+    }, {
+      'title': 'FAQ',
+      'link': 'javascript:void(0)'
+    }
+  ]
+%}
+
+{%
+  set langList = [
+    {
+      'title': 'en',
+      'type': 'button'
+    }, {
+      'title': 'ru',
+      'type': 'link'
+    }
+  ]
+%}
+
+{%
+  set userMenu = [
+    {
+      'title': 'User Profile',
+      'type': 'button'
+    }, {
+      'title': 'Preference',
+      'type': 'link'
+    }, {
+      'title': 'Security (2FA)',
+      'type': 'button'
+    }, {
+      'title': 'Logout',
+      'type': 'link'
+    }
+  ]
 %}
 
 <header class="cs--dashboard-header" data-landing-header>
@@ -28,6 +59,43 @@
         </ul>
       </nav>
       <div class="cs--dashboard-options">
+        <span class="cs--dashboard-options__status">Connected</span>
+        <details class="cs--dashboard-options__lang cs--dropdown">
+          <summary class="cs--dropdown__btn">en</summary>
+          <ul class="cs--dropdown__list">
+            {% for item in langList %}
+              <li class="cs--dropdown__item">
+              {% if item.type == 'button' %}
+                <button type="button">{{ item.title }}</button>
+              {% else %}
+                <a href="javascript:void(0)">{{ item.title }}</a>
+              {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </details>
+        <button type="button">
+          <img src="./img/icon/sun-solid.svg" alt="">
+        </button>
+        <div class="cs--user-menu">
+          <div class="cs--user-menu__img">
+            <img src="./img/examples/user-photo.png" alt="">
+          </div>
+          <details class="cs--dropdown">
+            <summary class="cs--dropdown__btn">Ivan Ivanov</summary>
+            <ul class="cs--dropdown__list">
+              {% for item in userMenu %}
+                <li class="cs--dropdown__item">
+                {% if item.type == 'button' %}
+                  <button type="button">{{ item.title }}</button>
+                {% else %}
+                  <a href="javascript:void(0)">{{ item.title }}</a>
+                {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </div>
       </div>
       <button type="button" class="cs--landing-header__menu" data-landing-expander aria-expanded="false">
         <span></span></button>
