@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CryptoSystem - Coming Soon</title>
+    <title>CryptoSystem - Interface</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>₿</text></svg>"
@@ -11,21 +11,15 @@
     {% include './partials/head/fonts.njk' %}
     {% include './partials/head/common.njk' %}
   </head>
+
+
   <body>
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
       {% include './partials/components/dashboard/header.njk' %}
-      <main class="cs--page cs--dashboard--coming-soon">
-        <section class="cs--section">
-          <div class="cs--container">
-            <div class="cs--dashboard--coming-soon__content">
-              <div class="cs--dashboard--coming-soon__decor">
-                <img src="./img/coming-soon-img.svg" alt="">
-              </div>
-              <h1 class="cs--dashboard--coming-soon__title">Coming Soon!</h1>
-            </div>
-          </div>
-        </section>
+      <main class="cs--page cs--dashboard--news-article">
+        <div class="cs--container">
+        </div>
       </main>
       {% include './partials/components/dashboard/footer.njk' %}
     </div>
