@@ -1,0 +1,93 @@
+{% from "../../components/table.njk" import table %}
+
+{%
+  set downTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Size',
+        'Price (USDT)',
+        'Total'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }
+    ]
+  }
+%}
+
+{%
+  set upTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Size',
+        'Price (USDT)',
+        'Total'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }
+    ]
+  }
+%}
+
+<section class="cs--dashboard-interface__block cs--dashboard-interface--order-book">
+  <h2 class="cs--table__title">Order Book</h2>
+  {{ table(downTable) }}
+  {{ table(upTable) }}
+</section>

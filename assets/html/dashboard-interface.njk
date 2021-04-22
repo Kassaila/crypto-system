@@ -17,8 +17,11 @@
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
       {% include './partials/components/dashboard/header.njk' %}
-      <main class="cs--page cs--dashboard--news-article">
+      <main class="cs--page cs--dashboard--interface">
         <div class="cs--container">
+          <div class="cs--dashboard-interface">
+            {% include './partials/sections/dashboard-interface/order-book.njk' %}
+          </div>
         </div>
       </main>
       {% include './partials/components/dashboard/footer.njk' %}
