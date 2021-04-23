@@ -1,0 +1,57 @@
+.cs--interface {
+  display: grid;
+  grid-template-areas:
+    'order-book tools tools balance'
+    'order-book tools tools balance'
+    'trade-history  my-orders my-orders chat';
+  grid-template-rows: repeat(3,300px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    background-color: var(--color-blue-85);
+    &--order-book {
+      grid-area: order-book;
+    }
+    &--trade-history {
+      grid-area: trade-history;
+    }
+    &--my-orders {
+      grid-area: my-orders;
+    }
+    &--chat {
+      grid-area: chat;
+      background-color: var(--color-blue-60);
+      box-shadow: 10px 0px 4px rgba(14, 17, 41, 0.25);
+    }
+    &--balance {
+      grid-area: balance;
+    }
+    &--tools {
+      grid-area: tools;
+      background-color: transparent;
+    }
+    &-title {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+  &__break-point {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+  }
+  .cs--table {
+    --cell-padding-x: 4px;
+    --cell-padding-y: 4px;
+    th {
+      padding: var(--cell-padding-y) var(--cell-padding-x) calc(3 * var(--cell-padding-y));
+      background-color: transparent;
+      color: var(--color-grey);
+    }
+  }
+}
