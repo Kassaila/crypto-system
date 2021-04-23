@@ -1,0 +1,103 @@
+{% from "../../components/table.njk" import table %}
+
+{%
+  set downTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Price (USDT)',
+        'Amount',
+        'Time'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }, {
+        'class': [
+          'cs--color-danger',
+          '',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '14:44:45'
+        ]
+      }
+    ]
+  }
+%}
+
+<section class="cs--interface__block cs--interface__block--trade-history">
+  <h2 class="cs--interface__block-title">Trade History</h2>
+  {{ table(downTable) }}
+</section>

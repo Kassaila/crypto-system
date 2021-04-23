@@ -1,0 +1,224 @@
+{% from "../../components/table.njk" import table %}
+
+{%
+  set downTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Size',
+        'Price (USDT)',
+        'Total'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }
+    ]
+  }
+%}
+
+{%
+  set upTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Size',
+        'Price (USDT)',
+        'Total'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }, {
+        'class': [
+          '',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '0.00423',
+          '55446.23',
+          '2356.6546546'
+        ]
+      }
+    ]
+  }
+%}
+
+<section class="cs--interface__block cs--interface__block--order-book">
+  <h2 class="cs--interface__block-title">Order Book</h2>
+  {{ table(downTable) }}
+  <div class="cs--interface__break-point cs--color-success">58,763.65 ≈ 1.00051916 BTC</div>
+  {{ table(upTable) }}
+</section>

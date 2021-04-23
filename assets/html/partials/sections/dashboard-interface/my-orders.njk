@@ -1,0 +1,151 @@
+{% from "../../components/table.njk" import table %}
+
+{%
+  set downTable = {
+    'head': {
+      'class': [
+        '',
+        '',
+        '',
+        '',
+        '',
+        ''
+      ],
+      'list': [
+        'Side',
+        'Size to fill',
+        'Price',
+        'Date',
+        'Status',
+        '-'
+      ]
+    },
+    'body': [
+      {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'Confirmed',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-warning',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'In processing',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'Rejected',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-success',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'Confirmed',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-warning',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'In processing',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'Rejected',
+          'Turpis'
+        ]
+      }, {
+        'class': [
+          '',
+          '',
+          '',
+          'cs--color-secondary',
+          'cs--color-danger',
+          'cs--color-secondary'
+        ],
+        'list': [
+          '58853.58',
+          '0.0447',
+          '58853.580000000002',
+          '18 mar 2021',
+          'Rejected',
+          'Turpis'
+        ]
+      }
+    ]
+  }
+%}
+
+<section class="cs--interface__block cs--interface__block--my-orders">
+  <h2 class="cs--interface__block-title">My Orders</h2>
+  {{ table(downTable) }}
+</section>
