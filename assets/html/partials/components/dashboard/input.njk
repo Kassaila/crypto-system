@@ -1,3 +1,25 @@
+{#
+  # @name dashInput
+  # @param {object} item - {
+    {string} title,
+    {string} id,
+    {string} type,
+    {string} class,
+    {string} postfix,
+    {string} placeholder,
+    {array<object>} optionList - {
+      {string} text,
+      {string} value
+    },
+    {array<object>} radioList - {
+      {string} title,
+      {string} value,
+      {boolean} slected
+    }
+  }
+  # @return {string}
+  #}
+
 {% macro dashInput(item) %}
   <div class="cs--dashboard-form__item">
     {% if item.title and item.type != 'radio' %}
@@ -8,7 +30,7 @@
     {% if item.type == 'textarea' %}
       <textarea id="{{ item.id }}" class="cs--dashboard-form__input" placeholder="{{ item.placeholder }}"></textarea>
     {% elif item.type == 'select' %}
-      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input--success' if item.valid }} {{ 'cs--dashboard-form__input--arrow' if item.type == 'select' }}">
+      <div class="cs--dashboard-form__input-wrapper {{ item.class }} {{ 'cs--dashboard-form__input--arrow' if item.type == 'select' }}">
         <select id="{{ item.id }}" class="cs--dashboard-form__input">
           <option value="" disabled selected hidden></option>
           {% for option in item.optionList %}
@@ -27,7 +49,7 @@
         {% endfor %}
       </div>
     {% else %}
-      <div class="cs--dashboard-form__input-wrapper {{ 'cs--dashboard-form__input--success' if item.valid }}">
+      <div class="cs--dashboard-form__input-wrapper {{ item.class }}" data-postfix="{{ item.postfix }}">
         <input id="{{ item.id }}" type="{{ item.type }}" class="cs--dashboard-form__input" placeholder="{{ item.placeholder }}">
       </div>
     {% endif %}

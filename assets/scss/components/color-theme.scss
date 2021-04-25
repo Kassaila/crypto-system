@@ -12,3 +12,8 @@
     }
   }
 }
+[data-color-theme='light'] {
+  .cs--interface__block {
+    background-color: var(--color-white);
+  }
+}

@@ -120,6 +120,19 @@
         }
       }
     }
+    &--postfix {
+      &:after {
+        content: attr(data-postfix);
+        position: absolute;
+        top: 50%;
+        right: var(--side-padding);
+        font-size: 12px;
+        transform: translateY(-50%);
+      }
+      .cs--dashboard-form__input {
+        padding-right: calc(3 * var(--side-padding));
+      }
+    }
     &--search-wrapper {
       position: relative;
       display: flex;

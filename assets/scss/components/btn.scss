@@ -77,6 +77,26 @@
   &--tab {
     --btn-border-radius: 0;
     background-color: var(--color-blue-60);
+    @include animate(background-color);
+    @include media('hover') {
+      &:hover {
+        &:not(.cs--btn--tab--active) {
+          background-color: var(--color-blue-50);
+        }
+      }
+    }
+    &--active {
+      background-color: var(--color-green-30);
+    }
+  }
+  &--success {
+    background-color: var(--color-green-30);
+    @include animate(background-color);
+    @include media('hover') {
+      &:hover {
+        background-color: var(--color-green-60);
+      }
+    }
   }
 }
 a.cs--btn {
@@ -91,5 +111,15 @@ a.cs--btn {
 }
 .cs--btn-group {
   display: flex;
-
+  & > * {
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+    &:not(:last-child) {
+      margin-right: 1px;
+    }
+  }
 }

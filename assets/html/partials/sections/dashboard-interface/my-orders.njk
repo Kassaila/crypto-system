@@ -146,11 +146,11 @@
 %}
 
 <section class="cs--interface__block cs--interface__block--my-orders">
-  <div>
+  <div class="cs--interface__block-head">
     <h2 class="cs--interface__block-title">My Orders</h2>
     <div class="cs--btn-group">
-      <button type="button" class="cs--btn cs--btn-tab">Open</button>
-      <button type="button" class="cs--btn cs--btn-tab">Filled</button>
+      <button type="button" class="cs--btn cs--btn--tab">Open</button>
+      <button type="button" class="cs--btn cs--btn--tab cs--btn--tab--active">Filled</button>
     </div>
   </div>
   {{ table(downTable) }}
