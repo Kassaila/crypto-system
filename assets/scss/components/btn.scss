@@ -10,7 +10,7 @@
   font-weight: 700;
   font-size: 16px;
   text-align: center;
-  &-grad-blue {
+  &--grad-blue {
     background-image: var(--grad-blue);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     @include animate(box-shadow);
@@ -40,7 +40,7 @@
       z-index: 1;
     }
   }
-  &-transparent-grad-blue {
+  &--transparent-grad-blue {
     --grad-border: 2px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     @include media('hover') {
@@ -74,6 +74,10 @@
       @include animate(opacity);
     }
   }
+  &--tab {
+    --btn-border-radius: 0;
+    background-color: var(--color-blue-60);
+  }
 }
 a.cs--btn {
   @include media('hover') {
@@ -84,4 +88,8 @@ a.cs--btn {
   &:focus {
     text-decoration: none;
   }
+}
+.cs--btn-group {
+  display: flex;
+
 }
