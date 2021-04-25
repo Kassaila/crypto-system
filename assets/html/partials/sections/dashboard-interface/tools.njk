@@ -1,3 +1,49 @@
+{% from "../../components/dashboard/input.njk" import dashInput %}
+
+{%
+  set input = {
+    'type': 'select',
+    'optionList': [
+      {
+        'text': 'Markets',
+        'value': 'markets'
+      }, {
+        'text': 'Markets - 1',
+        'value': 'markets-1'
+      }
+    ]
+  }
+%}
+
 <section class="cs--interface__block cs--interface__block--tools">
-  <h2 class="cs--interface__block-title">Tools</h2>
+  <div class="cs--interface__chart-head">
+    <div class="cs--interface__chart-select">
+      <img src="./img/crypto-icon/btc.svg" alt="">
+      <b>BTC - USDC</b>
+      {{ dashInput(input) }}
+    </div>
+    <div class="cs--interface__chart-comment">
+      <span class="cs--color-secondary">24h price change</span>
+      <div class="cs--interface__chart-stat">
+        <img src="./img/icon/progress-arrow-up.svg" alt="">
+        <span class="cs--color-success">+39.69%</span>
+        <img src="./img/icon/graph-line.svg" alt="">
+      </div>
+    </div>
+    <div class="cs--interface__chart-comment">
+      <span class="cs--color-secondary">Last Price</span>
+      <div class="cs--interface__chart-stat">
+        <span>USDC 37,008.25</span>
+      </div>
+    </div>
+    <div class="cs--interface__chart-comment">
+      <span class="cs--color-secondary">24h Volume</span>
+      <div class="cs--interface__chart-stat">
+        <span>BTC 10.82</span>
+      </div>
+    </div>
+  </div>
+  <div class="cs--interface__chart">
+    <img src="./img/examples/charts-example.png" alt="">
+  </div>
 </section>

@@ -3,89 +3,77 @@
   grid-template-areas:
     'order-book tools tools balance'
     'order-book tools tools balance'
-    'trade-history  my-orders my-orders chat';
+    'trade-history my-orders my-orders chat';
   grid-template-rows: repeat(3, 300px);
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
-  &__block {
-    display: flex;
-    flex-direction: column;
-    padding: 15px 20px;
-    background-color: var(--color-blue-85);
-    &--order-book {
-      grid-area: order-book;
-      .cs--interface__block-title {
-        margin-bottom: 25px;
-      }
-    }
-    &--trade-history {
-      grid-area: trade-history;
-      .cs--interface__block-title {
-        margin-bottom: 15px;
-      }
-    }
-    &--my-orders {
-      grid-area: my-orders;
-      .cs--btn-group {
-        margin-left: auto;
-      }
-    }
-    &--chat {
-      grid-area: chat;
-      background-color: var(--color-blue-60);
-      box-shadow: 10px 0px 4px rgba(14, 17, 41, 0.25);
-      .cs--interface__block-head {
-        margin-bottom: 0;
-      }
-      .cs--interface__block-title {
-        margin-left: 10px;
-      }
-      .cs--btn {
-        padding: 12px 14px;
-        border-radius: 3px;
-      }
-    }
-    &--balance {
-      grid-area: balance;
-      .cs--interface__block-title {
-        margin-bottom: 15px;
-      }
-      .cs--balance-table {
-        margin-bottom: 35px;
-      }
-      .cs--btn-group {
-        margin-bottom: 10px;
-        .cs--btn {
-          flex-grow: 1;
-        }
-      }
-      form {
-        margin-top: 20px;
-        .cs--dashboard-form__input {
-          font-size: 12px;
-        }
-        .cs--btn {
-          --btn-border-radius: 3px;
-          width: 100%;
-          padding: 10px;
-          margin-top: 15px;
-          font-size: 14px;
-        }
-      }
-    }
-    &--tools {
-      grid-area: tools;
-      background-color: transparent;
+  @include media('<xlg') {
+    grid-template-areas:
+      'tools tools'
+      'tools tools'
+      'order-book balance'
+      'order-book balance'
+      'my-orders my-orders'
+      'trade-history chat';
+    grid-template-rows: repeat(6, minmax(300px, max-content));
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  @include media('<sm') {
+    display: block;
+  }
+  &__chart {
+    // for example
+    & > img {
+      width: 100%;
     }
     &-head {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      @include media('<sm') {
+        flex-wrap: wrap;
+      }
+      & > *:not(:last-child) {
+        margin-right: 20px;
+      }
     }
-    &-title {
-      margin-bottom: 0;
-      font-weight: 700;
-      font-size: 14px;
+    &-select {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border: 1px solid var(--color-light-blue-50);
+      border-radius: 3px;
+      @include media('<sm') {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      @include media('<xs') {
+        flex-wrap: wrap;
+      }
+      & > *:not(:last-child) {
+        margin-right: 10px;
+      }
+      .cs--dashboard-form__item {
+        margin-left: auto;
+        @include media('<xs') {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+      .cs--dashboard-form__input {
+        padding: 10px calc(2 * var(--side-padding)) 10px var(--side-padding);
+        border: transparent;
+      }
+    }
+    &-comment {
+      font-size: 12px;
+      @include media('<xs') {
+        margin-bottom: 10px;
+      }
+    }
+    &-stat {
+      margin-top: 5px;
     }
   }
   &__break-point {
@@ -108,5 +96,93 @@
       padding: 6px 16px;
       font-size: 11px;
     }
+  }
+}
+.cs--interface__block {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  background-color: var(--color-blue-85);
+  @include media('<sm') {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &--order-book {
+    grid-area: order-book;
+    .cs--interface__block-title {
+      margin-bottom: 25px;
+    }
+  }
+  &--trade-history {
+    grid-area: trade-history;
+    .cs--interface__block-title {
+      margin-bottom: 15px;
+    }
+  }
+  &--my-orders {
+    grid-area: my-orders;
+    .cs--btn-group {
+      margin-left: auto;
+    }
+  }
+  &--chat {
+    grid-area: chat;
+    height: 300px;
+    background-color: var(--color-blue-60);
+    box-shadow: 10px 0px 4px rgba(14, 17, 41, 0.25);
+    .cs--interface__block-head {
+      margin-bottom: 0;
+    }
+    .cs--interface__block-title {
+      margin-left: 10px;
+    }
+    .cs--btn {
+      padding: 12px 14px;
+      border-radius: 3px;
+    }
+  }
+  &--balance {
+    grid-area: balance;
+    .cs--interface__block-title {
+      margin-bottom: 15px;
+    }
+    .cs--balance-table {
+      margin-bottom: 35px;
+    }
+    .cs--btn-group {
+      margin-bottom: 10px;
+      .cs--btn {
+        flex-grow: 1;
+      }
+    }
+    form {
+      margin-top: 20px;
+      .cs--dashboard-form__input {
+        font-size: 12px;
+      }
+      .cs--btn {
+        --btn-border-radius: 3px;
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+    }
+  }
+  &--tools {
+    grid-area: tools;
+    padding: 0;
+    background-color: transparent;
+  }
+  &-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &-title {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 14px;
   }
 }
