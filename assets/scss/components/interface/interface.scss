@@ -34,6 +34,16 @@
       grid-area: chat;
       background-color: var(--color-blue-60);
       box-shadow: 10px 0px 4px rgba(14, 17, 41, 0.25);
+      .cs--interface__block-head {
+        margin-bottom: 0;
+      }
+      .cs--interface__block-title {
+        margin-left: 10px;
+      }
+      .cs--btn {
+        padding: 12px 14px;
+        border-radius: 3px;
+      }
     }
     &--balance {
       grid-area: balance;
@@ -51,6 +61,9 @@
       }
       form {
         margin-top: 20px;
+        .cs--dashboard-form__input {
+          font-size: 12px;
+        }
         .cs--btn {
           --btn-border-radius: 3px;
           width: 100%;

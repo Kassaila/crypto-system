@@ -1,0 +1,35 @@
+.cs--chat {
+  &-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    max-height: 100%;
+  }
+  &-output {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: var(--color-blue-50);
+    }
+  }
+  &-message {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  &-input {
+    display: flex;
+    align-items: flex-start;
+    textarea.cs--dashboard-form__input {
+      height: 42px;
+      min-height: 0;
+      margin-right: 10px;
+      background-color: var(--color-white);
+      color: var(--color-black);
+      resize: none;
+    }
+  }
+}
