@@ -1,5 +1,13 @@
 .cs--table-wrapper {
-  overflow-x: auto;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--color-blue-50);
+  }
 }
 .cs--table {
   --cell-padding-x: 25px;

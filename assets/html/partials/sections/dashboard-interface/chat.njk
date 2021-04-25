@@ -1,3 +1,43 @@
+{% from "../../components/icon.njk" import icon %}
+
 <section class="cs--interface__block cs--interface__block--chat">
-  <h2 class="cs--interface__block-title">Chat</h2>
+  <form class="cs--chat-wrapper">
+    <div class="cs--interface__block-head">
+      <div>{{ icon('chat') }}</div>
+      <h2 class="cs--interface__block-title">Chat</h2>
+    </div>
+    <output class="cs--chat-output">
+      <div class="cs--chat-message">
+        <b class="cs--color-danger">gera267: </b><span>в этом году не будет рипла по 3$</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-success">RoboHoma: </b><span>Bilaldzhabrailov, на этой бирже любая монетка может х10 дать, но когда хз...</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-warning">aswert L0: </b><span>ceckf2017, ага рибята же в групе писали шоб</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-danger">gera267: </b><span>в этом году не будет рипла по 3$</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-success">RoboHoma: </b><span>Bilaldzhabrailov, на этой бирже любая монетка может х10 дать, но когда хз...</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-warning">aswert L0: </b><span>ceckf2017, ага рибята же в групе писали шоб</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-danger">gera267: </b><span>в этом году не будет рипла по 3$</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-success">RoboHoma: </b><span>Bilaldzhabrailov, на этой бирже любая монетка может х10 дать, но когда хз...</span>
+      </div>
+      <div class="cs--chat-message">
+        <b class="cs--color-warning">aswert L0: </b><span>ceckf2017, ага рибята же в групе писали шоб</span>
+      </div>
+    </output>
+    <div class="cs--chat-input">
+      <textarea class="cs--dashboard-form__input" placeholder="Message"></textarea>
+      <button class="cs--btn cs--btn--grad-blue">{{ icon('send') }}</button>
+    </div>
+  </form>
 </section>

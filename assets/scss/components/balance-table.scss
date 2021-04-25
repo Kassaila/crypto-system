@@ -1,0 +1,8 @@
+.cs--balance-table {
+  font-size: 10px;
+  &__accent {
+    color: var(--color-green-30);
+    font-weight: 700;
+    text-align: right;
+  }
+}

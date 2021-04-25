@@ -34,8 +34,8 @@ $media-expressions: (
     '(-ms-high-contrast: none)',
     '(-ms-high-contrast: active)',
   ),
-  'theme-light': 'prefers-color-scheme: light',
-  'theme-dark': 'prefers-color-scheme: dark',
+  'theme-light': '(prefers-color-scheme: light)',
+  'theme-dark': '(prefers-color-scheme: dark)',
   'ie': (
     '(-ms-high-contrast: none)',
     '(-ms-high-contrast: active)',

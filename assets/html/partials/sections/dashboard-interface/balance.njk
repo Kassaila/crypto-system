@@ -1,3 +1,60 @@
+{% from "../../components/dashboard/input.njk" import dashInput %}
+
+{%
+    set inputList = [
+      {
+        'title': 'Price',
+        'id': 'dashboard--price',
+        'type': 'text',
+        'class': 'cs--dashboard-form__input--postfix',
+        'postfix': 'USD'
+      }, {
+        'title': 'Total',
+        'id': 'dashboard--total',
+        'type': 'text',
+        'class': 'cs--dashboard-form__input--postfix',
+        'postfix': 'USD'
+      }
+    ]
+  %}
+
+  {%
+    set balanceTable = [
+      {
+        'title': 'USD',
+        'price': '200000.0447'
+      }, {
+        'title': 'BTC',
+        'price': '0000032.12154'
+      }
+    ]
+  %}
+
 <section class="cs--interface__block cs--interface__block--balance">
   <h2 class="cs--interface__block-title">Balance</h2>
+  <table class="cs--balance-table">
+    <tbody>
+      {% for item in balanceTable %}
+        <tr>
+          <td>{{ item.title }}</td>
+          <td class="cs--balance-table__accent">{{ item.price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="cs--btn-group">
+    <button type="button" class="cs--btn cs--btn--tab">Buy</button>
+    <button type="button" class="cs--btn cs--btn--tab cs--btn--tab--active">Sell</button>
+  </div>
+  <div class="cs--btn-group">
+    <button type="button" class="cs--btn cs--btn--tab cs--btn--tab--active">Market</button>
+    <button type="button" class="cs--btn cs--btn--tab">Limit</button>
+    <button type="button" class="cs--btn cs--btn--tab">Stop</button>
+  </div>
+  <form>
+    {% for input in inputList %}
+      {{ dashInput(input) }}
+    {% endfor %}
+    <button type="submit" class="cs--btn cs--btn--success">Buy</button>
+  </form>
 </section>
