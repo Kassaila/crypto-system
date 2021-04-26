@@ -76,12 +76,14 @@
   }
   &--tab {
     --btn-border-radius: 0;
-    background-color: var(--color-blue-60);
+    --btn-tab-bg: var(--color-blue-60);
+    --btn-tab-hover-bg: var(--color-blue-50);
+    background-color: var(--btn-tab-bg);
     @include animate(background-color);
     @include media('hover') {
       &:hover {
         &:not(.cs--btn--tab--active) {
-          background-color: var(--color-blue-50);
+          background-color: var(--btn-tab-hover-bg);
         }
       }
     }
