@@ -32,9 +32,9 @@
     overflow: hidden;
     width: 100%;
   }
-  &[class*='cs--dashboard'] {
-    background-image: var(--radial-blue);
-  }
+  // &[class*='cs--dashboard'] {
+  //   background-image: var(--radial-blue);
+  // }
   hr {
     height: 1px;
     margin: 25px 0;

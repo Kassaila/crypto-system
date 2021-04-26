@@ -13,7 +13,40 @@
   }
 }
 [data-color-theme='light'] {
+  --base-text-color: var(--color-grey-90);
+  --base-background-color: var(--color-light-blue-10);
   .cs--interface__block {
     background-color: var(--color-white);
+    &--chat {
+      box-shadow: none;
+      .cs--interface__block-head {
+        --icon-color: var(--color-red);
+      }
+    }
+  }
+  .cs--dashboard-form__input {
+    border-color: var(--color-grey-20);
+  }
+  select.cs--dashboard-form__input {
+    background-color: var(--color-white);
+  }
+  .cs--btn--tab {
+    --btn-tab-bg: var(--color-light-blue-15);
+    --btn-tab-hover-bg: var(--color-grey-20);
+    &:not(.cs--btn--tab--active) {
+      color: var(--base-text-color);
+    }
+  }
+  .cs--dashboard-footer {
+    background-color: var(--color-grey-blue-20);
+    * {
+      color: var(--color-white);
+    }
+  }
+  .cs--dashboard-header {
+    background-color: var(--color-grey-blue-20);
+    * {
+      color: var(--color-white);
+    }
   }
 }
