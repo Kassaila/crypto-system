@@ -32,7 +32,8 @@
       cursor: pointer;
       @include media('hover') {
         &:hover {
-          .cs--card-filter__filter-title {
+          .cs--card-filter__filter-title,
+          .cs--card-filter__filter-icon {
             opacity: 0.7;
           }
         }
@@ -56,6 +57,17 @@
       font-size: 12px;
       line-height: 1;
       @include animate(background-color opacity);
+    }
+    &-icon {
+      display: block;
+      padding: 7px;
+      border-radius: 3px;
+      background-color: var(--color-blue-50);
+      @include animate(background-color opacity);
+      .cs--icon {
+        width: 20px;
+        height: 18px;
+      }
     }
   }
 }

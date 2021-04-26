@@ -32,5 +32,13 @@
       color: var(--color-black);
       resize: none;
     }
+    .cs--btn {
+      padding: 9px 12px;
+      border-radius: 3px;
+    }
+    .cs--icon {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

@@ -1,10 +1,16 @@
+{% from "./icon.njk" import icon %}
+
 {% macro cardFilter(itemList) %}
   <ul class="cs--card-filter__filter-list">
     {% for item in itemList %}
       <li class="cs--card-filter__filter-item">
         <label for="{{ item.id }}" class="cs--card-filter__filter-label">
           <input id="{{ item.id }}" type="checkbox" class="cs--card-filter__filter-input">
-          <span class="cs--card-filter__filter-title">{{ item.title }}</span>
+          {% if item.type != 'icon' %}
+            <span class="cs--card-filter__filter-title">{{ item.title }}</span>
+          {% else %}
+            <span class="cs--card-filter__filter-icon">{{ icon(item.title) }}</span>
+          {% endif %}
         </label>
       </li>
     {% endfor %}

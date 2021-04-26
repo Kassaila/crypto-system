@@ -101,6 +101,9 @@
         pointer-events: none;
         transform: translateY(-50%) rotateZ(135deg);
       }
+      .cs--dashboard-form__input {
+        padding-right: calc(2 * var(--side-padding));
+      }
     }
     &--success {
       --valid-size: 20px;
@@ -143,6 +146,8 @@
       top: 50%;
       right: 15px;
       display: flex;
+      width: 17px;
+      height: 17px;
       padding: 0;
       border: none;
       background-color: transparent;

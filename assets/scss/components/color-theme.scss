@@ -1,6 +1,8 @@
 .cs--color-theme {
   &__btn {
     display: flex;
+    width: 20px;
+    height: 20px;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -48,5 +50,8 @@
     * {
       color: var(--color-white);
     }
+  }
+  .cs--favorite {
+    --icon-color: var(--color-grey-20);
   }
 }
