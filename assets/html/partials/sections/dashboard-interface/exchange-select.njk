@@ -1,0 +1,47 @@
+{% from "../../components/dashboard/input.njk" import dashInput %}
+
+{%
+  set inputList = [
+    {
+      'title': 'Exchange',
+      'id': 'dashboard--exchange',
+      'type': 'select',
+      'optionList': [
+        {
+          'text': 'Binance',
+          'value': 'binance'
+        }, {
+          'text': 'Example',
+          'value': 'example'
+        }
+      ]
+    }, {
+      'title': 'Account',
+      'id': 'dashboard--account',
+      'type': 'select',
+      'optionList': [
+        {
+          'text': 'Select Account',
+          'value': 'Select Account'
+        }, {
+          'text': 'Example',
+          'value': 'example'
+        }
+      ]
+    }
+  ]
+%}
+
+<section class="cs--interface__block cs--interface__block--balance">
+  <form>
+    {% for input in inputList %}
+      {{ dashInput(input) }}
+    {% endfor %}
+    <div class="cs--interface__alert">
+      <img src="./img/disconnect.svg" alt="">
+      <h3 class="cs--interface__alert-title">No Account</h3>
+      <span class="cs--interface__alert-text">Connect your AAX account to start trading</span>
+    </div>
+    <button type="submit" class="cs--btn cs--btn--success">Add Account</button>
+  </form>
+</section>

@@ -1,47 +1,335 @@
 {% from "../../components/dashboard/input.njk" import dashInput %}
+{% from "../../components/card-filter.njk" import cardFilter %}
+{% from "../../components/icon.njk" import icon %}
 
 {%
-  set inputList = [
+  set filterList = [
     {
-      'title': 'Exchange',
-      'id': 'dashboard--exchange',
-      'type': 'select',
-      'optionList': [
-        {
-          'text': 'Binance',
-          'value': 'binance'
-        }, {
-          'text': 'Example',
-          'value': 'example'
-        }
-      ]
+      'id': 'favorite',
+      'title': 'star',
+      'type': 'icon'
     }, {
-      'title': 'Account',
-      'id': 'dashboard--account',
-      'type': 'select',
-      'optionList': [
-        {
-          'text': 'Select Account',
-          'value': 'Select Account'
-        }, {
-          'text': 'Example',
-          'value': 'example'
-        }
-      ]
+      'id': 'ALL',
+      'title': 'ALL'
+    }, {
+      'id': 'BTC',
+      'title': 'BTC'
+    }, {
+      'id': 'ETH',
+      'title': 'ETH'
+    }, {
+      'id': 'USDT',
+      'title': 'USDT'
+    }, {
+      'id': 'USDC',
+      'title': 'USDC'
+    }, {
+      'id': 'DAI',
+      'title': 'DAI'
+    }, {
+      'id': 'ZXC',
+      'title': 'ZXC'
     }
   ]
 %}
 
+{%
+  set marketTable = {
+    'head': {
+      'list': [
+        'Name',
+        'Circulating Supply',
+        '24h Volume',
+        'Avg Price',
+        '24h % Change',
+        'Chart (24h)'
+      ]
+    },
+    'body': [
+        {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'cs--color-success',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Bitcoin-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/btc.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-plus.svg',
+            '+2.40%',
+            './img/icon/star.svg'
+          ]
+        }, {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'no-wrap cs--color-danger',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Ethereu-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/eth.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-minus.svg',
+            '-2.40%',
+            './img/icon/star.svg'
+          ]
+        }, {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'cs--color-success',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Bitcoin-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/btc.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-plus.svg',
+            '+2.40%',
+            './img/icon/star.svg'
+          ]
+        }, {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'no-wrap cs--color-danger',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Ethereu-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/eth.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-minus.svg',
+            '-2.40%',
+            './img/icon/star.svg'
+          ]
+        }, {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'cs--color-success',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Bitcoin-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/btc.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-plus.svg',
+            '+2.40%',
+            './img/icon/star.svg'
+          ]
+        }, {
+          'class': [
+            'no-wrap',
+            'no-wrap',
+            'no-wrap',
+            'cs--table__cell--chart',
+            'no-wrap cs--color-danger',
+            ''
+          ],
+          'list': [
+            {
+              'crypto': 'Ethereu-EUR',
+              'abbr': 'Bitcoin',
+              'imgSrc': './img/crypto-icon/eth.svg'
+            }, {
+              'crypto': '670.05K EUR',
+              'abbr': '24h volume'
+            }, {
+              'crypto': '30,045.56 EUR',
+              'abbr': '30,054.567 EUR'
+            },
+            './img/examples/chart-minus.svg',
+            '-2.40%',
+            './img/icon/star.svg'
+          ]
+        }
+    ]
+  }
+%}
+
 <section class="cs--interface__block cs--interface__block--balance">
-  <form>
-    {% for input in inputList %}
-      {{ dashInput(input) }}
-    {% endfor %}
-    <div class="cs--interface__alert">
-      <img src="./img/disconnect.svg" alt="">
-      <h3 class="cs--interface__alert-title">No Account</h3>
-      <span class="cs--interface__alert-text">Connect your AAX account to start trading</span>
+    <div class="cs--dashboard-form__item">
+      <label class="cs--dashboard-form__label">Exchange</label>
+      <details data-dropdown class="cs--interface__dropdown cs--dashboard-form__input-wrapper  cs--dashboard-form__input--arrow">
+        <summary class="cs--interface__dropdown-btn cs--dashboard-form__input">
+          <span>Balance</span>
+        </summary>
+        <div class="cs--interface__dropdown-content">
+          <form class="cs--card-filter__form">
+            <label for="search" class="cs--dashboard-form__input--search-wrapper ml-auto">
+              <input id="search" type="text" class="cs--dashboard-form__input cs--dashboard-form__input--search" placeholder="Search">
+              <button type="button" class="cs--dashboard-form__input--search-btn">
+                {{ icon('search') }}
+              </button>
+            </label>
+            {{ cardFilter(filterList) }}
+          </form>
+          <div class="cs--table-wrapper">
+            <table class="cs--table cs--table--bordered">
+              <tbody>
+                {% for value in marketTable.body %}
+                  <tr>
+                    {% for name in marketTable.head.list %}
+                      {% if loop.index == 5 %}
+                        <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
+                      {% elif loop.index == 4 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <img src="{{ value.list[loop.index - 1] }}" alt="">
+                        </td>
+                      {% elif loop.index == 6 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <button type="button" class="cs--favorite">
+                            {{ icon('star') }}
+                          </button>
+                        </td>
+                      {% elif loop.index == 1 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <div class="cs--table__card">
+                            <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
+                            <div class="cs--table__card-content">
+                              <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
+                              <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
+                            </div>
+                          </div>
+                        </td>
+                      {% else %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <div class="cs--table__card-content">
+                            <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
+                            <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
+                          </div>
+                        </td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
     </div>
+    <div class="cs--dashboard-form__item">
+      <label class="cs--dashboard-form__label">Account</label>
+      <details data-dropdown class="cs--interface__dropdown cs--dashboard-form__input-wrapper  cs--dashboard-form__input--arrow">
+        <summary class="cs--interface__dropdown-btn cs--dashboard-form__input">
+          <span>Select Account</span>
+        </summary>
+        <div class="cs--interface__dropdown-content">
+          <form class="cs--card-filter__form">
+            <label for="search" class="cs--dashboard-form__input--search-wrapper ml-auto">
+              <input id="search" type="text" class="cs--dashboard-form__input cs--dashboard-form__input--search" placeholder="Search">
+              <button type="button" class="cs--dashboard-form__input--search-btn">
+                {{ icon('search') }}
+              </button>
+            </label>
+            {{ cardFilter(filterList) }}
+          </form>
+          <div class="cs--table-wrapper">
+            <table class="cs--table cs--table--bordered">
+              <tbody>
+                {% for value in marketTable.body %}
+                  <tr>
+                    {% for name in marketTable.head.list %}
+                      {% if loop.index == 5 %}
+                        <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
+                      {% elif loop.index == 4 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <img src="{{ value.list[loop.index - 1] }}" alt="">
+                        </td>
+                      {% elif loop.index == 6 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <button type="button" class="cs--favorite">
+                            {{ icon('star') }}
+                          </button>
+                        </td>
+                      {% elif loop.index == 1 %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <div class="cs--table__card">
+                            <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
+                            <div class="cs--table__card-content">
+                              <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
+                              <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
+                            </div>
+                          </div>
+                        </td>
+                      {% else %}
+                        <td class="{{ value.class[loop.index - 1] }}">
+                          <div class="cs--table__card-content">
+                            <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
+                            <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
+                          </div>
+                        </td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+  <div class="cs--interface__alert">
+    <img src="./img/disconnect.svg" alt="">
+    <h3 class="cs--interface__alert-title">No Account</h3>
+    <span class="cs--interface__alert-text">Connect your AAX account to start trading</span>
+  </div>
+  <form>
     <button type="submit" class="cs--btn cs--btn--success">Add Account</button>
   </form>
 </section>

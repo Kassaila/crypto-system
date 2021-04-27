@@ -24,9 +24,13 @@
   }
   &__dropdown {
     position: relative;
+    z-index: 1;
     @include media('<sm') {
       width: 100%;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    &[open] {
+      z-index: 2;
     }
     &-btn {
       position: relative;
@@ -38,6 +42,10 @@
         cursor: pointer;
         @include media('<xs') {
           flex-wrap: wrap;
+        }
+        &::-webkit-details-marker,
+        &::marker {
+          display: none;
         }
         & > *:not(:last-child) {
           margin-right: 10px;
@@ -53,7 +61,7 @@
       padding-top: 65px;
       border: 1px solid var(--color-blue-50);
       border-radius: 5px;
-      background: var(--color-blue-85);
+      background-color: var(--color-blue-85);
       box-shadow: 0px 0px 40px rgba(15, 46, 105, 0.7);
       @include media('<sm') {
         width: 100%;
@@ -103,6 +111,11 @@
       }
       & > *:not(:last-child) {
         margin-right: 15px;
+        &.cs--interface__dropdown {
+          @include media('<sm') {
+            margin-right: 0;
+          }
+        }
       }
     }
     &-comment {
@@ -203,6 +216,7 @@
     }
   }
   &--balance {
+    position: relative;
     grid-area: balance;
     .cs--interface__block-title {
       margin-bottom: 15px;
@@ -216,17 +230,16 @@
         flex-grow: 1;
       }
     }
-    form {
-      .cs--dashboard-form__input {
-        font-size: 12px;
-      }
-      .cs--btn {
-        --btn-border-radius: 3px;
-        width: 100%;
-        padding: 10px;
-        margin-top: 15px;
-        font-size: 14px;
-      }
+    .cs--btn {
+      --btn-border-radius: 3px;
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .cs--interface__dropdown-content {
+      right: 0;
+      left: auto;
     }
   }
   &--tools {

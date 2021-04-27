@@ -3,21 +3,6 @@
 {% from "../../components/icon.njk" import icon %}
 
 {%
-  set input = {
-    'type': 'select',
-    'optionList': [
-      {
-        'text': 'Markets',
-        'value': 'markets'
-      }, {
-        'text': 'Markets - 1',
-        'value': 'markets-1'
-      }
-    ]
-  }
-%}
-
-{%
   set filterList = [
     {
       'id': 'favorite',
@@ -222,7 +207,7 @@
       <summary class="cs--interface__dropdown-btn cs--dashboard-form__input">
         <img src="./img/crypto-icon/btc.svg" alt="">
         <b>BTC - USDC</b>
-        <span>Market</span>
+        <span class="ml-auto">Market</span>
       </summary>
       <div class="cs--interface__dropdown-content">
         <form class="cs--card-filter__form">
