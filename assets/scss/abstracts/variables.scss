@@ -80,6 +80,7 @@ $media-expressions: (
   --color-grey-100: hsl(0, 0%, 13%);
   --color-light-blue-10: hsl(228, 33%, 97%);
   --color-light-blue-15: hsl(225, 10%, 92%);
+  --color-light-blue-20: hsl(227, 100%, 96%);
   --color-light-blue-50: hsl(206, 78%, 78%);
   --color-blue: hsl(210, 100%, 60%);
   --color-blue-10: hsl(195, 100%, 49%);
@@ -103,7 +104,7 @@ $media-expressions: (
   --color-green-60: hsl(175, 49%, 40%);
   --color-red: hsl(0, 83%, 70%);
   --color-yellow: hsl(43, 98%, 37%);
-  // --c: #02102f;
+  --c: #ECF0FF;
 
   --grad-blue: linear-gradient(86.88deg, #00c6fb 1.95%, #005bea 97.83%);
   --grad-orange: linear-gradient(271.95deg, #fb7e37 14.29%, #ff9a44 98.96%);

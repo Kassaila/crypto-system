@@ -211,6 +211,8 @@
     }
     & > * {
       display: flex;
+      overflow: hidden;
+      border-radius: 12px;
       @include animate(box-shadow);
       @include media('hover') {
         &:hover {

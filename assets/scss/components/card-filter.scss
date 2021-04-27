@@ -21,6 +21,7 @@
       flex-wrap: wrap;
     }
     &-item {
+      --card-filter-btn-bg: var(--color-blue-50);
       margin-top: 5px;
       margin-bottom: 5px;
       &:not(:last-child) {
@@ -52,7 +53,7 @@
       display: block;
       padding: 12px;
       border-radius: 3px;
-      background-color: var(--color-blue-50);
+      background-color: var(--card-filter-btn-bg);
       font-weight: 700;
       font-size: 12px;
       line-height: 1;
@@ -62,7 +63,7 @@
       display: block;
       padding: 7px;
       border-radius: 3px;
-      background-color: var(--color-blue-50);
+      background-color: var(--card-filter-btn-bg);
       @include animate(background-color opacity);
       .cs--icon {
         width: 20px;
