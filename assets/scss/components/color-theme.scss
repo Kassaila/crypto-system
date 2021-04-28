@@ -40,6 +40,7 @@
     }
   }
   .cs--dashboard-footer {
+    --icon-bg-color: var(--color-grey-blue-20);
     background-color: var(--color-grey-blue-20);
     * {
       color: var(--color-white);
@@ -80,8 +81,10 @@
   .cs--table th {
     background-color: var(--color-grey-5);
   }
-  .cs--table-wrapper {
-    box-shadow: 0px 0px 30px rgba(31, 85, 134, 0.15);
+  .cs--dashboard--markets {
+    .cs--table-wrapper {
+      box-shadow: 0px 0px 30px rgba(31, 85, 134, 0.15);
+    }
   }
   .cs--dashboard--markets .cs--table {
     background-color: var(--color-white);
@@ -142,11 +145,32 @@
       color: var(--color-blue-20);
     }
   }
-  .cs--details-item {
-    --detail-active-color: var(--color-light-blue-20);
-    --detail-bg-color: var(--color-white);
-  }
-  .cs--details-wrapper:not(:last-child) .cs--details-item {
-    border-color: var(--color-grey-20);
+
+  .cs--details {
+    &-wrapper {
+      &:not(:last-child) {
+        .cs--details-item {
+          border-color: var(--color-grey-20);
+        }
+      }
+    }
+    &-item {
+      --detail-active-color: var(--color-light-blue-20);
+      --detail-bg-color: var(--color-white);
+      &[open] {
+        .cs--details-summary {
+          &:before,
+          &:after {
+            background-color: var(--color-red);
+          }
+        }
+      }
+    }
+    &-summary {
+      &:before,
+      &:after {
+        background-color: var(--color-blue-30);
+      }
+    }
   }
 }

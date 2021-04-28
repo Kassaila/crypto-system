@@ -1,13 +1,23 @@
 .cs--interface {
   display: grid;
   grid-template-areas:
-    'order-book tools tools balance'
-    'order-book tools tools balance'
-    'trade-history my-orders my-orders chat';
+    'order-book tools tools tools balance'
+    'order-book tools tools tools balance'
+    'trade-history my-orders my-orders my-orders chat';
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 25px;
   @include media('<xlg') {
+    grid-template-areas:
+      'order-book tools tools'
+      'order-book tools tools'
+      'my-orders my-orders balance'
+      'trade-history chat balance';
+    grid-template-rows: repeat(4, minmax(300px, max-content));
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  @include media('<lg') {
     grid-template-areas:
       'tools tools'
       'tools tools'
@@ -17,7 +27,7 @@
       'trade-history chat';
     grid-template-rows: repeat(6, minmax(300px, max-content));
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
   }
   @include media('<sm') {
     display: block;
@@ -233,13 +243,16 @@
     .cs--btn {
       --btn-border-radius: 3px;
       width: 100%;
-      padding: 10px;
+      padding: 8px;
       margin-top: 15px;
       font-size: 14px;
     }
     .cs--interface__dropdown-content {
       right: 0;
       left: auto;
+    }
+    .cs--interface__dropdown-btn {
+      font-size: 12px;
     }
   }
   &--tools {

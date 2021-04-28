@@ -1,7 +1,7 @@
 .cs--dashboard--interface {
   padding: 40px 0 35px;
   .cs--container {
-    padding: 0 45px 0 100px;
+    padding: 0 45px 0 var(--padding-sm);
     @include media('<xlg') {
       padding: 0 var(--padding-sm);
     }

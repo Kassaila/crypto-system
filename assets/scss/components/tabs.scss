@@ -1,0 +1,19 @@
+.cs--dashboard-tab {
+  &-list {
+    @extend %listreset;
+    display: flex;
+  }
+  &-item {
+    font-size: 12px;
+    font-family: var(--font-secondary);
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    &--active {
+      color: var(--color-orange-30);
+    }
+    & > * {
+      color: inherit;
+    }
+  }
+}

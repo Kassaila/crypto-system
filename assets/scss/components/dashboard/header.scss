@@ -14,6 +14,16 @@
       padding: 0 var(--padding-xs);
     }
   }
+  .cs--landing-login {
+    a {
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: capitalize;
+    }
+    .cs--btn {
+      padding: 12px 30px;
+    }
+  }
 }
 .cs--dashboard-nav {
   margin-left: 55px;
