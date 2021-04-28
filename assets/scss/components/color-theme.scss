@@ -48,9 +48,22 @@
   }
   .cs--dashboard-header {
     background-color: var(--color-grey-blue-20);
-    * {
+    .cs--landing-login {
+      a {
+        color: var(--color-white);
+      }
+    }
+  }
+  .cs--dashboard-nav__item {
+    a {
       color: var(--color-white);
     }
+  }
+  .cs--dashboard-options__status-text {
+    color: var(--color-white);
+  }
+  .cs--dropdown__btn {
+    color: var(--color-white);
   }
   .cs--favorite {
     --icon-color: var(--color-grey-20);
@@ -170,6 +183,27 @@
       &:before,
       &:after {
         background-color: var(--color-blue-30);
+      }
+    }
+  }
+  .cs--dropdown {
+    &__item {
+      &:not(:last-child) {
+        border-color: var(--color-grey-20);
+      }
+    }
+    &__list {
+      background-color: var(--color-white);
+      background-image: none;
+      box-shadow: 0px 5px 10px rgba(23, 18, 43, 0.25);
+    }
+  }
+  .cs--interface__block--tools {
+    background-color: transparent;
+    .cs--interface__dropdown-btn {
+      &.cs--dashboard-form__input {
+        border-color: transparent;
+        background-color: var(--color-white);
       }
     }
   }

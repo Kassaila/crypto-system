@@ -47,6 +47,7 @@
       opacity: 0;
       &:checked ~ * {
         background-color: var(--color-green-30);
+        color: var(--color-white);
       }
     }
     &-title {
@@ -57,14 +58,14 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 1;
-      @include animate(background-color opacity);
+      @include animate(background-color opacity color);
     }
     &-icon {
       display: block;
       padding: 7px;
       border-radius: 3px;
       background-color: var(--card-filter-btn-bg);
-      @include animate(background-color opacity);
+      @include animate(background-color opacity color);
       .cs--icon {
         width: 20px;
         height: 18px;
