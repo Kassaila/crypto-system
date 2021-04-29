@@ -394,12 +394,41 @@
   }
 %}
 
+{%
+  set tabList = [
+    {
+      'text': 'Dashboard',
+      'class': 'cs--dashboard-tab-item--active'
+    }, {
+      'text': 'Portfoilo',
+      'class': ''
+    }, {
+      'text': 'Trade',
+      'class': ''
+    }, {
+      'text': 'Bots',
+      'class': ''
+    }, {
+      'text': 'Markets',
+      'class': ''
+    }, {
+      'text': 'Support',
+      'class': ''
+    }
+  ]
+%}
+
   <body>
     <div class="cs--preloader" data-preloader></div>
     <div class="cs--page-wrapper">
       {% include './partials/components/dashboard/header.njk' %}
       <main class="cs--page cs--dashboard--markets">
         <div class="cs--container">
+          <ul class="cs--dashboard-tab-list">
+            {% for tab in tabList %}
+              <li class="cs--dashboard-tab-item {{ tab.class }}"><a href="javascript:void(0)">{{ tab.text }}</a></li>
+            {% endfor %}
+          </ul>
           <div class="cs--page__head">
             <h1 class="cs--page__title">Market Overview</h1>
             <span class="cs--color-secondary">8757 Active pairs</span>

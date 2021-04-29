@@ -31,6 +31,9 @@ textarea {
   line-height: 1.2;
   resize: vertical;
 }
+summary {
+  outline: none;
+}
 select,
 button,
 input[type='button'],

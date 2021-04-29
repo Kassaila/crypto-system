@@ -1,5 +1,5 @@
 .cs--dashboard--markets {
-  padding: 65px 0 35px;
+  padding: 15px 0 35px;
   .cs--container {
     padding: 0 45px 0 100px;
     @include media('<xlg') {
@@ -36,5 +36,8 @@
         margin-top: 20px;
       }
     }
+  }
+  .cs--dashboard-tab-list {
+    margin-bottom: 40px;
   }
 }

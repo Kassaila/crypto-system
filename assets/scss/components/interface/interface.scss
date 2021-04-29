@@ -1,13 +1,23 @@
 .cs--interface {
   display: grid;
   grid-template-areas:
-    'order-book tools tools balance'
-    'order-book tools tools balance'
-    'trade-history my-orders my-orders chat';
-  grid-template-rows: repeat(3, 300px);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+    'order-book tools tools tools balance'
+    'order-book tools tools tools balance'
+    'trade-history my-orders my-orders my-orders chat';
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 25px;
   @include media('<xlg') {
+    grid-template-areas:
+      'order-book tools tools'
+      'order-book tools tools'
+      'my-orders my-orders balance'
+      'trade-history chat balance';
+    grid-template-rows: repeat(4, minmax(300px, max-content));
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  @include media('<lg') {
     grid-template-areas:
       'tools tools'
       'tools tools'
@@ -17,10 +27,100 @@
       'trade-history chat';
     grid-template-rows: repeat(6, minmax(300px, max-content));
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
   }
   @include media('<sm') {
     display: block;
+  }
+  &__dropdown {
+    position: relative;
+    z-index: 1;
+    @include media('<sm') {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    &[open] {
+      z-index: 2;
+    }
+    &-btn {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-secondary);
+      &-img {
+        width: 20px;
+        height: 20px;
+      }
+      &-text {
+        margin-left: 30px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+      &.cs--dashboard-form__input {
+        display: flex;
+        align-items: center;
+        border-color: var(--color-light-blue-50);
+        cursor: pointer;
+        @include media('<xs') {
+          flex-wrap: wrap;
+        }
+        &::-webkit-details-marker,
+        &::marker {
+          display: none;
+        }
+        & > *:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+    &-content {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      z-index: 1;
+      width: 300%;
+      padding-top: 65px;
+      border: 1px solid var(--color-blue-50);
+      border-radius: 5px;
+      background-color: var(--color-blue-85);
+      box-shadow: 0px 0px 40px rgba(15, 46, 105, 0.7);
+      @include media('<sm') {
+        width: 100%;
+      }
+      .cs--card-filter__form {
+        grid-template-columns: 1fr;
+        padding: 0 15px 15px;
+      }
+      .cs--card-filter__filter-title {
+        padding: 12px 25px;
+      }
+      .cs--dashboard-form__input--search-wrapper {
+        width: 100%;
+      }
+      .cs--table-wrapper {
+        tr {
+          @include animate(background-color);
+          @include media('hover') {
+            &:hover {
+              background-color: var(--color-blue-60);
+            }
+          }
+          & > td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            &:first-child {
+              padding-left: 15px;
+            }
+            &:last-child {
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+      .cs--table__cell--chart {
+        min-width: 80px;
+        max-width: 80px;
+      }
+    }
   }
   &__chart {
     // for example
@@ -36,34 +136,11 @@
       }
       & > *:not(:last-child) {
         margin-right: 15px;
-      }
-    }
-    &-select {
-      display: flex;
-      align-items: center;
-      padding: 15px 20px;
-      border: 1px solid var(--color-light-blue-50);
-      border-radius: 3px;
-      @include media('<sm') {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      @include media('<xs') {
-        flex-wrap: wrap;
-      }
-      & > *:not(:last-child) {
-        margin-right: 10px;
-      }
-      .cs--dashboard-form__item {
-        margin-left: auto;
-        @include media('<xs') {
-          width: 100%;
-          margin-top: 10px;
+        &.cs--interface__dropdown {
+          @include media('<sm') {
+            margin-right: 0;
+          }
         }
-      }
-      .cs--dashboard-form__input {
-        padding: 10px calc(2 * var(--side-padding)) 10px var(--side-padding);
-        border: transparent;
       }
     }
     &-comment {
@@ -97,7 +174,7 @@
     }
   }
   &__break-point {
-    margin: 15px 0;
+    margin: 15px 0 0;
     font-weight: 700;
     font-size: 16px;
     text-align: center;
@@ -110,6 +187,9 @@
       background-color: transparent;
       color: var(--color-grey);
     }
+    td {
+      line-height: 1.2;
+    }
   }
   .cs--btn-group {
     .cs--btn {
@@ -121,7 +201,7 @@
 .cs--interface__block {
   display: flex;
   flex-direction: column;
-  padding: 15px 20px;
+  padding: 15px;
   background-color: var(--color-blue-85);
   @include media('<sm') {
     &:not(:last-child) {
@@ -130,6 +210,7 @@
   }
   &--order-book {
     grid-area: order-book;
+    max-height: 660px;
     .cs--interface__block-title {
       margin-bottom: 25px;
     }
@@ -148,21 +229,21 @@
   }
   &--chat {
     grid-area: chat;
-    height: 300px;
     background-color: var(--color-blue-60);
     box-shadow: 10px 0px 4px rgba(14, 17, 41, 0.25);
     .cs--interface__block-head {
-      margin-bottom: 0;
+      &-icon {
+        display: flex;
+        width: 20px;
+        height: 20px;
+      }
     }
     .cs--interface__block-title {
       margin-left: 10px;
     }
-    .cs--btn {
-      padding: 12px 14px;
-      border-radius: 3px;
-    }
   }
   &--balance {
+    position: relative;
     grid-area: balance;
     .cs--interface__block-title {
       margin-bottom: 15px;
@@ -176,17 +257,19 @@
         flex-grow: 1;
       }
     }
-    form {
-      .cs--dashboard-form__input {
-        font-size: 12px;
-      }
-      .cs--btn {
-        --btn-border-radius: 3px;
-        width: 100%;
-        padding: 10px;
-        margin-top: 15px;
-        font-size: 14px;
-      }
+    .cs--btn {
+      --btn-border-radius: 3px;
+      width: 100%;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .cs--interface__dropdown-content {
+      right: 0;
+      left: auto;
+    }
+    .cs--interface__dropdown-btn {
+      font-size: 12px;
     }
   }
   &--tools {

@@ -1,0 +1,93 @@
+{% from "../icon.njk" import icon %}
+
+{%
+  set navList = [
+    {
+      'title': 'Platform',
+      'link': 'javascript:void(0)'
+    }, {
+      'title': 'News',
+      'link': 'javascript:void(0)'
+    }, {
+      'title': 'FAQ',
+      'link': 'javascript:void(0)'
+    }
+  ]
+%}
+
+{%
+  set langList = [
+    {
+      'title': 'en',
+      'type': 'button'
+    }, {
+      'title': 'ru',
+      'type': 'link'
+    }
+  ]
+%}
+
+{%
+  set userMenu = [
+    {
+      'title': 'User Profile',
+      'type': 'button'
+    }, {
+      'title': 'Preference',
+      'type': 'link'
+    }, {
+      'title': 'Security (2FA)',
+      'type': 'button'
+    }, {
+      'title': 'Logout',
+      'type': 'link'
+    }
+  ]
+%}
+
+<header class="cs--dashboard-header" data-landing-header>
+  <div class="cs--container">
+    <div class="cs--dashboard-header__wrapper">
+      <a href="javascript:void(0)" class="cs--logo cs--logo--xs">
+        <img src="./img/logo-icon.png" alt="logo">
+      </a>
+      <nav class="cs--dashboard-nav" data-landing-menu data-expanded="false">
+        <ul class="cs--dashboard-nav__list">
+          {% for navItem in navList %}
+            <li class="cs--dashboard-nav__item">
+              <a href="{{ navItem.link }}">{{ navItem.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="cs--dashboard-options">
+        <div class="cs--dashboard-options__status">
+          <span class="cs--dashboard-options__status-text">Connected</span>
+        </div>
+        <details data-dropdown class="cs--dashboard-options__lang cs--dropdown">
+          <summary class="cs--dropdown__btn">en</summary>
+          <ul class="cs--dropdown__list">
+            {% for item in langList %}
+              <li class="cs--dropdown__item">
+              {% if item.type == 'button' %}
+                <button type="button">{{ item.title }}</button>
+              {% else %}
+                <a href="javascript:void(0)">{{ item.title }}</a>
+              {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </details>
+        <button type="button" data-color-theme-toggler class="cs--color-theme__btn">
+          {{ icon('color-theme') }}
+        </button>
+        <div class="cs--landing-login">
+          <a href="javascript:void(0)">log in</a>
+          <a href="registration-create-account.html" class="cs--btn cs--btn--grad-blue">sing up</a>
+        </div>
+      </div>
+      <button type="button" class="cs--landing-header__menu" data-landing-expander aria-expanded="false">
+        <span></span></button>
+    </div>
+  </div>
+</header>

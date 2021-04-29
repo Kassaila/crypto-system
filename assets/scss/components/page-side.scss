@@ -8,6 +8,7 @@
   }
 }
 .cs--page-side {
+  --side-link-color: var(--color-light-blue-50);
   padding-left: 25px;
   border-left: 1px solid var(--color-grey-blue-10);
   @include media('<xlg') {
@@ -27,7 +28,7 @@
     font-size: 14px;
   }
   &__link {
-    color: var(--color-light-blue-50);
+    color: var(--side-link-color);
     font-weight: 500;
     font-size: 12px;
     &--accent {

@@ -1,6 +1,8 @@
 .cs--color-theme {
   &__btn {
     display: flex;
+    width: 20px;
+    height: 20px;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -38,6 +40,7 @@
     }
   }
   .cs--dashboard-footer {
+    --icon-bg-color: var(--color-grey-blue-20);
     background-color: var(--color-grey-blue-20);
     * {
       color: var(--color-white);
@@ -45,8 +48,163 @@
   }
   .cs--dashboard-header {
     background-color: var(--color-grey-blue-20);
-    * {
+    .cs--landing-login {
+      a {
+        color: var(--color-white);
+      }
+    }
+  }
+  .cs--dashboard-nav__item {
+    a {
       color: var(--color-white);
+    }
+  }
+  .cs--dashboard-options__status-text {
+    color: var(--color-white);
+  }
+  .cs--dropdown__btn {
+    color: var(--color-white);
+  }
+  .cs--favorite {
+    --icon-color: var(--color-grey-20);
+  }
+  .cs--btn--transparent-grad-blue {
+    &:after {
+      background-color: var(--color-grey-blue-20);
+    }
+  }
+  .cs--interface__dropdown-content {
+    border-color: var(--color-grey-20);
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 40px rgba(215, 215, 215, 0.7);
+  }
+  .cs--card-filter__filter-item {
+    --card-filter-btn-bg: var(--color-light-blue-15);
+  }
+  .cs--table--bordered > tbody > tr:not(:last-child) {
+    border-color: var(--color-grey-20);
+  }
+  .cs--interface__dropdown-content .cs--table-wrapper tr {
+    @include media('hover') {
+      &:hover {
+        background-color: var(--color-light-blue-15);
+      }
+    }
+  }
+  .cs--table th {
+    background-color: var(--color-grey-5);
+  }
+  .cs--dashboard--markets {
+    .cs--table-wrapper {
+      box-shadow: 0px 0px 30px rgba(31, 85, 134, 0.15);
+    }
+  }
+  .cs--dashboard--markets .cs--table {
+    background-color: var(--color-white);
+  }
+  .cs--exchange-card {
+    background-color: var(--color-white);
+    &__img {
+      mix-blend-mode: darken;
+    }
+    .cs--btn--transparent-grad-blue {
+      color: var(--base-text-color);
+      &:after {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .cs--page-side {
+    --side-link-color: var(--base-text-color);
+  }
+  .cs--dashboard-form {
+    background-color: var(--color-white);
+    .cs--table-wrapper {
+      box-shadow: none;
+    }
+    .cs--table--striped > tbody > tr:nth-of-type(even) {
+      background-color: var(--color-grey-5);
+    }
+    .cs--btn--transparent-grad-blue {
+      color: var(--base-text-color);
+      &:after {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .cs--table--striped > tbody > tr:nth-of-type(even) {
+    background-color: var(--color-grey-5);
+  }
+  .cs--dashboard--support {
+    .cs--table th {
+      background-color: var(--color-grey-10);
+    }
+  }
+  .cs--page hr {
+    background-color: var(--color-grey-20);
+  }
+  .cs--article {
+    background-color: var(--color-white);
+    .cs--btn--transparent-grad-blue {
+      color: var(--base-text-color);
+      &:after {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .cs--card-item {
+    background-color: var(--color-white);
+    &__link {
+      color: var(--color-blue-20);
+    }
+  }
+
+  .cs--details {
+    &-wrapper {
+      &:not(:last-child) {
+        .cs--details-item {
+          border-color: var(--color-grey-20);
+        }
+      }
+    }
+    &-item {
+      --detail-active-color: var(--color-light-blue-20);
+      --detail-bg-color: var(--color-white);
+      &[open] {
+        .cs--details-summary {
+          &:before,
+          &:after {
+            background-color: var(--color-red);
+          }
+        }
+      }
+    }
+    &-summary {
+      &:before,
+      &:after {
+        background-color: var(--color-blue-30);
+      }
+    }
+  }
+  .cs--dropdown {
+    &__item {
+      &:not(:last-child) {
+        border-color: var(--color-grey-20);
+      }
+    }
+    &__list {
+      background-color: var(--color-white);
+      background-image: none;
+      box-shadow: 0px 5px 10px rgba(23, 18, 43, 0.25);
+    }
+  }
+  .cs--interface__block--tools {
+    background-color: transparent;
+    .cs--interface__dropdown-btn {
+      &.cs--dashboard-form__input {
+        border-color: transparent;
+        background-color: var(--color-white);
+      }
     }
   }
 }

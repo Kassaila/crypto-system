@@ -1,0 +1,19 @@
+.cs--favorite {
+  --size: 18px;
+  --icon-color: var(--color-blue-50);
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  @include animate(opacity);
+  @include media('hover') {
+    &:hover {
+      --icon-color: var(--color-green-30);
+      opacity: 0.7;
+    }
+  }
+  &--active {
+    --icon-color: var(--color-green-30);
+  }
+}
