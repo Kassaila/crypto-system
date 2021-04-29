@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta charset="utf-8" />
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting" />
+    <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no" />
+    <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <title></title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--   The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+      <style>
+        * {
+          font-family: sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+      /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+      :root {
+        color-scheme: light;
+        supported-color-schemes: light;
+      }
+
+      /* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+      html,
+      body {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      /* What it does: Stops email clients resizing small text. */
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* What it does: Centers email on Android 4.4 */
+      div[style*='margin: 16px 0'] {
+        margin: 0 !important;
+      }
+
+      /* What it does: forces Samsung Android mail clients to use the entire viewport */
+      #MessageViewBody,
+      #MessageWebViewDiv {
+        width: 100% !important;
+      }
+
+      /* What it does: Stops Outlook from adding extra spacing to tables. */
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+
+      /* What it does: Fixes webkit padding issue. */
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        margin: 0 auto !important;
+      }
+
+      /* What it does: Uses a better rendering method when resizing images in IE. */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+      a {
+        text-decoration: none;
+      }
+
+      /* What it does: A work-around for email clients meddling in triggered links. */
+      a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+        border-bottom: 0 !important;
+        cursor: default !important;
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+      .a6S {
+        display: none !important;
+        opacity: 0.01 !important;
+      }
+
+      /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+      .im {
+        color: inherit !important;
+      }
+
+      /* If the above doesn't work, add a .g-img class to any image in question. */
+      img.g-img + div {
+        display: none !important;
+      }
+
+      /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+      /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+      /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+      @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+        u ~ div .email-container {
+          min-width: 320px !important;
+        }
+      }
+      /* iPhone 6, 6S, 7, 8, and X */
+      @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+        u ~ div .email-container {
+          min-width: 375px !important;
+        }
+      }
+      /* iPhone 6+, 7+, and 8+ */
+      @media only screen and (min-device-width: 414px) {
+        u ~ div .email-container {
+          min-width: 414px !important;
+        }
+      }
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+      /* What it does: Hover styles for buttons */
+      .button-td,
+      .button-a {
+        transition: all 100ms ease-in;
+      }
+      .button-td-primary:hover,
+      .button-a-primary:hover {
+        border-color: #00a3f5 !important;
+      }
+    </style>
+    <!-- Progressive Enhancements : END -->
+  </head>
+  <body
+    width="100%"
+    style="
+      margin: 0;
+      padding: 0 !important;
+      mso-line-height-rule: exactly;
+      background-color: #02143b;
+    "
+  >
+    <center
+      role="article"
+      aria-roledescription="email"
+      lang="en"
+      style="width: 100%; background-color: #02143b"
+    >
+      <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+      <div style="max-width: 600px; margin: 0 auto" class="email-container">
+        <div style="background-color: #02143b">
+          <!--[if gte mso 9]>
+            <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+              <v:fill type="tile" src="https://i.imgur.com/YJOX1PC.png" color="#eb7bc5" />
+            </v:background>
+          <![endif]-->
+          <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td valign="top" align="left" background="./img/email/email-bg.png">
+                <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
+            <tr>
+            <td>
+            <![endif]-->
+
+                <!-- Email Body : BEGIN -->
+                <table
+                  align="center"
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin: auto"
+                >
+                  <!-- Email Header : BEGIN -->
+                  <tr>
+                    <td style="padding: 40px 0; text-align: center">
+                      <a href="#">
+                        <img
+                          src="./img/logo.png"
+                          width="230"
+                          height="42"
+                          alt="alt_text"
+                          border="0"
+                          style="height: auto"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                  <!-- Email Header : END -->
+
+                  <!-- img -->
+                  <tr>
+                    <td>
+                      <table
+                        role="presentation"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        width="100%"
+                      >
+                        <tr>
+                          <td valign="top" width="50%">
+                            <table
+                              role="presentation"
+                              cellspacing="0"
+                              cellpadding="0"
+                              border="0"
+                              width="100%"
+                            >
+                              <tr>
+                                <td style="text-align: center; padding: 0 10px">
+                                  <img
+                                    src="./img/email/email-img-1.png"
+                                    width="315"
+                                    height=""
+                                    alt="alt_text"
+                                    border="0"
+                                    style="width: 100%; max-width: 315px"
+                                  />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center; color: #ffffff">
+                                  <h1
+                                    style="font-size: 30px; line-height: 36px; margin-bottom: 15px"
+                                  >
+                                    Email confirmation
+                                  </h1>
+                                  <p
+                                    style="
+                                      font-size: 18px;
+                                      line-height: 22px;
+                                      color: #e6e6e6;
+                                      margin: 0;
+                                    "
+                                  >
+                                    Follow the link to confirm
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- img -->
+
+                  <!-- 1 Column Text + Button : BEGIN -->
+                  <tr>
+                    <td>
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                        width="100%"
+                      >
+                        <tr>
+                          <td style="padding: 0 20px">
+                            <!-- Button : BEGIN -->
+                            <table
+                              align="center"
+                              role="presentation"
+                              cellspacing="0"
+                              cellpadding="0"
+                              border="0"
+                              style="margin: auto"
+                            >
+                              <tr>
+                                <td class="button-td button-td-primary" style="padding-top: 35px">
+                                  <a
+                                    class="button-a button-a-primary"
+                                    href="#"
+                                    style="
+                                      border: 2px solid #ffffff;
+                                      font-size: 24px;
+                                      line-height: 28px;
+                                      text-decoration: none;
+                                      padding: 25px 35px;
+                                      color: #ffffff;
+                                      display: block;
+                                    "
+                                    ><span style="text-decoration: underline"
+                                      >45erisque211nisiutultr335iceseasest</span
+                                    ></a
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-top: 40px; text-align: center">
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 18px;
+                                      line-height: 22px;
+                                      color: #ffffff;
+                                    "
+                                  >
+                                    Best regards,<br />CryptoSystem team!
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- Button : END -->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- 1 Column Text + Button : END -->
+                </table>
+                <!-- Email Body : END -->
+
+                <!-- Email Footer : BEGIN -->
+                <table
+                  align="center"
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin: auto"
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding-top: 45px;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-align: center;
+                        color: #ffffff;
+                      "
+                    >
+                      <p style="margin-bottom: 0">
+                        If you have any questions, our customer support team is ready to help you
+                        24/7.
+                      </p>
+                      <p style="margin-top: 0">
+                        Email us at
+                        <a href="mailto:info@cryptosystem.com" style="color: #00a3f5"
+                          >info@cryptosystem.com</a
+                        >
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="margin: auto; padding: 25px 0 45px">
+                      <table
+                        align="center"
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="6"
+                        border="0"
+                      >
+                        <tr>
+                          <td>
+                            <a
+                              href="#"
+                              style="
+                                font-size: 25px;
+                                line-height: 25px;
+                                text-decoration: none;
+                                color: #ffffff;
+                                display: block;
+                              "
+                            >
+                              <img
+                                src="./img/email/email-facebook.png"
+                                width="25"
+                                height="25"
+                                alt="facebook"
+                                border="0"
+                                style="height: auto"
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a
+                              href="#"
+                              style="
+                                font-size: 25px;
+                                line-height: 25px;
+                                text-decoration: none;
+                                color: #ffffff;
+                                display: block;
+                              "
+                            >
+                              <img
+                                src="./img/email/email-twitter.png"
+                                width="25"
+                                height="25"
+                                alt="twitter"
+                                border="0"
+                                style="height: auto"
+                              />
+                            </a>
+                          </td>
+                          <td>
+                            <a
+                              href="#"
+                              style="
+                                font-size: 25px;
+                                line-height: 25px;
+                                text-decoration: none;
+                                color: #ffffff;
+                                display: block;
+                              "
+                            >
+                              <img
+                                src="./img/email/email-telegram.png"
+                                width="25"
+                                height="25"
+                                alt="telegram"
+                                border="0"
+                                style="height: auto"
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Email Footer : END -->
+
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+  </body>
+</html>
