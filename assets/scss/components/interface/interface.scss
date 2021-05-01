@@ -235,6 +235,7 @@
   }
   &--trade-history {
     grid-area: trade-history;
+    max-height: 315px;
     @include media('<sm') {
       max-height: 100vh;
     }
@@ -244,6 +245,7 @@
   }
   &--my-orders {
     grid-area: my-orders;
+    max-height: 315px;
     @include media('<sm') {
       max-height: 100vh;
     }
