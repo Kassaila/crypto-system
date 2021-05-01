@@ -81,8 +81,21 @@
   .cs--card-filter__filter-item {
     --card-filter-btn-bg: var(--color-light-blue-15);
   }
-  .cs--table--bordered > tbody > tr:not(:last-child) {
-    border-color: var(--color-grey-20);
+  .cs--table {
+    tr:not(:last-child) {
+      @include media('<sm') {
+        border-color: var(--color-light-blue-20);
+      }
+    }
+    th {
+      background-color: var(--color-grey-5);
+    }
+    &--bordered > tbody > tr:not(:last-child) {
+      border-color: var(--color-grey-20);
+    }
+    &--striped > tbody > tr:nth-of-type(even) {
+      background-color: var(--color-grey-5);
+    }
   }
   .cs--interface__dropdown-content .cs--table-wrapper tr {
     @include media('hover') {
@@ -90,9 +103,6 @@
         background-color: var(--color-light-blue-15);
       }
     }
-  }
-  .cs--table th {
-    background-color: var(--color-grey-5);
   }
   .cs--dashboard--markets {
     .cs--table-wrapper {
@@ -131,9 +141,6 @@
         background-color: var(--color-white);
       }
     }
-  }
-  .cs--table--striped > tbody > tr:nth-of-type(even) {
-    background-color: var(--color-grey-5);
   }
   .cs--dashboard--support {
     .cs--table th {

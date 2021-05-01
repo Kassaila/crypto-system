@@ -77,7 +77,10 @@
       top: -1px;
       left: -1px;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
       width: 300%;
+      max-height: 500px;
       padding-top: 65px;
       border: 1px solid var(--color-blue-50);
       border-radius: 5px;
@@ -85,6 +88,7 @@
       box-shadow: 0px 0px 40px rgba(15, 46, 105, 0.7);
       @include media('<sm') {
         width: 100%;
+        max-height: 90vh;
       }
       .cs--card-filter__form {
         grid-template-columns: 1fr;
@@ -92,6 +96,16 @@
       }
       .cs--card-filter__filter-title {
         padding: 12px 25px;
+        @include media('<sm') {
+          padding: 6px 12px;
+        }
+      }
+      .cs--card-filter__filter-icon {
+        padding: 5px;
+        .cs--icon {
+          width: 12px;
+          height: 10px;
+        }
       }
       .cs--dashboard-form__input--search-wrapper {
         width: 100%;
@@ -107,6 +121,9 @@
           & > td {
             padding-top: 10px;
             padding-bottom: 10px;
+            @include media('<sm') {
+              padding: calc(2 * var(--cell-padding-x));
+            }
             &:first-child {
               padding-left: 15px;
             }
@@ -173,12 +190,6 @@
       text-align: center;
     }
   }
-  &__break-point {
-    margin: 15px 0 0;
-    font-weight: 700;
-    font-size: 16px;
-    text-align: center;
-  }
   .cs--table {
     --cell-padding-x: 4px;
     --cell-padding-y: 4px;
@@ -189,6 +200,10 @@
     }
     td {
       line-height: 1.2;
+      @include media('<sm') {
+        --cell-padding-x: 4px;
+        --cell-padding-y: 4px;
+      }
     }
   }
   .cs--btn-group {
@@ -211,18 +226,29 @@
   &--order-book {
     grid-area: order-book;
     max-height: 660px;
+    @include media('<sm') {
+      max-height: 100vh;
+    }
     .cs--interface__block-title {
       margin-bottom: 25px;
     }
   }
   &--trade-history {
     grid-area: trade-history;
+    max-height: 315px;
+    @include media('<sm') {
+      max-height: 100vh;
+    }
     .cs--interface__block-title {
       margin-bottom: 15px;
     }
   }
   &--my-orders {
     grid-area: my-orders;
+    max-height: 315px;
+    @include media('<sm') {
+      max-height: 100vh;
+    }
     .cs--btn-group {
       margin-left: auto;
     }
@@ -267,6 +293,13 @@
     .cs--interface__dropdown-content {
       right: 0;
       left: auto;
+      width: 300%;
+      @include media('<xlg') {
+        width: 200%;
+      }
+      @include media('<sm') {
+        width: 100%;
+      }
     }
     .cs--interface__dropdown-btn {
       font-size: 12px;

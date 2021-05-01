@@ -315,16 +315,6 @@
         }
       }
     }
-    tr {
-      * {
-        &:first-child {
-          padding-left: var(--form-padding-side);
-        }
-        &:last-child {
-          padding-right: var(--form-padding-side);
-        }
-      }
-    }
     th {
       background-color: transparent;
       color: var(--color-grey-blue-50);

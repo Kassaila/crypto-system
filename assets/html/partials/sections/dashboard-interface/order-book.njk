@@ -1,7 +1,9 @@
-{% from "../../components/table.njk" import table %}
+{%
+  set colLength = 0
+%}
 
 {%
-  set downTable = {
+  set dataTable = {
     'head': {
       'class': [
         '',
@@ -103,27 +105,10 @@
           '55446.23',
           '2356.6546546'
         ]
-      }
-    ]
-  }
-%}
-
-{%
-  set upTable = {
-    'head': {
-      'class': [
-        '',
-        '',
-        ''
-      ],
-      'list': [
-        '',
-        '',
-        ''
-      ]
-    },
-    'body': [
-      {
+      }, {
+        'class': 'cs--color-success',
+        'breakPoint': '58,763.65 ≈ 1.00051916 BTC'
+      }, {
         'class': [
           '',
           'cs--color-success',
@@ -284,7 +269,29 @@
 
 <section class="cs--interface__block cs--interface__block--order-book">
   <h2 class="cs--interface__block-title">Order Book</h2>
-  {{ table(downTable) }}
-  <div class="cs--interface__break-point cs--color-success">58,763.65 ≈ 1.00051916 BTC</div>
-  {{ table(upTable) }}
+  <div class="cs--table-wrapper">
+    <table class="cs--table {{ 'cs--table--striped' if dataTable.striped }}">
+      <thead>
+        <tr>
+          {% for name in dataTable.head.list %}
+            {% set colLength = loop.length %}
+            <th class="{{ data.head.class[loop.index - 1] }}">{{ name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for value in dataTable.body %}
+          <tr>
+            {% if value.breakPoint %}
+              <td colspan="{{ colLength }}" class="cs--table__break-point {{ value.class }}">{{ value.breakPoint }}</td>
+            {% else %}
+              {% for name in dataTable.head.list %}
+                <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}"><span>{{ value.list[loop.index - 1] }}</span></td>
+              {% endfor %}
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </section>

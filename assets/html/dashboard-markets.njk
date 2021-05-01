@@ -453,7 +453,7 @@
                     <tr>
                       {% for name in marketTable.head.list %}
                         {% if loop.index == 2 %}
-                          <td class="{{ value.class[loop.index - 1] }}">
+                          <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                             <div class="cs--table__card">
                               <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
                               <div class="cs--table__card-content">
@@ -463,13 +463,13 @@
                             </div>
                           </td>
                         {% elif loop.index == 4 %}
-                          <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b> <span class="cs--color-secondary">BTC</span></td>
+                          <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}"><span><b>{{ value.list[loop.index - 1] }}</b> <span class="cs--color-secondary">BTC</span></span></td>
                         {% elif loop.index == 8 %}
-                          <td class="{{ value.class[loop.index - 1] }}">
+                          <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                             <img src="{{ value.list[loop.index - 1] }}" alt="">
                           </td>
                         {% else %}
-                          <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
+                          <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
                         {% endif %}
                       {% endfor %}
                     </tr>
