@@ -166,14 +166,23 @@
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
-      /* What it does: Hover styles for buttons */
-      .button-td,
-      .button-a {
-        transition: all 100ms ease-in;
+      .email-bg {
+        background-image: url('./img/email/email-bg.png');
+        background-repeat: no-repeat;
       }
-      .button-td-primary:hover,
-      .button-a-primary:hover {
-        border-color: #00a3f5 !important;
+      .button-td {
+        font-size: 24px;
+      }
+      @media (max-width: 600px) {
+        .button-td {
+          font-size: 18px;
+        }
+      }
+      .button-a {
+        border-width: 2px;
+        border-style: solid;
+        border-color: #ffffff;
+        transition: border 0.2s ease;
       }
     </style>
     <!-- Progressive Enhancements : END -->
@@ -199,293 +208,262 @@
     <td>
     <![endif]-->
       <div style="max-width: 600px; margin: 0 auto" class="email-container">
-        <div style="background-color: #02143b">
-          <!--[if gte mso 9]>
-            <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-              <v:fill type="tile" src="https://i.imgur.com/YJOX1PC.png" color="#eb7bc5" />
-            </v:background>
-          <![endif]-->
-          <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td valign="top" align="left" background="./img/email/email-bg.png">
-                <!--[if mso]>
+        <!--[if gte mso 9]>
+          <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+            <v:fill type="tile" src="https://i.imgur.com/YJOX1PC.png" color="#eb7bc5" />
+          </v:background>
+        <![endif]-->
+        <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" align="left" background="./img/email/email-bg.png">
+              <!--[if mso]>
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
             <tr>
             <td>
             <![endif]-->
 
-                <!-- Email Body : BEGIN -->
-                <table
-                  align="center"
-                  role="presentation"
-                  cellspacing="0"
-                  cellpadding="0"
-                  border="0"
-                  width="100%"
-                  style="margin: auto"
-                >
-                  <!-- Email Header : BEGIN -->
-                  <tr>
-                    <td style="padding: 40px 0; text-align: center">
-                      <a href="#">
-                        <img
-                          src="./img/logo.png"
-                          width="230"
-                          height="42"
-                          alt="alt_text"
-                          border="0"
-                          style="height: auto"
-                        />
-                      </a>
-                    </td>
-                  </tr>
-                  <!-- Email Header : END -->
-
-                  <!-- img -->
-                  <tr>
-                    <td>
-                      <table
-                        role="presentation"
+              <!-- Email Body : BEGIN -->
+              <table
+                align="center"
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+                width="100%"
+                style="margin: auto"
+              >
+                <!-- Email Header : BEGIN -->
+                <tr>
+                  <td style="padding: 40px 0; text-align: center">
+                    <a href="#">
+                      <img
+                        src="./img/logo.png"
+                        width="230"
+                        height="42"
+                        alt="CryptoSystem"
                         border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                        width="100%"
-                      >
-                        <tr>
-                          <td valign="top" width="50%">
-                            <table
-                              role="presentation"
-                              cellspacing="0"
-                              cellpadding="0"
-                              border="0"
-                              width="100%"
-                            >
-                              <tr>
-                                <td style="text-align: center; padding: 0 10px">
-                                  <img
-                                    src="./img/email/email-img-1.png"
-                                    width="315"
-                                    height=""
-                                    alt="alt_text"
-                                    border="0"
-                                    style="width: 100%; max-width: 315px"
-                                  />
-                                </td>
-                              </tr>
-                              <tr>
-                                <td style="text-align: center; color: #ffffff">
-                                  <h1
-                                    style="font-size: 30px; line-height: 36px; margin-bottom: 15px"
-                                  >
-                                    Email confirmation
-                                  </h1>
-                                  <p
-                                    style="
-                                      font-size: 18px;
-                                      line-height: 22px;
-                                      color: #e6e6e6;
-                                      margin: 0;
-                                    "
-                                  >
-                                    Follow the link to confirm
-                                  </p>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <!-- img -->
+                        style="height: auto"
+                      />
+                    </a>
+                  </td>
+                </tr>
+                <!-- Email Header : END -->
 
-                  <!-- 1 Column Text + Button : BEGIN -->
-                  <tr>
-                    <td>
-                      <table
-                        role="presentation"
-                        cellspacing="0"
-                        cellpadding="0"
-                        border="0"
-                        width="100%"
-                      >
-                        <tr>
-                          <td style="padding: 0 20px">
-                            <!-- Button : BEGIN -->
-                            <table
-                              align="center"
-                              role="presentation"
-                              cellspacing="0"
-                              cellpadding="0"
-                              border="0"
-                              style="margin: auto"
-                            >
-                              <tr>
-                                <td class="button-td button-td-primary" style="padding-top: 35px">
-                                  <a
-                                    class="button-a button-a-primary"
-                                    href="#"
-                                    style="
-                                      border: 2px solid #ffffff;
-                                      font-size: 24px;
-                                      line-height: 28px;
-                                      text-decoration: none;
-                                      padding: 25px 35px;
-                                      color: #ffffff;
-                                      display: block;
-                                    "
-                                    ><span style="text-decoration: underline"
-                                      >45erisque211nisiutultr335iceseasest</span
-                                    ></a
-                                  >
-                                </td>
-                              </tr>
-                              <tr>
-                                <td style="padding-top: 40px; text-align: center">
-                                  <p
-                                    style="
-                                      margin: 0;
-                                      font-size: 18px;
-                                      line-height: 22px;
-                                      color: #ffffff;
-                                    "
-                                  >
-                                    Best regards,<br />CryptoSystem team!
-                                  </p>
-                                </td>
-                              </tr>
-                            </table>
-                            <!-- Button : END -->
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <!-- 1 Column Text + Button : END -->
-                </table>
-                <!-- Email Body : END -->
-
-                <!-- Email Footer : BEGIN -->
-                <table
-                  align="center"
-                  role="presentation"
-                  cellspacing="0"
-                  cellpadding="0"
-                  border="0"
-                  width="100%"
-                  style="margin: auto"
-                >
-                  <tr>
-                    <td
-                      style="
-                        padding-top: 45px;
-                        font-size: 12px;
-                        line-height: 15px;
-                        text-align: center;
-                        color: #ffffff;
-                      "
+                <!-- img -->
+                <tr>
+                  <td>
+                    <table
+                      role="presentation"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="100%"
                     >
-                      <p style="margin-bottom: 0">
-                        If you have any questions, our customer support team is ready to help you
-                        24/7.
-                      </p>
-                      <p style="margin-top: 0">
-                        Email us at
-                        <a href="mailto:info@cryptosystem.com" style="color: #00a3f5"
-                          >info@cryptosystem.com</a
-                        >
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="margin: auto; padding: 25px 0 45px">
-                      <table
-                        align="center"
-                        role="presentation"
-                        cellspacing="0"
-                        cellpadding="6"
-                        border="0"
-                      >
-                        <tr>
-                          <td>
-                            <a
-                              href="#"
-                              style="
-                                font-size: 25px;
-                                line-height: 25px;
-                                text-decoration: none;
-                                color: #ffffff;
-                                display: block;
-                              "
-                            >
-                              <img
-                                src="./img/email/email-facebook.png"
-                                width="25"
-                                height="25"
-                                alt="facebook"
-                                border="0"
-                                style="height: auto"
-                              />
-                            </a>
-                          </td>
-                          <td>
-                            <a
-                              href="#"
-                              style="
-                                font-size: 25px;
-                                line-height: 25px;
-                                text-decoration: none;
-                                color: #ffffff;
-                                display: block;
-                              "
-                            >
-                              <img
-                                src="./img/email/email-twitter.png"
-                                width="25"
-                                height="25"
-                                alt="twitter"
-                                border="0"
-                                style="height: auto"
-                              />
-                            </a>
-                          </td>
-                          <td>
-                            <a
-                              href="#"
-                              style="
-                                font-size: 25px;
-                                line-height: 25px;
-                                text-decoration: none;
-                                color: #ffffff;
-                                display: block;
-                              "
-                            >
-                              <img
-                                src="./img/email/email-telegram.png"
-                                width="25"
-                                height="25"
-                                alt="telegram"
-                                border="0"
-                                style="height: auto"
-                              />
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-                <!-- Email Footer : END -->
+                      <tr>
+                        <td valign="top" width="50%">
+                          <table
+                            role="presentation"
+                            cellspacing="0"
+                            cellpadding="0"
+                            border="0"
+                            width="100%"
+                          >
+                            <tr>
+                              <td style="text-align: center; padding: 0 10px">
+                                <img
+                                  src="./img/email/email-img-1.png"
+                                  width="315"
+                                  height=""
+                                  alt=""
+                                  border="0"
+                                  style="width: 100%; max-width: 315px"
+                                />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="text-align: center; color: #ffffff; padding: 0 10px">
+                                <h1 style="font-size: 30px; line-height: 36px; margin-bottom: 15px">
+                                  Email confirmation
+                                </h1>
+                                <p
+                                  style="
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    color: #e6e6e6;
+                                    margin: 0;
+                                  "
+                                >
+                                  Follow the link to confirm
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- img -->
 
-                <!--[if mso]>
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                  <td>
+                    <table
+                      role="presentation"
+                      cellspacing="0"
+                      cellpadding="0"
+                      border="0"
+                      width="100%"
+                    >
+                      <tr>
+                        <td style="padding: 0 20px">
+                          <!-- Button : BEGIN -->
+                          <table
+                            align="center"
+                            role="presentation"
+                            cellspacing="0"
+                            cellpadding="0"
+                            border="0"
+                            style="margin: auto"
+                          >
+                            <tr>
+                              <td
+                                class="button-td"
+                                style="padding: 35px 10px 0; text-align: center"
+                              >
+                                <a
+                                  class="button-a"
+                                  href="#"
+                                  style="
+                                    text-decoration: none;
+                                    padding: 25px 35px;
+                                    color: #ffffff;
+                                    display: block;
+                                  "
+                                  ><span style="text-decoration: underline; word-break: break-all"
+                                    >45erisque211nisiutultr335iceseasest</span
+                                  ></a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 40px; text-align: center">
+                                <p
+                                  style="
+                                    margin: 0;
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    color: #ffffff;
+                                  "
+                                >
+                                  Best regards,<br />CryptoSystem team!
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- Button : END -->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+              </table>
+              <!-- Email Body : END -->
+
+              <!-- Email Footer : BEGIN -->
+              <table
+                align="center"
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+                width="100%"
+                style="margin: auto"
+              >
+                <tr>
+                  <td
+                    style="
+                      padding: 45px 15px 0;
+                      font-size: 12px;
+                      line-height: 15px;
+                      text-align: center;
+                      color: #ffffff;
+                    "
+                  >
+                    <p style="margin-bottom: 0">
+                      If you have any questions, our customer support team is ready to help you
+                      24/7.
+                    </p>
+                    <p style="margin-top: 0">
+                      Email us at
+                      <a href="mailto:info@cryptosystem.com" style="color: #00a3f5"
+                        >info@cryptosystem.com</a
+                      >
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="margin: auto; padding: 25px 0 45px">
+                    <table
+                      align="center"
+                      role="presentation"
+                      cellspacing="0"
+                      cellpadding="6"
+                      border="0"
+                    >
+                      <tr>
+                        <td>
+                          <a href="#" style="text-decoration: none; color: #ffffff; display: block">
+                            <img
+                              src="./img/email/email-facebook.png"
+                              width="25"
+                              height="25"
+                              alt="facebook"
+                              border="0"
+                              style="height: auto"
+                            />
+                          </a>
+                        </td>
+                        <td>
+                          <a href="#" style="text-decoration: none; color: #ffffff; display: block">
+                            <img
+                              src="./img/email/email-twitter.png"
+                              width="25"
+                              height="25"
+                              alt="twitter"
+                              border="0"
+                              style="height: auto"
+                            />
+                          </a>
+                        </td>
+                        <td>
+                          <a href="#" style="text-decoration: none; color: #ffffff; display: block">
+                            <img
+                              src="./img/email/email-telegram.png"
+                              width="25"
+                              height="25"
+                              alt="telegram"
+                              border="0"
+                              style="height: auto"
+                            />
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <!-- Email Footer : END -->
+
+              <!--[if mso]>
             </td>
             </tr>
             </table>
             <![endif]-->
-              </td>
-            </tr>
-          </table>
-        </div>
+            </td>
+          </tr>
+        </table>
       </div>
       <!--[if mso | IE]>
     </td>
