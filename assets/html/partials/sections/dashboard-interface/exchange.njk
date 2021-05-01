@@ -3,31 +3,62 @@
 {% from "../../components/icon.njk" import icon %}
 
 {%
-  set filterList = [
+  set filterListOne = [
     {
-      'id': 'favorite',
+      'id': 'favorite-1',
       'title': 'star',
       'type': 'icon'
     }, {
-      'id': 'ALL',
+      'id': 'ALL-1',
       'title': 'ALL'
     }, {
-      'id': 'BTC',
+      'id': 'BTC-1',
       'title': 'BTC'
     }, {
-      'id': 'ETH',
+      'id': 'ETH-1',
       'title': 'ETH'
     }, {
-      'id': 'USDT',
+      'id': 'USDT-1',
       'title': 'USDT'
     }, {
-      'id': 'USDC',
+      'id': 'USDC-1',
       'title': 'USDC'
     }, {
-      'id': 'DAI',
+      'id': 'DAI-1',
       'title': 'DAI'
     }, {
-      'id': 'ZXC',
+      'id': 'ZXC-1',
+      'title': 'ZXC'
+    }
+  ]
+%}
+
+{%
+  set filterListTwo = [
+    {
+      'id': 'favorite-2',
+      'title': 'star',
+      'type': 'icon'
+    }, {
+      'id': 'ALL-2',
+      'title': 'ALL'
+    }, {
+      'id': 'BTC-2',
+      'title': 'BTC'
+    }, {
+      'id': 'ETH-2',
+      'title': 'ETH'
+    }, {
+      'id': 'USDT-2',
+      'title': 'USDT'
+    }, {
+      'id': 'USDC-2',
+      'title': 'USDC'
+    }, {
+      'id': 'DAI-2',
+      'title': 'DAI'
+    }, {
+      'id': 'ZXC-2',
       'title': 'ZXC'
     }
   ]
@@ -36,6 +67,14 @@
 {%
   set marketTable = {
     'head': {
+      'class': [
+        'no-wrap',
+        'no-wrap',
+        'no-wrap',
+        'cs--table__cell--chart',
+        'cs--color-success',
+        ''
+      ],
       'list': [
         'Name',
         'Circulating Supply',
@@ -51,7 +90,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'cs--color-success',
             ''
           ],
@@ -76,7 +115,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'no-wrap cs--color-danger',
             ''
           ],
@@ -101,7 +140,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'cs--color-success',
             ''
           ],
@@ -126,7 +165,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'no-wrap cs--color-danger',
             ''
           ],
@@ -151,7 +190,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'cs--color-success',
             ''
           ],
@@ -176,7 +215,7 @@
             'no-wrap',
             'no-wrap',
             'no-wrap',
-            'cs--table__cell--chart',
+            '',
             'no-wrap cs--color-danger',
             ''
           ],
@@ -216,7 +255,7 @@
                 {{ icon('search') }}
               </button>
             </label>
-            {{ cardFilter(filterList) }}
+            {{ cardFilter(filterListOne) }}
           </form>
           <div class="cs--table-wrapper">
             <table class="cs--table cs--table--bordered">
@@ -225,19 +264,19 @@
                   <tr>
                     {% for name in marketTable.head.list %}
                       {% if loop.index == 5 %}
-                        <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
                       {% elif loop.index == 4 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <img src="{{ value.list[loop.index - 1] }}" alt="">
                         </td>
                       {% elif loop.index == 6 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <button type="button" class="cs--favorite">
                             {{ icon('star') }}
                           </button>
                         </td>
                       {% elif loop.index == 1 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <div class="cs--table__card">
                             <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
                             <div class="cs--table__card-content">
@@ -247,7 +286,7 @@
                           </div>
                         </td>
                       {% else %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <div class="cs--table__card-content">
                             <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
                             <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
@@ -277,7 +316,7 @@
                 {{ icon('search') }}
               </button>
             </label>
-            {{ cardFilter(filterList) }}
+            {{ cardFilter(filterListTwo) }}
           </form>
           <div class="cs--table-wrapper">
             <table class="cs--table cs--table--bordered">
@@ -286,19 +325,19 @@
                   <tr>
                     {% for name in marketTable.head.list %}
                       {% if loop.index == 5 %}
-                        <td class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}"><b>{{ value.list[loop.index - 1] }}</b></td>
                       {% elif loop.index == 4 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <img src="{{ value.list[loop.index - 1] }}" alt="">
                         </td>
                       {% elif loop.index == 6 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <button type="button" class="cs--favorite">
                             {{ icon('star') }}
                           </button>
                         </td>
                       {% elif loop.index == 1 %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <div class="cs--table__card">
                             <img src="{{ value.list[loop.index - 1].imgSrc }}" alt="">
                             <div class="cs--table__card-content">
@@ -308,7 +347,7 @@
                           </div>
                         </td>
                       {% else %}
-                        <td class="{{ value.class[loop.index - 1] }}">
+                        <td data-label="{{ name }}" class="{{ value.class[loop.index - 1] }}">
                           <div class="cs--table__card-content">
                             <span class="cs--table__card-title">{{ value.list[loop.index - 1].crypto }}</span>
                             <span class="cs--table__card-abbr">{{ value.list[loop.index - 1].abbr }}</span>
