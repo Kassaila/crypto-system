@@ -114,7 +114,7 @@
         right: var(--side-padding);
         width: var(--valid-size);
         height: var(--valid-size);
-        background: url('/img/icon/dash-input_success.svg') center / contain no-repeat;
+        background: url('../img/icon/dash-input_success.svg') center / contain no-repeat;
         transform: translateY(-50%);
       }
       &.cs--dashboard-form__input--arrow {
