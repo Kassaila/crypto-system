@@ -47,7 +47,7 @@
     "gulp-sass": "4.1.0",
     "gulp-stylelint": "13.0.0",
     "htmlhint-stylish": "1.0.3",
-    "husky": "6.0.0",
+    "husky": "^6.0.0",
     "lint-staged": "11.0.0",
     "node-notifier": "9.0.1",
     "postcss": "8.2.14",
@@ -65,6 +65,7 @@
     "node": ">=12.0.0 <15"
   },
   "scripts": {
+    "prepare": "husky install",
     "postinstall": "npx gulp load-env",
     "lint-staged": "npx lint-staged -r --allow-empty",
     "format": "npx prettier --write --ignore-unknown",
@@ -75,8 +76,7 @@
     "lint-styles": "npx gulp lint-styles",
     "lint-js": "npx gulp lint-js",
     "fix-js": "npx prettier js/**/*.js --write && npx eslint js/**/*.js --fix",
-    "fix-styles": "npx prettier scss/**/*.scss --write && npx stylelint scss/**/*.scss --fix --cache",
-    "prepare": "husky install"
+    "fix-styles": "npx prettier scss/**/*.scss --write && npx stylelint scss/**/*.scss --fix --cache"
   },
   "dependencies": {
     "normalize.css": "8.0.1"
