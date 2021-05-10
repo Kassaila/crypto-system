@@ -58,3 +58,7 @@ report.*
 public/*.html
 public/js
 public/css
+
+# husky
+.husky/_
+.husky/.gitignore
