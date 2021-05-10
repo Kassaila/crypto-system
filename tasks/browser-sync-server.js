@@ -14,9 +14,9 @@ module.exports = function (options) {
       injectChanges: false,
       minify: false,
       server: {
-        baseDir: `../${global.folder.build}`,
+        baseDir: `./${global.folder.build}`,
         // If index.html exist - open it, else show folder
-        directory: !fs.existsSync(`../${global.folder.build}/${global.file.html.main}`),
+        directory: !fs.existsSync(`./${global.folder.build}/${global.file.html.main}`),
       },
       port: 8080,
     });

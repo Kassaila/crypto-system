@@ -1,0 +1,83 @@
+{
+  "name": "web-starter-jc",
+  "version": "6.0.0-beta",
+  "description": "Starter kit for markup projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justcoded/web-starter-kit-wp"
+  },
+  "keywords": [
+    "starter",
+    "markup",
+    "JustCoded",
+    "jc"
+  ],
+  "author": "JustCoded",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justcoded/web-starter-kit/issues"
+  },
+  "homepage": "https://github.com/justcoded/web-starter-kit",
+  "devDependencies": {
+    "@babel/core": "7.14.0",
+    "@babel/eslint-parser": "7.13.14",
+    "@babel/eslint-plugin": "7.13.16",
+    "@babel/plugin-transform-runtime": "7.13.15",
+    "@babel/preset-env": "7.14.1",
+    "@babel/runtime": "7.14.0",
+    "autoprefixer": "10.2.5",
+    "babel-loader": "8.2.2",
+    "browser-sync": "2.26.14",
+    "cross-env": "7.0.3",
+    "cssnano": "5.0.2",
+    "del": "6.0.0",
+    "dotenv": "9.0.2",
+    "dotenv-expand": "5.1.0",
+    "eslint": "7.26.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "gulp": "4.0.2",
+    "gulp-htmlhint": "4.0.0",
+    "gulp-if": "3.0.0",
+    "gulp-nunjucks": "5.1.0",
+    "gulp-postcss": "9.0.0",
+    "gulp-rename": "2.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-stylelint": "13.0.0",
+    "htmlhint-stylish": "1.0.3",
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
+    "node-notifier": "9.0.1",
+    "postcss": "8.2.14",
+    "postcss-import": "14.0.2",
+    "postcss-sort-media-queries": "3.9.10",
+    "prettier": "2.3.0",
+    "sass": "1.32.12",
+    "stylelint": "13.13.1",
+    "stylelint-config-recommended": "5.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.19.0",
+    "webpack": "5.37.0"
+  },
+  "engines": {
+    "node": ">=12.0.0 <15"
+  },
+  "scripts": {
+    "prepare": "npx husky install && npx gulp load-env",
+    "lint-staged": "npx lint-staged -r --allow-empty",
+    "format": "npx prettier --write --ignore-unknown",
+    "dev": "npx gulp",
+    "test": "npx gulp build --log-level -LLLL",
+    "build": "npx cross-env NODE_ENV=production npx gulp build && npm run format public/**/*.html",
+    "lint-html": "npx gulp lint-html",
+    "lint-styles": "npx gulp lint-styles",
+    "lint-js": "npx gulp lint-js",
+    "fix-styles": "npx prettier scss/**/*.scss --write && npx stylelint scss/**/*.scss --fix --cache",
+    "fix-js": "npx prettier js/**/*.js --write && npx eslint js/**/*.js --fix"
+  },
+  "dependencies": {
+    "normalize.css": "8.0.1"
+  }
+}

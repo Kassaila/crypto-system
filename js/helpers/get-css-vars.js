@@ -16,8 +16,8 @@ function getCssValue(variable, el = document.documentElement) {
  * @returns {number}
  * @description get CSS custom property and return value as number
  */
-function getCssValueNum(variable, units) {
-  return Number(getCssValue(variable).replace(units, ''));
+function getCssValueNum(variable, units, el) {
+  return Number(getCssValue(variable, el).replace(units, ''));
 }
 
 export { getCssValue, getCssValueNum };

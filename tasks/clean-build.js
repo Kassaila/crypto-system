@@ -13,9 +13,9 @@ module.exports = function () {
   };
 
   const delFolders = [
-    `../${global.folder.build}/css/**`,
-    `../${global.folder.build}/js/**`,
-    `../${global.folder.build}/**/*.html`,
+    `./${global.folder.build}/css/**`,
+    `./${global.folder.build}/js/**`,
+    `./${global.folder.build}/**/*.html`,
   ];
 
   return async () => {
