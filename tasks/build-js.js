@@ -17,7 +17,7 @@ module.exports = function () {
     mode: 'none',
     entry: global.buildJs.getEntryPoints(),
     output: {
-      path: path.resolve(`../${global.folder.build}`, 'js/'),
+      path: path.resolve(`./${global.folder.build}`, 'js/'),
       filename: '[name].js',
     },
     target: 'browserslist',

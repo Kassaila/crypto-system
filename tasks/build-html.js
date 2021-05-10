@@ -19,5 +19,5 @@ module.exports = function () {
       .src([`./${global.buildHtml.templates}/*.html`, `./${global.buildHtml.templates}/*.njk`])
       .pipe(nunjucks.compile({ env: sortEnv }))
       .on('error', (error) => notifier.error(error.message, 'HTML compiling error', done))
-      .pipe(gulp.dest(`../${global.folder.build}`));
+      .pipe(gulp.dest(`./${global.folder.build}`));
 };

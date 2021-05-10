@@ -1,5 +1,5 @@
 {
-  "name": "web-starter-jc-wp",
+  "name": "web-starter-jc",
   "version": "6.0.0-beta",
   "description": "Starter kit for markup projects",
   "repository": {
@@ -10,15 +10,14 @@
     "starter",
     "markup",
     "JustCoded",
-    "jc",
-    "WordPress"
+    "jc"
   ],
   "author": "JustCoded",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justcoded/web-starter-kit-wp/issues"
+    "url": "https://github.com/justcoded/web-starter-kit/issues"
   },
-  "homepage": "https://github.com/justcoded/web-starter-kit-wp",
+  "homepage": "https://github.com/justcoded/web-starter-kit",
   "devDependencies": {
     "@babel/core": "7.14.0",
     "@babel/eslint-parser": "7.13.14",
@@ -71,7 +70,7 @@
     "format": "npx prettier --write --ignore-unknown",
     "dev": "npx gulp",
     "test": "npx gulp build --log-level -LLLL",
-    "build": "npx cross-env NODE_ENV=production npx gulp build && npm run format ../public/**/*.html",
+    "build": "npx cross-env NODE_ENV=production npx gulp build && npm run format public/**/*.html",
     "lint-html": "npx gulp lint-html",
     "lint-styles": "npx gulp lint-styles",
     "lint-js": "npx gulp lint-js",
