@@ -2,9 +2,9 @@
  * Hint HTML
  */
 
+const path = require('path');
 const gulp = require('gulp');
 const htmlhint = require('gulp-htmlhint');
-const path = require('path');
 
 const global = require('../gulp-config.js');
 

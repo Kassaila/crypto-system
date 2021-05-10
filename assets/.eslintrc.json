@@ -5,10 +5,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "globals": {
-    "jQuery": true,
-    "$": true
-  },
+  "globals": {},
   "env": {
     "browser": true,
     "node": true,
