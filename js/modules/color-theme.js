@@ -9,12 +9,11 @@ function _eventListener() {
         $html.setAttribute('data-color-theme', 'light');
         break;
       case 'light':
-         $html.setAttribute('data-color-theme', 'dark');
+        $html.setAttribute('data-color-theme', 'dark');
         break;
       default:
         break;
     }
-  ;
   });
 }
 
